@@ -11,11 +11,12 @@ export default function Story() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <StoryHero/>
-      <section>
+      <div className="px-[6%]">
+      <section className="mb-60">
       <h1 className="w-full text-5xl text-[rgba(1,124,109,1)] font-bold text-center leading-loose max-md:max-w-full max-md:text-[40px]">
         About Us
       </h1>
-      <p className="w-full text-base text-[rgba(67,67,67,1)] font-normal leading-[30px] mt-[21px] max-md:max-w-full">
+      <p className="w-full text-base text-[rgba(67,67,67,1)] font-normal leading-[30px] mt-[10px] max-md:max-w-full">
         At Lambda Adventures, every trek is more than just a journey—it's a path
         to growth, connection, and unforgettable memories. Born from a passion
         for the outdoors and driven by trust, care, and authenticity, we pride
@@ -35,6 +36,7 @@ export default function Story() {
         story begins here.
       </p>
     </section>
+    </div>
         </>
     )
 }

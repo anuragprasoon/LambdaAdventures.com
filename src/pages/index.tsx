@@ -163,12 +163,14 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <div className="px-[6%]">
       <Hero/>
       <TrekSection title="Upcoming Treks" treks={upcomingTreks} />
       <TrekSection title="Popular Treks" treks={popularTreks} />
       <AdventureCallout/>
       <FeaturesSection features={features}/>
       <TestimonialsSection testimonials={testimonials}/>
+      </div>
       <section id="contact">
       <ContactForm/>
       </section>
