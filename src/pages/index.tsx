@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
+import Link from "next/link";
 import { Geist, Geist_Mono } from "next/font/google";
 import styles from "@/styles/Home.module.css";
 import ContactForm from "@/components/ContactForm";
@@ -165,9 +166,17 @@ export default function Home() {
       </Head>
       <div className="px-[6%]">
       <Hero/>
-      <TrekSection title="Upcoming Treks" treks={upcomingTreks} />
-      <TrekSection title="Popular Treks" treks={popularTreks} />
-      <AdventureCallout/>
+      <TrekSection title="Upcoming" treks={upcomingTreks} />
+      <TrekSection title="Popular" treks={popularTreks} />
+      <Link href={'/contact'}><Image
+  src="https://res.cloudinary.com/anuragprasoon/image/upload/v1745615313/adventurecallout_kdpc4k.png"
+  alt="Adventure Callout"
+  width={1200} // Original width of the image
+  height={800} // Original height of the image
+  layout="responsive"
+  loader={({ src }) => src} // Makes the image responsive and adjusts based on container width
+/></Link>
+  
       <FeaturesSection features={features}/>
       <TestimonialsSection testimonials={testimonials}/>
       </div>

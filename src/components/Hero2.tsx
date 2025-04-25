@@ -35,7 +35,7 @@ export const HeroSection: React.FC = () => {
                 />
                 <input
                   type="text"
-                  placeholder="Search Treks, Expedition & Yoga retreat plans"
+                  placeholder="Search Treks & Expeditions"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   className="self-stretch min-w-60 my-auto bg-transparent border-none outline-none text-white placeholder-white w-full"

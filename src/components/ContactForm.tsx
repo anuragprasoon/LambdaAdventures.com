@@ -1,6 +1,5 @@
-
 import React, { useState } from "react";
-import SendIcon from '@mui/icons-material/Send';
+
 
 const ContactForm: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -22,9 +21,10 @@ const ContactForm: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission logic here
+
     console.log("Form submitted:", formData);
-    // Reset form after submission
+    alert("Thank You! Your Message has been sent");
+
     setFormData({
       name: "",
       phone: "",
@@ -36,7 +36,7 @@ const ContactForm: React.FC = () => {
   return (
     <div className="flex flex-col relative min-h-[990px] w-full font-normal pl-[171px] pr-[174px] pt-[155px] max-md:max-w-full max-md:px-5 max-md:py-[100px]">
       <img
-        src="https://cdn.builder.io/api/v1/image/assets/TEMP/006d6a7265cc890178b3902058264117bcfe1f7d?placeholderIfAbsent=true"
+        src="https://cdn.builder.io/api/v1/image/assets/TEMP/006d6a7265cc890178b3902058264117bcfe1f7d"
         alt="Contact Background"
         className="absolute h-full w-full object-cover inset-0"
       />

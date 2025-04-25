@@ -15,7 +15,7 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
 }) => {
   return (
     <div className="bg-[rgba(1,124,109,1)] border self-stretch flex min-w-60 flex-col items-stretch w-[377px] my-auto pb-5 rounded-[20px] border-[rgba(1,124,109,1)] border-solid hover:shadow-lg transition-shadow">
-      <div className="self-stretch flex-1 shrink basis-[0%] bg-white min-h-[235px] w-full gap-[7px] text-base text-[rgba(67,67,67,1)] font-medium leading-[31px] px-[30px] py-14 rounded-[20px] max-md:px-5">
+      <div className="self-stretch flex-1 shrink basis-[0%] bg-white min-h-[235px] w-full gap-[7px] text-[16px] text-[rgba(67,67,67,1)] font-medium leading-[31px] px-[30px] py-14 rounded-[20px] max-md:px-5">
         {quote}
       </div>
       <div className="self-center flex min-h-[65px] items-center gap-[13px] text-white mt-5">
@@ -25,8 +25,8 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
           className="aspect-[1] object-contain w-[65px] self-stretch shrink-0 my-auto rounded-[50%]"
         />
         <div className="self-stretch w-[111px] my-auto">
-          <div className="text-[17px] font-bold">{name}</div>
-          <div className="text-[13px] font-medium mt-[5px]">{location}</div>
+          <div className="text-[14px] font-bold">{name}</div>
+          <div className="text-[12px] font-medium mt-[5px]">{location}</div>
         </div>
       </div>
     </div>

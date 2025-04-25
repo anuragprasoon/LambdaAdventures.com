@@ -2,7 +2,7 @@ import React from "react";
 const AdventureCallout: React.FC = () => {
   return <div className="w-full text-white leading-none mt-[60px] rounded-[0px_0px_0px_0px] max-md:mt-10">
       <div className="flex flex-col relative min-h-[439px] w-full pt-[111px] pb-[60px] px-[78px] rounded-[20px] max-md:max-w-full max-md:pt-[100px] max-md:px-5">
-        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/62b20ff1b68e87983436a4f74e07164d648e6a98?placeholderIfAbsent=true" alt="Adventure Background" className="absolute h-full w-full object-cover inset-0" />
+        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/62b20ff1b68e87983436a4f74e07164d648e6a98" alt="Adventure Background" className="absolute  w-full object-cover inset-0" />
         <div className="relative w-[699px] max-w-full rounded-[19px]">
           <div className="w-full max-md:max-w-full">
             <h2 className="text-[56px] font-extrabold italic leading-[62px] max-md:max-w-full max-md:text-[40px] max-md:leading-[50px]">

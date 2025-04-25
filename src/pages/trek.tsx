@@ -3,6 +3,8 @@ import TrekSection from "@/components/TrekSection"
 import AdventureCallout from "@/components/AdventureCallout";
 import { HeroSection } from "@/components/Hero2";
 import { FilterTabs } from "@/components/FilterTabs";
+import Link from "next/link";
+import Image from "next/image";
 
 const popularTreks = [{
     imageSrc: "https://cdn.builder.io/api/v1/image/assets/TEMP/7763efce8d843787118ada5a9f6bbf42b9b51caa?placeholderIfAbsent=true",
@@ -64,11 +66,24 @@ export default function Trek() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <HeroSection/>
+      <div className="px-[6%]">
+      
       <FilterTabs/>
       
-      <TrekSection title=" " treks={popularTreks}/>
-      <TrekSection title=" " treks={popularTreks}/>
-      <AdventureCallout/>
+      <TrekSection title="Himachal " treks={popularTreks}/>
+      <TrekSection title="Uttrakhand " treks={popularTreks}/>
+      <Link href={'/contact'}>
+      <Image
+  src="https://res.cloudinary.com/anuragprasoon/image/upload/v1745615313/adventurecallout_kdpc4k.png"
+  alt="Adventure Callout"
+  width={1200} // Original width of the image
+  height={800} // Original height of the image
+  layout="responsive"
+  loader={({ src }) => src}
+  className="mb-[30px]" // Makes the image responsive and adjusts based on container width
+/>
+</Link>
+      </div>
         </>
     )
 }
