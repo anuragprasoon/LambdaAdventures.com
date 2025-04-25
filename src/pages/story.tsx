@@ -12,8 +12,8 @@ export default function Story() {
       </Head>
       <StoryHero/>
       <div className="px-[6%]">
-      <section className="mb-60">
-      <h1 className="w-full text-5xl text-[rgba(1,124,109,1)] font-bold text-center leading-loose max-md:max-w-full max-md:text-[40px]">
+      <section className="mb-40 max-md:mb-[20px]">
+      <h1 className="w-full text-4xl text-[rgba(1,124,109,1)] font-bold text-center leading-loose max-md:max-w-full max-md:text-[28px] max-md:mt-[30px]">
         About Us
       </h1>
       <p className="w-full text-base text-[rgba(67,67,67,1)] font-normal leading-[30px] mt-[10px] max-md:max-w-full">

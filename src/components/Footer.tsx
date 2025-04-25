@@ -3,12 +3,11 @@ import Link from "next/link";
 
 const Footer: React.FC = () => {
   return <>
-      <div className="bg-[rgba(2,7,10,1)] flex min-h-[222px] w-full mt-[104px] max-md:max-w-full max-md:mt-10" />
+      <div className="bg-[rgba(2,7,10,1)] flex min-h-[222px] w-full mt-[104px] max-md:max-w-full max-md:mt-[0px]" />
       <div className="z-10 mt-[-326px] w-full max-md:max-w-full max-md:mt-[-200px]">
-        
         <div className="bg-[rgba(2,7,10,1)] flex min-h-[406px] w-full flex-wrap px-6 py-[60px] max-md:max-w-full max-md:px-5">
-          <div className="flex min-w-60 flex-col items-stretch grow shrink w-[279px] px-8 max-md:px-5">
-            <div className="max-w-full w-[285px] text-[17px] text-[rgba(188,188,188,1)] font-normal">
+          <div className="max-md:mb-[30px] flex min-w-60 flex-col items-stretch grow shrink w-[279px] px-8 max-md:px-5">
+            <div className="max-w-full w-[285px] text-[14px] text-[rgba(188,188,188,1)] font-normal">
             <Link href={'/'}><img src="https://cdn.builder.io/api/v1/image/assets/TEMP/f5d86b31aeefa680477dfb00b45ee4bad0741df4?placeholderIfAbsent=true" alt="Footer Logo" className="aspect-[1.11] object-contain w-[59px]" /></Link>
               <div className="mt-6">
                 © 2025 Lambda Adventures
@@ -28,8 +27,8 @@ const Footer: React.FC = () => {
               </a>
             </div>
           </div>
-          <div className="flex min-w-60 gap-[40px_48px] text-[17px] text-[rgba(123,123,123,1)] font-normal flex-wrap max-md:max-w-full">
-            <div>
+          <div className="flex min-w-60 gap-[40px_48px] text-[14px] text-[rgba(123,123,123,1)] font-normal flex-wrap max-md:max-w-full">
+            <div className="max-md:px-5">
               <h3 className="text-white font-bold">Quick Links</h3>
               <div className="mt-6 hover:text-white transition-colors cursor-pointer">
               <Link href={'/story'}>About Us</Link>
@@ -50,7 +49,7 @@ const Footer: React.FC = () => {
                 <Link href={'/info/#cancellation'}>Cancellation Policy</Link>
               </div>
             </div>
-            <div>
+            <div className="max-md:px-5">
               <h3 className="text-white font-bold">Our Services</h3>
               <div className="mt-6 hover:text-white transition-colors cursor-pointer">
                 <Link href={'/trek'}>Trek & Expeditions</Link>
@@ -65,7 +64,7 @@ const Footer: React.FC = () => {
                 Custom Treks
               </div>
             </div>
-            <div>
+            <div className="max-md:hidden">
               <h3 className="text-white font-bold">Upcoming Treks</h3>
               <div className="mt-6 hover:text-white transition-colors cursor-pointer">
                 Brahmatal Trek

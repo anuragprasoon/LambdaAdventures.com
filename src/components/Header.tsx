@@ -1,12 +1,17 @@
 
-import React from "react";
+import React , { useState }from "react";
 import Link from "next/link";
 import MenuIcon from '@mui/icons-material/Menu';
+import CloseIcon from '@mui/icons-material/Close';
+
+
+
 
 const Header: React.FC = () => {
+    const [isOpen, setIsOpen] = React.useState(false);
   return (
     <>
-    <div className="bg-white flex w-full items-center gap-[40px_100px] overflow-hidden text-[19px] text-black font-medium leading-none justify-between flex-wrap pl-[78px] pr-20 py-5 mx-auto max-md:max-w-full max-md:mr-0.5 max-md:px-5">
+    <div className="bg-white flex w-full items-center gap-[40px_100px] overflow-hidden text-[16px] text-black font-medium leading-none justify-between flex-wrap pl-[78px] pr-20 py-5 mx-auto max-md:max-w-full max-md:mr-0.5 max-md:px-5">
       <Link href="/"><img
         src="https://cdn.builder.io/api/v1/image/assets/TEMP/b2fa7c30181431a02d611b8ae9935850086686e9?placeholderIfAbsent=true"
         alt="Company Logo"
@@ -29,15 +34,16 @@ const Header: React.FC = () => {
         <Link  href={'/contact'}>Contact Us</Link>
         </div>
         <div className="md:hidden self-stretch ml-auto my-auto cursor-pointer hover:text-[rgba(1,124,109,1)]">
-        <MenuIcon className="text-2xl"/>
+        <MenuIcon className="text-2xl" onClick={() => setIsOpen(true)}/>
         </div>
 
       </div>
     </div>
 
-    <div className=" hidden top-0 right-0 h-screen w-[200px] float-right bg-[rgba(1,124,109,1)] flex flex-col items-start justify-start space-y-10 p-6 fixed z-50">
-    <div className=" cursor-pointer hover:text-black hidden">
-        <MenuIcon className="text-white text-2xl"/>
+    <div className={`md:hidden ${isOpen ? "flex" : "hidden"} top-0 right-0 h-screen w-[200px] float-right bg-[rgba(1,124,109,1)] flex-col items-start justify-start space-y-10 p-6 fixed z-50`}>
+
+    <div className=" cursor-pointer hover:text-black">
+        <CloseIcon className="text-white text-2xl" onClick={() => setIsOpen(false)}/>
     </div>
     <div className="cursor-pointer hover:text-black">
           <Link  href={'/trek'}>Treks & Expeditions</Link>

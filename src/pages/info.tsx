@@ -10,11 +10,12 @@ export default function Info() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <StoryHero/>
-      <section id="terms">
-      <h1 className="w-full text-5xl text-[rgba(1,124,109,1)] font-bold text-center leading-loose max-md:max-w-full max-md:text-[40px]">
+      <div className="px-[6%] mb-[140px]">
+      <section id="terms" className="mb-[20px]">
+      <h1 className="w-full text-4xl text-[rgba(1,124,109,1)] font-bold text-center leading-loose max-md:max-w-full max-md:text-[28px] mt-[10px">
         Terms & Condition
       </h1>
-      <p className="w-full text-base text-[rgba(67,67,67,1)] font-normal leading-[30px] mt-[21px] max-md:max-w-full">
+      <p className="w-full text-base text-[rgba(67,67,67,1)] font-normal leading-[30px] max-md:max-w-full">
         At Lambda Adventures, every trek is more than just a journey—it's a path
         to growth, connection, and unforgettable memories. Born from a passion
         for the outdoors and driven by trust, care, and authenticity, we pride
@@ -34,11 +35,11 @@ export default function Info() {
         story begins here.
       </p>
     </section>
-    <section id="cancellation">
-      <h1 className="w-full text-5xl text-[rgba(1,124,109,1)] font-bold text-center leading-loose max-md:max-w-full max-md:text-[40px]">
+    <section id="cancellation" className="mb-[20px]">
+      <h1 className="w-full text-4xl text-[rgba(1,124,109,1)] font-bold text-center leading-loose max-md:max-w-full max-md:text-[28px]">
         Cancellation Policy
       </h1>
-      <p className="w-full text-base text-[rgba(67,67,67,1)] font-normal leading-[30px] mt-[21px] max-md:max-w-full">
+      <p className="w-full text-base text-[rgba(67,67,67,1)] font-normal leading-[30px]  max-md:max-w-full">
         At Lambda Adventures, every trek is more than just a journey—it's a path
         to growth, connection, and unforgettable memories. Born from a passion
         for the outdoors and driven by trust, care, and authenticity, we pride
@@ -58,11 +59,11 @@ export default function Info() {
         story begins here.
       </p>
     </section>
-    <section id="privacy">
-      <h1 className="w-full text-5xl text-[rgba(1,124,109,1)] font-bold text-center leading-loose max-md:max-w-full max-md:text-[40px]">
+    <section id="privacy" className="mb-[20px]">
+      <h1 className="w-full text-4xl text-[rgba(1,124,109,1)] font-bold text-center leading-loose max-md:max-w-full max-md:text-[28px]">
         Privacy Policy
       </h1>
-      <p className="w-full text-base text-[rgba(67,67,67,1)] font-normal leading-[30px] mt-[21px] max-md:max-w-full">
+      <p className="w-full text-base text-[rgba(67,67,67,1)] font-normal leading-[30px] max-md:max-w-full">
         At Lambda Adventures, every trek is more than just a journey—it's a path
         to growth, connection, and unforgettable memories. Born from a passion
         for the outdoors and driven by trust, care, and authenticity, we pride
@@ -82,11 +83,11 @@ export default function Info() {
         story begins here.
       </p>
     </section>
-    <section id="disclaimer">
-      <h1 className="w-full text-5xl text-[rgba(1,124,109,1)] font-bold text-center leading-loose max-md:max-w-full max-md:text-[40px]">
+    <section id="disclaimer" className="mb-[20px]">
+      <h1 className="w-full text-4xl text-[rgba(1,124,109,1)] font-bold text-center leading-loose max-md:max-w-full max-md:text-[28px]">
         Disclaimer
       </h1>
-      <p className="w-full text-base text-[rgba(67,67,67,1)] font-normal leading-[30px] mt-[21px] max-md:max-w-full">
+      <p className="w-full text-base text-[rgba(67,67,67,1)] font-normal leading-[30px] max-md:max-w-full">
         At Lambda Adventures, every trek is more than just a journey—it's a path
         to growth, connection, and unforgettable memories. Born from a passion
         for the outdoors and driven by trust, care, and authenticity, we pride
@@ -106,7 +107,7 @@ export default function Info() {
         story begins here.
       </p>
     </section>
-
+    </div>
         </>
     )
 }
