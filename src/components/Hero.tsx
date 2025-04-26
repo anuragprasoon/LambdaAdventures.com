@@ -20,7 +20,7 @@ const Hero: React.FC = () => {
       <div className="self-stretch min-w-60 w-[1361px] my-auto rounded-[19px]">
         <div className="flex flex-col relative w-full items-center pt-[147px] pb-[41px] px-20 rounded-[19px] max-md:max-w-full max-md:pt-[100px] max-md:px-5">
           <div className="carousel-container absolute inset-0 w-full h-full overflow-hidden rounded-[19px]">
-            {images.map((src, index) => <Image key={index}  width={1200} height={800} layout="responsive" src={src} alt={`Hero Background ${index + 1}`} className={`absolute h-[600px] w-full object-cover object-center inset-0 transition-opacity rounded-[19px] duration-1000 ${index === currentImageIndex ? 'opacity-100' : 'opacity-0'}`} />)}
+            {images.map((src, index) => <Image key={index} width={1311} height={600} src={src} alt={`Hero Background ${index + 1}`} className={`absolute h-[600px] w-full object-cover object-center inset-0 transition-opacity rounded-[19px] duration-1000 ${index === currentImageIndex ? 'opacity-100' : 'opacity-0'}`} />)}
           </div>
           <div className="relative flex w-[773px] max-w-full flex-col items-center rounded-[19px]">
             <div className="w-full text-white text-left max-md:max-w-full">
