@@ -15,10 +15,10 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
 }) => {
   return (
     <div className="bg-[rgba(1,124,109,1)] border self-stretch flex min-w-60 flex-col items-stretch w-[377px] my-auto pb-5 rounded-[20px] border-[rgba(1,124,109,1)] border-solid hover:shadow-lg transition-shadow">
-      <div className="self-stretch flex-1 shrink basis-[0%] bg-white min-h-[235px] w-full gap-[7px] text-[16px] text-[rgba(67,67,67,1)] font-medium leading-[31px] px-[30px] py-14 rounded-[20px] max-md:px-5">
+      <div className="self-stretch flex-1 shrink basis-[0%] bg-white min-h-[100px] w-full gap-[7px] text-[14px] text-[rgba(67,67,67,1)] font-medium leading-[31px] px-[30px] py-8 rounded-[20px] max-md:px-5">
         {quote}
       </div>
-      <div className="self-center flex min-h-[65px] items-center gap-[13px] text-white mt-5">
+      <div className="self-center flex min-h-[65px] items-center gap-[10px] text-white mt-5">
         <img
           src={imageSrc}
           alt={name}

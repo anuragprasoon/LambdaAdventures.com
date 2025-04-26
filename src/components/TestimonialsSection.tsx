@@ -18,7 +18,7 @@ const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({
       <h2 className="text-[rgba(1,124,109,1)] text-4xl font-bold leading-none text-center max-md:max-w-full max-md:text-[28px]  mb-[30px]">
         What People Say About Us{" "}
       </h2>
-      <div className="flex w-full  overflow-x-auto [&::-webkit-scrollbar]:hidden items-center gap-[26px] justify-centermt-[41px] rounded-[20px] max-md:max-w-full max-md:mt-8">
+      <div className="flex w-full  overflow-x-auto [&::-webkit-scrollbar]:hidden items-center gap-[20px] justify-centermt-[41px] rounded-[20px] max-md:max-w-full max-md:mt-8">
         {testimonials.map((testimonial, index) => (
           <TestimonialCard
             key={index}
