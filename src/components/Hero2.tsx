@@ -12,11 +12,11 @@ export const HeroSection: React.FC = () => {
 
   return (
     <div className="self-center w-full text-white">
-      <div className="flex flex-col relative min-h-[329px] w-full items-center justify-center px-20 py-[59px] rounded-[19px] max-md:max-w-full max-md:px-5">
+      <div className="flex flex-col relative min-h-[329px] w-full items-center justify-center px-20 py-[59px]  max-md:max-w-full max-md:px-5">
         <img
-          src="https://cdn.builder.io/api/v1/image/assets/4b5665cbbffd4ab3b47a4640b783bd87/4873afe2287c0a7cba516f7123a01bc91b26225b?placeholderIfAbsent=true"
+          src="https://res.cloudinary.com/anuragprasoon/image/upload/v1745672525/trek-hero_fy3co4.png"
           alt="Adventure background"
-          className="absolute h-full w-full object-cover inset-0 rounded-[19px]"
+          className="absolute h-full w-full object-cover inset-0"
         />
         <div className="relative flex w-[777px] max-w-full flex-col items-stretch">
           <h1 className="text-[64px] font-bold leading-[60px] text-center max-md:max-w-full max-md:text-[40px] max-md:leading-[41px]">
@@ -29,7 +29,7 @@ export const HeroSection: React.FC = () => {
             <div className="bg-[rgba(255,255,255,0.01)] border flex min-w-60 min-h-14 w-full items-center gap-0.5 flex-1 shrink basis-[0%] px-3 py-[18px] rounded-lg border-white border-solid max-md:max-w-full backdrop-blur-[10px]">
               <div className="self-stretch flex min-w-60 items-center gap-4 my-auto w-full">
                 <img
-                  src="https://cdn.builder.io/api/v1/image/assets/4b5665cbbffd4ab3b47a4640b783bd87/afd61f49e242be832f8f845a8b263a98d6eba015?placeholderIfAbsent=true"
+                  src="https://cdn.builder.io/api/v1/image/assets/4b5665cbbffd4ab3b47a4640b783bd87/afd61f49e242be832f8f845a8b263a98d6eba015"
                   alt="Search icon"
                   className="aspect-[1] object-contain w-5 self-stretch shrink-0 my-auto"
                 />

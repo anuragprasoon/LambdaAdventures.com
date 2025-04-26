@@ -28,7 +28,7 @@ const TrekSection: React.FC<TrekSectionProps> = ({
         <h2 className="text-[rgba(1,124,109,1)] text-[24px] font-bold leading-none">
           {title}
         </h2>
-        <div className="text-[rgba(34,34,34,1)] text-[16px] font-semibold leading-none cursor-pointer hover:text-[rgba(1,124,109,1)]">
+        <div className="text-[rgba(34,34,34,1)] text-[16px] md:font-semibold leading-none cursor-pointer hover:text-[rgba(1,124,109,1)]">
          <Link href={'/trek'}>View all</Link> 
         </div>
       </div>
