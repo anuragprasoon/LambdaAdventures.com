@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-type FilterOption = "all" | "treks" | "expeditions" | "yoga";
+export type FilterOption = "all" | "treks" | "expeditions" | "yoga";
 
 interface FilterTabsProps {
   onFilterChange: (filter: FilterOption) => void;

@@ -7,6 +7,7 @@ import TrekCard from "@/components/TrekCard";
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from 'react';
+import { type FilterOption } from "@/components/FilterTabs";
 
 const popularTreks = [
   {
@@ -153,7 +154,7 @@ const popularTreks = [
 
 
 export default function Trek() {
-  const [activeFilter, setActiveFilter] = useState("all");
+  const [activeFilter, setActiveFilter] = useState<FilterOption>("all");
     
     const filteredTreks = popularTreks.filter(trek => {
       if (activeFilter === "all") return true;
@@ -163,7 +164,7 @@ export default function Trek() {
       return false;
     });
 
-    const handleFilterChange = (filter) => {
+    const handleFilterChange = (filter: FilterOption) => {
       setActiveFilter(filter);
     };
 
