@@ -3,17 +3,19 @@ import React, { useState } from "react";
 type FilterOption = "all" | "treks" | "expeditions" | "yoga";
 
 interface FilterTabsProps {
-  onFilterChange?: (filter: FilterOption) => void;
+  onFilterChange: (filter: FilterOption) => void;
+  initialFilter?: FilterOption;
 }
 
-export const FilterTabs: React.FC<FilterTabsProps> = ({ onFilterChange }) => {
-  const [activeFilter, setActiveFilter] = useState<FilterOption>("all");
+export const FilterTabs: React.FC<FilterTabsProps> = ({ 
+  onFilterChange, 
+  initialFilter = "all" 
+}) => {
+  const [activeFilter, setActiveFilter] = useState<FilterOption>(initialFilter);
 
   const handleFilterChange = (filter: FilterOption) => {
     setActiveFilter(filter);
-    if (onFilterChange) {
-      onFilterChange(filter);
-    }
+    onFilterChange(filter);
   };
 
   return (
