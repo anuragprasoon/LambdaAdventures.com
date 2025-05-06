@@ -18,17 +18,20 @@ const Header: React.FC = () => {
         className="aspect-[3.38] object-contain w-[142px] self-stretch shrink-0 my-auto"
       /></Link>
       <div className="self-stretch flex items-center gap-[26px] flex-wrap my-auto max-md:max-w-full">
+      <div className="max-md:hidden self-stretch my-auto cursor-pointer hover:text-[rgba(1,124,109,1)]">
+          <Link  href={'/'}>Home</Link>
+        </div>
         <div className="max-md:hidden self-stretch my-auto cursor-pointer hover:text-[rgba(1,124,109,1)]">
           <Link  href={'/trek'}>Treks & Expeditions</Link>
         </div>
         <div className=" max-md:hidden self-stretch my-auto cursor-pointer hover:text-[rgba(1,124,109,1)]">
-          Yoga Retreat
+          <Link href={'/comingsoon'}>Yoga Retreat</Link>
         </div>
         <div className="max-md:hidden self-stretch my-auto cursor-pointer hover:text-[rgba(1,124,109,1)]">
         <Link  href={'/story'}>About Us</Link>
         </div>
         <div className="max-md:hidden self-stretch whitespace-nowrap my-auto cursor-pointer hover:text-[rgba(1,124,109,1)]">
-          Blog
+          <Link href={'/comingsoon'}>Blog</Link>
         </div>
         <div className="max-md:hidden self-stretch my-auto cursor-pointer hover:text-[rgba(1,124,109,1)]">
         <Link  href={'/contact'}>Contact Us</Link>
@@ -46,19 +49,22 @@ const Header: React.FC = () => {
         <CloseIcon className="text-white text-2xl" onClick={() => setIsOpen(false)}/>
     </div>
     <div className="cursor-pointer hover:text-black">
-          <Link  href={'/trek'}>Treks & Expeditions</Link>
+          <Link  href={'/'} onClick={()=>setIsOpen(false)}>Home</Link>
+        </div>
+    <div className="cursor-pointer hover:text-black">
+          <Link  href={'/trek'} onClick={()=>setIsOpen(false)}>Treks & Expeditions</Link>
         </div>
     <div className=" cursor-pointer hover:text-black">
-          Yoga Retreat
+          <Link href={'/comingsoon'} onClick={()=>setIsOpen(false)}>Yoga Retreat</Link>  
     </div>
     <div className=" cursor-pointer hover:text-black">
-        <Link  href={'/story'}>About Us</Link>
+         <Link  href={'/story'} onClick={()=>setIsOpen(false)}>About Us</Link>
     </div>
     <div className=" cursor-pointer hover:text-black">
-          Blog
+        <Link href={'/comingsoon'} onClick={()=>setIsOpen(false)}>Blog</Link>
     </div>
     <div className=" cursor-pointer hover:text-black">
-        <Link  href={'/contact'}>Contact Us</Link>
+        <Link  href={'/contact'} onClick={()=>setIsOpen(false)}>Contact Us</Link>
     </div>
     </div>
     </>

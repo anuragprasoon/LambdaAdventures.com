@@ -17,23 +17,13 @@ export default function Story() {
         About Us
       </h1>
       <p className="w-full text-base text-[rgba(67,67,67,1)] font-normal leading-[30px] mt-[10px] max-md:max-w-full">
-        At Lambda Adventures, every trek is more than just a journey—it's a path
-        to growth, connection, and unforgettable memories. Born from a passion
-        for the outdoors and driven by trust, care, and authenticity, we pride
-        ourselves on crafting transformative adventures that stay true to our
-        word. From the moment you book with us, we become your trusted partner
-        in exploration, prioritizing your safety, comfort, and satisfaction at
-        every step. Our experienced guides don't just lead treks—they share
-        knowledge, build relationships, and tailor each experience to your
-        needs, whether you're a seasoned explorer or setting foot on a trail for
-        the first time. With a promise of transparency and a commitment to
-        value, we ensure every aspect of your journey is thoughtfully curated
-        and genuinely rewarding. At Lambda, we believe that exploration isn't
-        just about the destination—it's about the stories you collect, the
-        limits you push, and the bonds you form. So, whether you're scaling
-        mountains or wandering through serene valleys, join us to explore,
-        experience, and evolve—because with Lambda Adventures, your next great
-        story begins here.
+      At Lambda Adventures, our journeys start with a simple idea: exploring together. When you sign up for a trek, mountain climb, or yoga retreat with us, you’re not just booking a trip-you’re joining a group of people who care about the outdoors and each other. We know what it’s like to feel both excited and a little unsure before heading into the mountains, so we make sure you always have someone to count on, from your first question to your last step.
+      </p>
+      <p className="w-full text-base text-[rgba(67,67,67,1)] font-normal leading-[30px] mt-[10px] max-md:max-w-full">
+      Along the way, our guides are there to walk beside you. They’ll share stories from the trail, help you through tough moments, and make sure everyone feels included. We listen to what you want from your adventure, whether it’s reaching a summit, trying something new, or just enjoying a quiet moment in nature. Our trips are shaped by the people who join us, and we do our best to make everyone feel welcome.
+      </p>
+      <p className="w-full text-base text-[rgba(67,67,67,1)] font-normal leading-[30px] mt-[10px] max-md:max-w-full">
+      When the journey ends, what stays with you isn’t just the view or the challenge-it’s the people you met and the moments you shared. At Lambda Adventures, we focus on honest connections and real experiences, helping you discover something new about the world and yourself, one step at a time.
       </p>
     </section>
     </div>

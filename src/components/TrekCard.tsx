@@ -27,7 +27,7 @@ const TrekCard: React.FC<TrekCardProps> = ({
   difficultyIconSrc
 }) => {
   return <div className="min-w-60 w-[302px]">
-      <img src={imageSrc} alt={title} className="aspect-[1.06] object-contain w-[302px] max-w-full rounded-xl" />
+      <img src={imageSrc} alt={title} className="aspect-[1.06] w-[302px] max-w-full rounded-xl" />
       <div className="w-full text-sm text-[#717171] font-medium leading-none mt-3">
         <div className="flex w-full flex-col">
           <div className="self-stretch w-full gap-8 text-base text-[rgba(34,34,34,1)] font-bold leading-none">

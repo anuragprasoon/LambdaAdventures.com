@@ -65,13 +65,12 @@ export default function Trek() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <HeroSection/>
-      <div className="px-[6%]">
       
+      <div className="px-[6%]">
+      <HeroSection/>
       <FilterTabs/>
       
-      <TrekSection title="Himachal " treks={popularTreks}/>
-      <TrekSection title="Uttrakhand " treks={popularTreks}/>
+      
       <div className="mb-[100px] max-sm:hidden ">
       <Link href={'/contact'}><Image
   src="https://res.cloudinary.com/anuragprasoon/image/upload/v1745615313/adventurecallout_kdpc4k.png"

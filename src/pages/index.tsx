@@ -21,120 +21,153 @@ const geistMono = Geist_Mono({
 });
 
 const testimonials = [{
-  quote: '"On the Windows talking painted pasture yet its express parties use. Sure last upon he same as knew next. Of believed or diverted no."',
-  imageSrc: "https://cdn.builder.io/api/v1/image/assets/TEMP/db7574ae171e5572b7fce803dee7af46d2cf94b7",
-  name: "Mike taylor",
-  location: "Lahore, Pakistan"
+  quote: '"Had an amazing experience volunteering with Yaswanth on the trek to Hari Hara Betta this Republic Day! The views were stunning, and the journey was truly unforgettable. Kudos to Lambda Adventures for organizing such a wonderful event!"',
+  imageSrc: "https://res.cloudinary.com/anuragprasoon/image/upload/v1746543799/lamda_user_sjsw1t.png",
+  name: "Tony Abhinash",
+  location: "Ranchi, India"
 }, {
-  quote: '"On the Windows talking painted pasture yet its express parties use. Sure last upon he same as knew next. Of believed or diverted no."',
-  imageSrc: "https://cdn.builder.io/api/v1/image/assets/TEMP/db7574ae171e5572b7fce803dee7af46d2cf94b7",
-  name: "Mike taylor",
-  location: "Lahore, Pakistan"
+  quote: '"Best team. Lambda Adventures prioritizes responsible tourism, supporting local communities and minimizing environmental impact. India\'s Best travel company. India\'s best trekking company. India\'s leading trekking and expedition company."',
+  imageSrc: "https://res.cloudinary.com/anuragprasoon/image/upload/v1746543798/lamda_user2_owhmab.png",
+  name: "Manu",
+  location: "Ranchi, India"
 }, {
-  quote: '"On the Windows talking painted pasture yet its express parties use. Sure last upon he same as knew next. Of believed or diverted no."',
-  imageSrc: "https://cdn.builder.io/api/v1/image/assets/TEMP/db7574ae171e5572b7fce803dee7af46d2cf94b7",
-  name: "Mike taylor",
-  location: "Lahore, Pakistan"
+  quote: '"Very good experience of a day trip to DHARAGIRI falls in Ghatshila with a group of 11 school students belonging to nature club. Lambda adventures made the experience pleasant and enjoyable. Thanks to Lambda Adventures"',
+  imageSrc: "https://res.cloudinary.com/anuragprasoon/image/upload/v1746543799/lamda_user3_xml73z.png",
+  name: "Tania Mukhopadhyay",
+  location: "Ranchi, India"
 }];
 
-const upcomingTreks = [{
-  imageSrc: "https://cdn.builder.io/api/v1/image/assets/TEMP/45cebc0808498914db6f5f9e8ceb06fe989e8bb5",
-  title: "Chandrashila Trek",
-  location: "Himachal Pradesh",
-  dates: "22 Oct – 27 Oct",
-  duration: "5 Days, 4 Nights",
-  distance: "9 km",
-  difficulty: "Moderate",
-  locationIconSrc: "https://cdn.builder.io/api/v1/image/assets/TEMP/c78b42c43ac18291961706e53a80daf2860c05cd",
-  dateIconSrc: "https://cdn.builder.io/api/v1/image/assets/TEMP/cb1828659fa21ee1886a498b0ac8f906577ed0d2",
-  distanceIconSrc: "https://cdn.builder.io/api/v1/image/assets/TEMP/74c7088b1f87c965057e00756a224e5be800786f",
-  difficultyIconSrc: "https://cdn.builder.io/api/v1/image/assets/TEMP/1cb7539d47c7cc3b499f95de1d8fabce29757f9c"
-}, {
-  imageSrc: "https://cdn.builder.io/api/v1/image/assets/TEMP/ffc78d0ccbb2717b7d8dc02bf897072ed4a1c3c5",
-  title: "Chandrashila Trek",
-  location: "Himachal Pradesh",
-  dates: "22 Oct – 27 Oct",
-  duration: "5 Days, 4 Nights",
-  distance: "9 km",
-  difficulty: "Moderate",
-  locationIconSrc: "https://cdn.builder.io/api/v1/image/assets/TEMP/9ad45f075284efb48f18c6d16a98c7071ac6ed7e",
-  dateIconSrc: "https://cdn.builder.io/api/v1/image/assets/TEMP/fc692e905e8970fcbb065c93d7a0fa691585954c",
-  distanceIconSrc: "https://cdn.builder.io/api/v1/image/assets/TEMP/ce20a86a5d70fec7e1b9446b8053f65ed5b7f647",
-  difficultyIconSrc: "https://cdn.builder.io/api/v1/image/assets/TEMP/a279ac1af07bfa6b5b4501ab04dea24ea08bd5b6"
-}, {
-  imageSrc: "https://cdn.builder.io/api/v1/image/assets/TEMP/7763efce8d843787118ada5a9f6bbf42b9b51caa",
-  title: "Chandrashila Trek",
-  location: "Himachal Pradesh",
-  dates: "22 Oct – 27 Oct",
-  duration: "5 Days, 4 Nights",
-  distance: "9 km",
-  difficulty: "Moderate",
-  locationIconSrc: "https://cdn.builder.io/api/v1/image/assets/TEMP/de023415d53ab049720a040eb55a9360db4799c4",
-  dateIconSrc: "https://cdn.builder.io/api/v1/image/assets/TEMP/42e83d894df0ef448ab8a8c643e384428952fc00",
-  distanceIconSrc: "https://cdn.builder.io/api/v1/image/assets/TEMP/9dbf2ccd235260cadfc86bef85d7071ef15a0cec",
-  difficultyIconSrc: "https://cdn.builder.io/api/v1/image/assets/TEMP/2182ab57bc4f0c3fb9f520096d2f2dcd6f8f1bec"
-}, {
-  imageSrc: "https://cdn.builder.io/api/v1/image/assets/TEMP/45cebc0808498914db6f5f9e8ceb06fe989e8bb5",
-  title: "Chandrashila Trek",
-  location: "Himachal Pradesh",
-  dates: "22 Oct – 27 Oct",
-  duration: "5 Days, 4 Nights",
-  distance: "9 km",
-  difficulty: "Moderate",
-  locationIconSrc: "https://cdn.builder.io/api/v1/image/assets/TEMP/eacecd33b3e156b441471b5885bd65122973a3ba",
-  dateIconSrc: "https://cdn.builder.io/api/v1/image/assets/TEMP/cb1828659fa21ee1886a498b0ac8f906577ed0d2",
-  distanceIconSrc: "https://cdn.builder.io/api/v1/image/assets/TEMP/347615fbc4ad58d81ff446f856db4581ec0055ce",
-  difficultyIconSrc: "https://cdn.builder.io/api/v1/image/assets/TEMP/c5acaed8ecbb741a86d3d609c6dc83902f76de8f"
-}];
-
-const popularTreks = [{
-  imageSrc: "https://cdn.builder.io/api/v1/image/assets/TEMP/45cebc0808498914db6f5f9e8ceb06fe989e8bb5",
-  title: "Chandrashila Trek",
-  location: "Himachal Pradesh",
-  dates: "22 Oct – 27 Oct",
-  duration: "5 Days, 4 Nights",
-  distance: "9 km",
-  difficulty: "Moderate",
-  locationIconSrc: "https://cdn.builder.io/api/v1/image/assets/TEMP/c78b42c43ac18291961706e53a80daf2860c05cd",
+const upcomingTreks = [    {
+  "imageSrc": "https://res.cloudinary.com/dibrmj6nh/image/upload/v1745909217/Chandrashila-Trek_cbwfkp.webp",
+  "title": "Chandrashila Trek",
+  "location": "Uttarakhand",
+  "dates": "10 May - 13 May",
+  "duration": "3 Days, 2 Nights",
+  "distance": "9 km",
+  "difficulty": "Easy-Moderate",
+  "locationIconSrc": "https://cdn.builder.io/api/v1/image/assets/TEMP/c78b42c43ac18291961706e53a80daf2860c05cd",
+  "dateIconSrc": "https://cdn.builder.io/api/v1/image/assets/TEMP/42e83d894df0ef448ab8a8c643e384428952fc00",
+  "distanceIconSrc": "https://cdn.builder.io/api/v1/image/assets/TEMP/a9a5f3e1e17750cac30fb8dedd1d89c542cf7c3e",
+  "difficultyIconSrc": "https://cdn.builder.io/api/v1/image/assets/TEMP/2182ab57bc4f0c3fb9f520096d2f2dcd6f8f1bec"
+},
+{
+  "imageSrc": "https://res.cloudinary.com/dibrmj6nh/image/upload/v1745909231/Chandratal-Trek_iudmmv.webp",
+  "title": "Chandratal Trek",
+  "location": "Himachal Pradesh",
+  "dates": "10 May - 14 May",
+  "duration": "4 Days",
+  "distance": "80 km",
+  "difficulty": "Moderate",
+  "locationIconSrc": "https://cdn.builder.io/api/v1/image/assets/TEMP/c78b42c43ac18291961706e53a80daf2860c05cd",
+  "dateIconSrc": "https://cdn.builder.io/api/v1/image/assets/TEMP/42e83d894df0ef448ab8a8c643e384428952fc00",
+  "distanceIconSrc": "https://cdn.builder.io/api/v1/image/assets/TEMP/a9a5f3e1e17750cac30fb8dedd1d89c542cf7c3e",
+  "difficultyIconSrc": "https://cdn.builder.io/api/v1/image/assets/TEMP/2182ab57bc4f0c3fb9f520096d2f2dcd6f8f1bec"
+},
+{
+  "imageSrc": "https://res.cloudinary.com/dibrmj6nh/image/upload/v1745909234/Deoriatal-Chandrashila-Trek_yjt3oi.webp",
+  "title": "Deoriatal Chandrashila Trek",
+  "location": "Uttarakhand",
+  "dates": "10 May - 16 May",
+  "duration": "6 Days",
+  "distance": "32 km",
+  "difficulty": "Easy to Moderate",
+  "locationIconSrc": "https://cdn.builder.io/api/v1/image/assets/TEMP/c78b42c43ac18291961706e53a80daf2860c05cd",
+  "dateIconSrc": "https://cdn.builder.io/api/v1/image/assets/TEMP/42e83d894df0ef448ab8a8c643e384428952fc00",
+  "distanceIconSrc": "https://cdn.builder.io/api/v1/image/assets/TEMP/a9a5f3e1e17750cac30fb8dedd1d89c542cf7c3e",
+  "difficultyIconSrc": "https://cdn.builder.io/api/v1/image/assets/TEMP/2182ab57bc4f0c3fb9f520096d2f2dcd6f8f1bec"
+},
+{
+  "imageSrc": "https://res.cloudinary.com/dibrmj6nh/image/upload/v1745905007/brahmatal_xh3yar.webp",
+  "title": "Brahma Tal Trek",
+  "location": "Uttarakhand",
+  "dates": "10 May - 16 May",
+  "duration": "6 Days",
+  "distance": "30 km",
+  "difficulty": "Easy to Moderate",
+  "locationIconSrc": "https://cdn.builder.io/api/v1/image/assets/TEMP/c78b42c43ac18291961706e53a80daf2860c05cd",
+  "dateIconSrc": "https://cdn.builder.io/api/v1/image/assets/TEMP/42e83d894df0ef448ab8a8c643e384428952fc00",
+  "distanceIconSrc": "https://cdn.builder.io/api/v1/image/assets/TEMP/a9a5f3e1e17750cac30fb8dedd1d89c542cf7c3e",
+  "difficultyIconSrc": "https://cdn.builder.io/api/v1/image/assets/TEMP/2182ab57bc4f0c3fb9f520096d2f2dcd6f8f1bec"
+},
+{
+  "imageSrc": "https://res.cloudinary.com/dibrmj6nh/image/upload/v1745905042/ali-bugyal_ipylmr.webp",
+  "title": "Ali Bedni Bugyal Trek",
+  "location": "Uttarakhand",
+  "dates": "May to June & September to October",
+  "duration": "6 Days",
+  "distance": "35 km",
+  "difficulty": "Easy to Moderate",
+  "locationIconSrc": "https://cdn.builder.io/api/v1/image/assets/TEMP/c78b42c43ac18291961706e53a80daf2860c05cd",
   dateIconSrc: "https://cdn.builder.io/api/v1/image/assets/TEMP/cb1828659fa21ee1886a498b0ac8f906577ed0d2",
   distanceIconSrc: "https://cdn.builder.io/api/v1/image/assets/TEMP/a9a5f3e1e17750cac30fb8dedd1d89c542cf7c3e",
   difficultyIconSrc: "https://cdn.builder.io/api/v1/image/assets/TEMP/1cb7539d47c7cc3b499f95de1d8fabce29757f9c"
-}, {
-  imageSrc: "https://cdn.builder.io/api/v1/image/assets/TEMP/ffc78d0ccbb2717b7d8dc02bf897072ed4a1c3c5",
-  title: "Chandrashila Trek",
-  location: "Himachal Pradesh",
-  dates: "22 Oct – 27 Oct",
-  duration: "5 Days, 4 Nights",
-  distance: "9 km",
-  difficulty: "Moderate",
-  locationIconSrc: "https://cdn.builder.io/api/v1/image/assets/TEMP/9ad45f075284efb48f18c6d16a98c7071ac6ed7e",
-  dateIconSrc: "https://cdn.builder.io/api/v1/image/assets/TEMP/fc692e905e8970fcbb065c93d7a0fa691585954c",
-  distanceIconSrc: "https://cdn.builder.io/api/v1/image/assets/TEMP/2d410b8104705dbebee10ea6bcb951199ae6f0e1",
-  difficultyIconSrc: "https://cdn.builder.io/api/v1/image/assets/TEMP/a279ac1af07bfa6b5b4501ab04dea24ea08bd5b6"
-}, {
-  imageSrc: "https://cdn.builder.io/api/v1/image/assets/TEMP/7763efce8d843787118ada5a9f6bbf42b9b51caa",
-  title: "Chandrashila Trek",
-  location: "Himachal Pradesh",
-  dates: "22 Oct – 27 Oct",
-  duration: "5 Days, 4 Nights",
-  distance: "9 km",
-  difficulty: "Moderate",
-  locationIconSrc: "https://cdn.builder.io/api/v1/image/assets/TEMP/de023415d53ab049720a040eb55a9360db4799c4",
-  dateIconSrc: "https://cdn.builder.io/api/v1/image/assets/TEMP/42e83d894df0ef448ab8a8c643e384428952fc00",
-  distanceIconSrc: "https://cdn.builder.io/api/v1/image/assets/TEMP/d63f0c5ce5909640a5c01e5dff030e5468f696d8",
-  difficultyIconSrc: "https://cdn.builder.io/api/v1/image/assets/TEMP/2182ab57bc4f0c3fb9f520096d2f2dcd6f8f1bec"
-}, {
-  imageSrc: "https://cdn.builder.io/api/v1/image/assets/TEMP/45cebc0808498914db6f5f9e8ceb06fe989e8bb5",
-  title: "Chandrashila Trek",
-  location: "Himachal Pradesh",
-  dates: "22 Oct – 27 Oct",
-  duration: "5 Days, 4 Nights",
-  distance: "9 km",
-  difficulty: "Moderate",
-  locationIconSrc: "https://cdn.builder.io/api/v1/image/assets/TEMP/eacecd33b3e156b441471b5885bd65122973a3ba",
-  dateIconSrc: "https://cdn.builder.io/api/v1/image/assets/TEMP/cb1828659fa21ee1886a498b0ac8f906577ed0d2",
-  distanceIconSrc: "https://cdn.builder.io/api/v1/image/assets/TEMP/361b80f5d82207ab4e07902add203f2afe76ca9d",
-  difficultyIconSrc: "https://cdn.builder.io/api/v1/image/assets/TEMP/c5acaed8ecbb741a86d3d609c6dc83902f76de8f"
+}
+];
+
+const popularTreks = [{
+  "imageSrc": "https://res.cloudinary.com/dibrmj6nh/image/upload/v1745905052/Everest-Base-Camp_exwewg.webp",
+  "title": "Everest Base Camp Trek",
+  "location": "Nepal",
+  "dates": "10 May - 16 May",
+  "duration": "16 Days",
+  "distance": "130 km",
+  "difficulty": "Difficult",
+  "locationIconSrc": "https://cdn.builder.io/api/v1/image/assets/TEMP/c78b42c43ac18291961706e53a80daf2860c05cd",
+  "dateIconSrc": "https://cdn.builder.io/api/v1/image/assets/TEMP/42e83d894df0ef448ab8a8c643e384428952fc00",
+  "distanceIconSrc": "https://cdn.builder.io/api/v1/image/assets/TEMP/a9a5f3e1e17750cac30fb8dedd1d89c542cf7c3e",
+  "difficultyIconSrc": "https://cdn.builder.io/api/v1/image/assets/TEMP/2182ab57bc4f0c3fb9f520096d2f2dcd6f8f1bec"
+},
+{
+  "imageSrc": "https://res.cloudinary.com/dibrmj6nh/image/upload/v1745905140/bali-pass_c7wakm.webp",
+  "title": "Bali Pass",
+  "location": "Uttarakhand",
+  "dates": "10 May - 18 May",
+  "duration": "8 Days",
+  "distance": "66 km",
+  "difficulty": "Difficult",
+  "locationIconSrc": "https://cdn.builder.io/api/v1/image/assets/TEMP/c78b42c43ac18291961706e53a80daf2860c05cd",
+  "dateIconSrc": "https://cdn.builder.io/api/v1/image/assets/TEMP/42e83d894df0ef448ab8a8c643e384428952fc00",
+  "distanceIconSrc": "https://cdn.builder.io/api/v1/image/assets/TEMP/a9a5f3e1e17750cac30fb8dedd1d89c542cf7c3e",
+  "difficultyIconSrc": "https://cdn.builder.io/api/v1/image/assets/TEMP/2182ab57bc4f0c3fb9f520096d2f2dcd6f8f1bec"
+},
+{
+  "imageSrc": "https://res.cloudinary.com/dibrmj6nh/image/upload/v1745905148/beas-kund_bbmw24.webp",
+  "title": "Beas Kund",
+  "location": "Himachal Pradesh",
+  "dates": "10 May - 14 May",
+  "duration": "4 Days",
+  "distance": "15 km",
+  "difficulty": "Easy to Moderate",
+  "locationIconSrc": "https://cdn.builder.io/api/v1/image/assets/TEMP/c78b42c43ac18291961706e53a80daf2860c05cd",
+  "dateIconSrc": "https://cdn.builder.io/api/v1/image/assets/TEMP/42e83d894df0ef448ab8a8c643e384428952fc00",
+  "distanceIconSrc": "https://cdn.builder.io/api/v1/image/assets/TEMP/a9a5f3e1e17750cac30fb8dedd1d89c542cf7c3e",
+  "difficultyIconSrc": "https://cdn.builder.io/api/v1/image/assets/TEMP/2182ab57bc4f0c3fb9f520096d2f2dcd6f8f1bec"
+},
+{
+  "imageSrc": "https://res.cloudinary.com/dibrmj6nh/image/upload/v1745905887/bhrigu-lake_lc3o4l.webp",
+  "title": "Bhrigu Lake Trek",
+  "location": "Himachal Pradesh",
+  "dates": "10 May - 14 May",
+  "duration": "4 Days",
+  "distance": "10 km",
+  "difficulty": "Moderate",
+  "locationIconSrc": "https://cdn.builder.io/api/v1/image/assets/TEMP/c78b42c43ac18291961706e53a80daf2860c05cd",
+  "dateIconSrc": "https://cdn.builder.io/api/v1/image/assets/TEMP/42e83d894df0ef448ab8a8c643e384428952fc00",
+  "distanceIconSrc": "https://cdn.builder.io/api/v1/image/assets/TEMP/a9a5f3e1e17750cac30fb8dedd1d89c542cf7c3e",
+  "difficultyIconSrc": "https://cdn.builder.io/api/v1/image/assets/TEMP/2182ab57bc4f0c3fb9f520096d2f2dcd6f8f1bec"
+},
+{
+  "imageSrc": "https://res.cloudinary.com/dibrmj6nh/image/upload/v1745909314/buran-ghati_laaalk.webp",
+  "title": "Buran Ghati Trek",
+  "location": "Himachal Pradesh",
+  "dates": "10 May - 18 May",
+  "duration": "8 Days",
+  "distance": "65 Kms",
+  "difficulty": "Moderate to Difficult",
+  "locationIconSrc": "https://cdn.builder.io/api/v1/image/assets/TEMP/c78b42c43ac18291961706e53a80daf2860c05cd",
+  "dateIconSrc": "https://cdn.builder.io/api/v1/image/assets/TEMP/42e83d894df0ef448ab8a8c643e384428952fc00",
+  "distanceIconSrc": "https://cdn.builder.io/api/v1/image/assets/TEMP/d63f0c5ce5909640a5c01e5dff@30e5468f696d8",
+  "difficultyIconSrc": "https://cdn.builder.io/api/v1/image/assets/TEMP/2182ab57bc4f0c3fb9f520096d2f2dcd6f8f1bec"
 }];
 
 const features = [{

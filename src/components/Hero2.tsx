@@ -11,12 +11,12 @@ export const HeroSection: React.FC = () => {
   };
 
   return (
-    <div className="self-center w-full text-white">
+    <div className="self-center w-full text-white ">
       <div className="flex flex-col relative min-h-[329px] w-full items-center justify-center px-20 py-[59px]  max-md:max-w-full max-md:px-5">
         <img
-          src="https://res.cloudinary.com/anuragprasoon/image/upload/v1745672525/trek-hero_fy3co4.png"
+          src="https://res.cloudinary.com/anuragprasoon/image/upload/v1745677807/carousel3_f4saji.png"
           alt="Adventure background"
-          className="absolute h-full w-full object-cover inset-0"
+          className="absolute h-full w-full object-cover inset-0 rounded-[19px]"
         />
         <div className="relative flex w-[777px] max-w-full flex-col items-stretch">
           <h1 className="text-[64px] font-bold leading-[60px] text-center max-md:max-w-full max-md:text-[40px] max-md:leading-[41px]">
