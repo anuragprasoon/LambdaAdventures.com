@@ -180,7 +180,7 @@ export default function Trek() {
       <div className="px-[6%]">
       <HeroSection/>
       <FilterTabs onFilterChange={handleFilterChange}/>
-      <div className="flex w-full gap-[36px] justify-start mt-[20px] flex-wrap max-md:mt-5 pb-4 ml-auto mr-auto">
+      <div className="flex w-full gap-[36px] justify-center mt-[20px] flex-wrap max-md:mt-5 pb-4 ml-auto mr-auto">
       {filteredTreks.length > 0 ? (
           filteredTreks.map((trek, index) => (
             <TrekCard 
