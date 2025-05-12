@@ -19,8 +19,19 @@ const ContactForm: React.FC = () => {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    const res = await fetch("/api/contact", { 
+      method: "POST", headers: {
+      "Content-Type": "application/json"},
+      body: JSON.stringify({
+        name: formData.name,
+        phone: formData.phone,
+        email: formData.email,
+        message: formData.message
+      })
+  });
 
     console.log("Form submitted:", formData);
     alert("Thank You! Your Message has been sent");

@@ -22,13 +22,16 @@ const Header: React.FC = () => {
           <Link  href={'/'}>Home</Link>
         </div>
         <div className="max-md:hidden self-stretch my-auto cursor-pointer hover:text-[rgba(1,124,109,1)]">
-          <Link  href={'/trek'}>Treks & Expeditions</Link>
+          <Link  href={'/trek'}>Treks</Link>
+        </div>
+        <div className="max-md:hidden self-stretch my-auto cursor-pointer hover:text-[rgba(1,124,109,1)]">
+        <Link  href={'/comingsoon'}>Expeditions</Link>
+        </div>
+        <div className="max-md:hidden self-stretch my-auto cursor-pointer hover:text-[rgba(1,124,109,1)]">
+        <Link  href={'/comingsoon'}>Bike Expeditions</Link>
         </div>
         <div className=" max-md:hidden self-stretch my-auto cursor-pointer hover:text-[rgba(1,124,109,1)]">
           <Link href={'/comingsoon'}>Yoga Retreat</Link>
-        </div>
-        <div className="max-md:hidden self-stretch my-auto cursor-pointer hover:text-[rgba(1,124,109,1)]">
-        <Link  href={'/story'}>About Us</Link>
         </div>
         <div className="max-md:hidden self-stretch whitespace-nowrap my-auto cursor-pointer hover:text-[rgba(1,124,109,1)]">
           <Link href={'/comingsoon'}>Blog</Link>
@@ -52,8 +55,14 @@ const Header: React.FC = () => {
           <Link  href={'/'} onClick={()=>setIsOpen(false)}>Home</Link>
         </div>
     <div className="cursor-pointer hover:text-black">
-          <Link  href={'/trek'} onClick={()=>setIsOpen(false)}>Treks & Expeditions</Link>
+          <Link  href={'/trek'} onClick={()=>setIsOpen(false)}>Treks</Link>
         </div>
+    <div className=" cursor-pointer hover:text-black">
+          <Link href={'/comingsoon'} onClick={()=>setIsOpen(false)}>Expeditions</Link>  
+    </div>
+    <div className=" cursor-pointer hover:text-black">
+          <Link href={'/comingsoon'} onClick={()=>setIsOpen(false)}>Bike Expedition</Link>  
+    </div>
     <div className=" cursor-pointer hover:text-black">
           <Link href={'/comingsoon'} onClick={()=>setIsOpen(false)}>Yoga Retreat</Link>  
     </div>
