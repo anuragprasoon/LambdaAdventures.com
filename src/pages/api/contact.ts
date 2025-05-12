@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import { createClient } from "@supabase/supabase-js";
-import nodemailer from "nodemailer";
+import nodemailer from 'nodemailer';
 
 const dburl = process.env.SUPABASE_URL!;
 const supabaseKey = process.env.SUPABASE_KEY!;
