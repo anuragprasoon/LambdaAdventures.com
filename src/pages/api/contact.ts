@@ -35,7 +35,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     try {
       await transporter.sendMail({
         from: `"${name}" <${process.env.GMAIL_USER}>`,
-        to: 'anuragprasoon23@gmail.com',
+        to: 'lambdaadventure@gmail.com',
         subject: `New message from ${name}`,
         text: message,
         html: `<h1>You Recieved A Message from Lambda Adventures Website</h1><p><strong>Name:</strong> ${name}</p><p><strong>Phone:</strong> ${phone}</p><p><strong>Email:</strong> ${email}</p><p><strong>Message:</strong> ${message}</p>`,
