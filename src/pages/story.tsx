@@ -12,7 +12,7 @@ export default function Story() {
       </Head>
       <StoryHero/>
       <div className="px-[6%]">
-      <section className="mb-40 max-md:mb-[20px]">
+      <section className="mb-10 max-md:mb-[20px]">
       <h1 className="w-full text-4xl text-[rgba(1,124,109,1)] font-bold text-center leading-loose max-md:max-w-full max-md:text-[28px] max-md:mt-[30px]">
         About Us
       </h1>
@@ -25,6 +25,52 @@ export default function Story() {
       <p className="w-full text-base text-[rgba(67,67,67,1)] font-normal leading-[30px] mt-[10px] max-md:max-w-full">
       When the journey ends, what stays with you isn’t just the view or the challenge-it’s the people you met and the moments you shared. At Lambda Adventures, we focus on honest connections and real experiences, helping you discover something new about the world and yourself, one step at a time.
       </p>
+    </section>
+    <section className="mb-40 max-md:mb-[20px]">
+      <h1 className="w-full text-4xl text-[rgba(1,124,109,1)] font-bold text-center leading-loose max-md:max-w-full max-md:text-[28px] max-md:mt-[30px]">
+        Our Team
+      </h1>
+      <div className="sm:flex gap-5 text-black">
+        <div className="sm:flex border-1">
+          <img src="https://lambdaadventures.com/wp-content/uploads/2024/03/t2.jpg" className="min-w-[180px] object-cover"/>
+          <div className="p-5">
+            <span className="text-[2vm] font-semibold">Shashi</span>
+            <p className="mt-2">Shashi Shekhar is a seasoned mountaineer with certification in his craft, boasting a summit of Mt. Lobuche and an Everest attempt to his name. His professional journey is marked by daring expeditions and a relentless pursuit of alpine challenges. 
+            </p>
+          </div>
+        </div>
+  
+        <div className="sm:flex border-1">
+        <img src="https://lambdaadventures.com/wp-content/uploads/2024/03/t4.jpg" className="min-w-[180px] object-cover "/>
+          <div className="p-5">
+            <span className="text-[2vm] font-semibold">Rahul</span>
+            <p className="mt-2">Rahul Kumar, certified in both mountaineering and yoga, embodies a unique blend of physical prowess and mental discipline, equipped to conquer both rugged peaks and inner serenity with equal finesse. 
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div className="sm:flex gap-5 text-black mt-5">
+        <div className="sm:flex border-1">
+          <img src="https://lambdaadventures.com/wp-content/uploads/2024/03/t6.jpg" className="min-w-[180px] object-cover"/>
+          <div className="p-5">
+            <span className="text-[2vm] font-semibold">Ankit</span>
+            <p className="mt-2">Ankit is a highly regarded yoga instructor, certified in the art of yoga with a wealth of experience. Renowned for his expertise, he has conducted transformative yoga sessions for international students.
+            </p>
+          </div>
+        </div>
+  
+        <div className="sm:flex border-1">
+        <img src="https://lambdaadventures.com/wp-content/uploads/2024/03/t3.jpg" className="min-w-[180px] object-cover "/>
+          <div className="p-5">
+            <span className="text-[2vm] font-semibold">Manoj
+</span>
+            <p className="mt-2">Manoj is a serene and gentle soul with a profound dedication to the art of mountaineering, complemented by his professional certification in the field. His quiet demeanor belies a steadfast commitment to conquering new summits and pushing the boundaries of exploration.
+            </p>
+          </div>
+        </div>
+      </div>
+      
     </section>
     </div>
         </>

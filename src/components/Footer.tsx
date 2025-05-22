@@ -16,13 +16,13 @@ const Footer: React.FC = () => {
               </div>
             </div>
             <div className="flex items-center gap-2 mt-[27px]">
-              <a href="#" aria-label="Facebook">
+              <a href="https://instagram.com/LambdaAdventure" aria-label="Instagram">
                 <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/b739864375de9c9583a930d2b3fc3cf659d08648?placeholderIfAbsent=true" alt="Facebook" className="aspect-[1] object-contain w-[34px] self-stretch shrink-0 my-auto hover:opacity-80 transition-opacity" />
               </a>
-              <a href="#" aria-label="Twitter">
-                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/054cd81119d2b05a4c4a16805c3142c6005bdeaf?placeholderIfAbsent=true" alt="Twitter" className="aspect-[1] object-contain w-[34px] self-stretch shrink-0 my-auto hover:opacity-80 transition-opacity" />
+              <a href="https://www.linkedin.com/company/lambdaadventure" aria-label="Linkedin">
+                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/054cd81119d2b05a4c4a16805c3142c6005bdeaf?placeholderIfAbsent=true" alt="Linkedin" className="aspect-[1] object-contain w-[34px] self-stretch shrink-0 my-auto hover:opacity-80 transition-opacity" />
               </a>
-              <a href="#" aria-label="Instagram">
+              <a href="https://www.youtube.com/@642films" aria-label="Youtube">
                 <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/ecc9acc048563947db1cb67ed060d1e0ea5760cb?placeholderIfAbsent=true" alt="Instagram" className="aspect-[1] object-contain w-[34px] self-stretch shrink-0 my-auto hover:opacity-80 transition-opacity" />
               </a>
             </div>
