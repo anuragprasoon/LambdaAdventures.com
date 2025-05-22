@@ -209,19 +209,19 @@ export default function Home() {
           <div className="relative w-full">
           <img src="https://res.cloudinary.com/dibrmj6nh/image/upload/v1745909231/Chandratal-Trek_iudmmv.webp" className=" h-[400px] hidden"/>
 
-          <iframe className=" rounded-lg h-[350px] w-full min-w-[280px]" src="https://www.youtube-nocookie.com/embed/u5orczW-tFk?si=WfNR0LPPxOBK2mCf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          <iframe className=" rounded-lg h-[350px] w-full min-w-[280px]" src="https://www.youtube-nocookie.com/embed/u5orczW-tFk?si=WfNR0LPPxOBK2mCf" title="YouTube video player"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen={true}></iframe>
           </div>
 
           <div className="relative w-full">
           <img src="https://res.cloudinary.com/dibrmj6nh/image/upload/v1745909231/Chandratal-Trek_iudmmv.webp" className=" h-[400px] hidden "/>
 
-          <iframe className="rounded-lg h-[350px] w-full min-w-[280px]" src="https://www.youtube-nocookie.com/embed/Ua4iV8uU-mA?si=D4fkAGoQ6TxBb5nu" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          <iframe className="rounded-lg h-[350px] w-full min-w-[280px]" src="https://www.youtube-nocookie.com/embed/Ua4iV8uU-mA?si=D4fkAGoQ6TxBb5nu" title="YouTube video player"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen={true}></iframe>
           </div>
 
           <div className="relative w-full">
           <img src="https://res.cloudinary.com/dibrmj6nh/image/upload/v1745909231/Chandratal-Trek_iudmmv.webp" className=" h-[400px] hidden "/>
 
-          <iframe className="rounded-lg  h-[350px] w-full min-w-[280px]" src="https://www.youtube-nocookie.com/embed/bNX8gD8L-_8?si=VAWS5PpFiRN5Nf1Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          <iframe className="rounded-lg  h-[350px] w-full min-w-[280px]" src="https://www.youtube-nocookie.com/embed/bNX8gD8L-_8?si=VAWS5PpFiRN5Nf1Q" title="YouTube video player"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen={true}></iframe>
           </div>  
           
         </div>
