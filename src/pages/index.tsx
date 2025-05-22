@@ -201,6 +201,31 @@ export default function Home() {
       <Hero/>
       <TrekSection title="Upcoming" treks={upcomingTreks} />
       <TrekSection title="Popular" treks={popularTreks} />
+       <div>
+        <h1 className="text-[rgba(1,124,109,1)] text-4xl font-bold leading-none text-center max-md:max-w-full max-md:text-[28px] mt-10">
+          Our Travel Stories
+      </h1>
+        <div className="flex py-[40px] w-full justify-between gap-5 overflow-x-auto [&::-webkit-scrollbar]:hidden max-md:max-w-full">
+          <div className="relative w-full">
+          <img src="https://res.cloudinary.com/dibrmj6nh/image/upload/v1745909231/Chandratal-Trek_iudmmv.webp" className=" h-[400px] hidden"/>
+
+          <iframe className=" rounded-lg h-[350px] w-full min-w-[280px]" src="https://www.youtube-nocookie.com/embed/u5orczW-tFk?si=WfNR0LPPxOBK2mCf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+
+          <div className="relative w-full">
+          <img src="https://res.cloudinary.com/dibrmj6nh/image/upload/v1745909231/Chandratal-Trek_iudmmv.webp" className=" h-[400px] hidden "/>
+
+          <iframe className="rounded-lg h-[350px] w-full min-w-[280px]" src="https://www.youtube-nocookie.com/embed/Ua4iV8uU-mA?si=D4fkAGoQ6TxBb5nu" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+
+          <div className="relative w-full">
+          <img src="https://res.cloudinary.com/dibrmj6nh/image/upload/v1745909231/Chandratal-Trek_iudmmv.webp" className=" h-[400px] hidden "/>
+
+          <iframe className="rounded-lg  h-[350px] w-full min-w-[280px]" src="https://www.youtube-nocookie.com/embed/bNX8gD8L-_8?si=VAWS5PpFiRN5Nf1Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>  
+          
+        </div>
+      </div>
       <div className="max-sm:hidden">
       <Link href={'/contact'}><Image
   src="https://res.cloudinary.com/anuragprasoon/image/upload/v1745615313/adventurecallout_kdpc4k.png"
@@ -208,9 +233,9 @@ export default function Home() {
   width={1200}
   height={800}
   layout="responsive"
-  loader={({ src }) => src}
-/></Link>
-</div>
+  loader={({ src }) => src}/></Link>
+      </div>
+     
 
 <div className="sm:hidden">
       <Link href={'/contact'}><Image
@@ -228,7 +253,11 @@ export default function Home() {
       <section id="contact">
       <ContactForm/>
       </section>
-      
+      <div className="fixed bottom-2 right-2">
+        <a href="https://api.whatsapp.com/send/?phone=919065550642&text=Hi%20Lambda%20Adventures,%20I%20want%20to%20plan%20a%20trip">
+          <img src="https://res.cloudinary.com/dibrmj6nh/image/upload/v1747946474/Frame_1597884222_xnchxt.png" className="w-[50px]"/>
+        </a>
+      </div>
     </>
   );
 }
