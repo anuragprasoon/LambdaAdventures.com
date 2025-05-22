@@ -55,7 +55,7 @@ const TrekCard: React.FC<TrekCardProps> = ({
         </div>
       </div>
       <button className="self-stretch bg-[rgba(1,124,109,1)] min-h-[49px] w-full gap-[3px] text-base text-white font-bold leading-loose mt-3 px-[26px] py-3 rounded-xl max-md:px-5 hover:bg-[rgba(1,104,89,1)] transition-colors">
-        <Link href="/trekabout">Book Now</Link>
+        <Link href="/trekking">Book Now</Link>
       </button>
     </div>;
 };
