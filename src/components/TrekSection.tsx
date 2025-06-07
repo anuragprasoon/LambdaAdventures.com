@@ -32,7 +32,7 @@ const TrekSection: React.FC<TrekSectionProps> = ({
          <Link href={'/trek'}>View all</Link> 
         </div>
       </div>
-      <div className="flex w-full gap-[34px] justify-between mt-[20px] overflow-x-auto [&::-webkit-scrollbar]:hidden max-md:max-w-full max-md:mt-5 pb-4">
+      <div className="flex w-full gap-[34px] justify-between mt-[20px] overflow-x-auto [&::-webkit-scrollbar]:hidden max-md:max-w-full max-md:mt-5 pt-4 pb-4">
         {treks.map((trek, index) => <TrekCard key={index} imageSrc={trek.imageSrc} title={trek.title} location={trek.location} dates={trek.dates} duration={trek.duration} distance={trek.distance} difficulty={trek.difficulty} locationIconSrc={trek.locationIconSrc} dateIconSrc={trek.dateIconSrc} distanceIconSrc={trek.distanceIconSrc} difficultyIconSrc={trek.difficultyIconSrc} />)}
       </div>
     </div>;

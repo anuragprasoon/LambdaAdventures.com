@@ -26,7 +26,7 @@ const TrekCard: React.FC<TrekCardProps> = ({
   distanceIconSrc,
   difficultyIconSrc
 }) => {
-  return <div className="min-w-60 w-[302px]">
+  return <div className="min-w-60 w-[302px] hover:scale-120 rounded-lg will-change-scroll">
       <img src={imageSrc} alt={title} className="aspect-[1.06] w-[302px] max-w-full rounded-xl" />
       <div className="w-full text-sm text-[#717171] font-medium leading-none mt-3">
         <div className="flex w-full flex-col">

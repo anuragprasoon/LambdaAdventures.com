@@ -1,8 +1,10 @@
 import React, { useState } from "react";
-
-const TrekAbout: React.FC = () => {
+interface TrekAboutProps {
+  payFunc: () => void;
+}
+const TrekAbout: React.FC<TrekAboutProps> = ({ payFunc }) => {
   const [expanded, setExpanded] = useState(false);
-
+  console.log("hello",payFunc)
   const fullText = `At Lambda Adventures, every trek is more than just a journey—it's a path to growth, connection, and unforgettable memories. Born from a passion for the outdoors and driven by trust, care, and authenticity, we pride ourselves on crafting transformative adventures that stay true to our word. From the moment you book with us, we become your trusted partner in exploration, prioritizing your safety, comfort, and satisfaction at every step. Our experienced guides don't just lead treks—they share knowledge, build relationships, and tailor each experience to with us, we become your trusted partner in exploration, prioritizing your safety, comfort, and satisfaction at every step. Our experienced guides don't just lead treks—they share knowledge, build relationships, and tailor each experience to with us, we become your trusted partner in exploration, prioritizing your safety, comfort, and satisfaction at every step. Our experienced guides don't just lead treks—they share knowledge, build relationships, and tailor each experience to with us, we become your trusted partner in exploration, prioritizing your safety, comfort, and satisfaction at every step. Our experienced guides don't just lead treks—they share knowledge, build relationships, and tailor each experience to`;
 
   const truncatedText = expanded
@@ -37,7 +39,7 @@ const TrekAbout: React.FC = () => {
       <div className=" sm:text-lg"><i className="fa-regular fa-compass"></i> 9 Km</div>
       <div className=" sm:text-lg"><i className="fa-regular fa-map"></i> Moderate</div>
   <button className="block w-full border-1  rounded-sm p-2 mt-3">Share</button>
-  <button className="block w-full rounded-sm p-2 bg-[#017C6D] mt-1 text-white font-bold">Book Now</button>
+  <button className="block w-full rounded-sm p-2 bg-[#017C6D] mt-1 text-white font-bold" onClick={payFunc}>Book Now</button>
   </div>
   </div>
 

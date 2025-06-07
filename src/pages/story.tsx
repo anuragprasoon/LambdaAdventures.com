@@ -17,7 +17,7 @@ export default function Story() {
         About Us
       </h1>
       <p className="w-full text-base text-[rgba(67,67,67,1)] font-normal leading-[30px] mt-[10px] max-md:max-w-full">
-      At Lambda Adventures, our journeys start with a simple idea: exploring together. When you sign up for a trek, mountain climb, or yoga retreat with us, you’re not just booking a trip-you’re joining a group of people who care about the outdoors and each other. We know what it’s like to feel both excited and a little unsure before heading into the mountains, so we make sure you always have someone to count on, from your first question to your last step.
+      At Lambda Advsjjjjns, our journeys start with a simple idea: exploring together. When you sign up for a trek, mountain climb, or yoga retreat with us, you’re not just booking a trip-you’re joining a group of people who care about the outdoors and each other. We know what it’s like to feel both excited and a little unsure before heading into the mountains, so we make sure you always have someone to count on, from your first question to your last step.
       </p>
       <p className="w-full text-base text-[rgba(67,67,67,1)] font-normal leading-[30px] mt-[10px] max-md:max-w-full">
       Along the way, our guides are there to walk beside you. They’ll share stories from the trail, help you through tough moments, and make sure everyone feels included. We listen to what you want from your adventure, whether it’s reaching a summit, trying something new, or just enjoying a quiet moment in nature. Our trips are shaped by the people who join us, and we do our best to make everyone feel welcome.
