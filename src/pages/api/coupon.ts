@@ -9,7 +9,7 @@ export default async function handler(req:NextApiRequest, res:NextApiResponse ) 
     if(req.method=='GET'){
         const code=req.query['code']
         const {data, error} = await supabase.from('coupons').select("discount_percent, status").eq("coupon",code)
-        return res.status(200).json(data[0])
+        return res.status(200).json(data)
     }
     
 }

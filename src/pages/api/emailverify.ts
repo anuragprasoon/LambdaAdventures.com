@@ -20,8 +20,8 @@ export default async function handler(req:NextApiRequest,res:NextApiResponse) {
     if(req.method=='GET' && email){
         const {data,error}= await supabase.from('customer').select('*').eq('email',email)
 
-        const jsondata= JSON.parse(JSON.stringify(data[0]))
-        let name=jsondata.name
+        const jsondata= JSON.parse(JSON.stringify(data))
+        let name=jsondata[0].name
 
         if(jsondata.email_verify!='done'){
             console.log('need to verify')
@@ -58,8 +58,8 @@ export default async function handler(req:NextApiRequest,res:NextApiResponse) {
          res.status(400).send('something is missing')
         }
         const { data, error }= await supabase.from('customer').select("verify_otp").eq('email',email)
-        let jsdata=JSON.parse(JSON.stringify(data[0]))
-        if(jsdata.verify_otp==otp){
+        let jsdata=JSON.parse(JSON.stringify(data))
+        if(jsdata[0].verify_otp==otp){
             const {data,error}= await supabase.from('customer').update({'email_verify':'done'}).eq('email',email).select('*')
             res.status(200).send('email verified')
         }
