@@ -15,10 +15,7 @@ export default function trekking() {
     }, []);
 
      const handlePayment = async () => {
-            if (typeof window.Razorpay === "undefined") {
-              console.error("Razorpay is not loaded!");
-        return;
-      }
+            
         const price = 1000; 
   
         const response = await fetch("/api/payment", {
@@ -36,13 +33,13 @@ export default function trekking() {
         amount: price * 100,
         currency: "INR",
         order_id: orderID,
-        handler: (response: RazorpayResponse) => {
+        handler: (response: any) => {
           alert("Payment Successful! Payment ID: " + response.razorpay_payment_id);
         },
       };
     
       console.log("Creating Razorpay instance...");
-      const pay = new window.Razorpay(options);
+      const pay = new (window as any).Razorpay(options);
       pay.open();
     
         }
