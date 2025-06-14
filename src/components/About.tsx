@@ -92,7 +92,7 @@ const TrekAbout: React.FC<TrekAboutProps> = ({ payFunc }) => {
       <span className="text-2xl block pb-3 text-[#017C6D] font-semibold">Itinerary</span>
       <div className="border-1 rounded-sm p-3 mb-1">
           <span className="text-xl block text-[#017C6D] font-semibold">Day 1: Title</span>
-        <ul className="p-2 hidden ">
+        <ul className="p-2 hidden hover:block ">
           <li>1. High-quality Dome tents.</li>
           <li>2. Sleeping bags.</li>
           <li>3. High-quality Dome tents.</li>
