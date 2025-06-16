@@ -1,9 +1,10 @@
 import { useState } from "react";
 import React from "react"
 interface CustomTripProp {
-   closeFunc: () => void;  
+   closeFunc: () => void;
+   tripid: number;  
 }
-const CustomTrip:React.FC<CustomTripProp> =({closeFunc})=>{
+const CustomTrip:React.FC<CustomTripProp> =({closeFunc, tripid})=>{
     const [formData, setFormData] = useState({
         name: "",
         phone: "",
@@ -39,8 +40,7 @@ const CustomTrip:React.FC<CustomTripProp> =({closeFunc})=>{
             startDate: formData.startDate,
             day: formData.day,
             night: formData.night,
-            tripid: tripi
-
+            tripid: tripid,
           })
       });
     

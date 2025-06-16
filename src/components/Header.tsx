@@ -25,7 +25,7 @@ const Header: React.FC = () => {
           <Link  href={'/trek'}>Treks</Link>
         </div>
         <div className="max-md:hidden self-stretch my-auto cursor-pointer hover:text-[rgba(1,124,109,1)]">
-        <Link  href={'/comingsoon'}>Expeditions</Link>
+        <Link  href={'/expeditions'}>Expeditions</Link>
         </div>
         <div className="max-md:hidden self-stretch my-auto cursor-pointer hover:text-[rgba(1,124,109,1)]">
         <Link  href={'/comingsoon'}>Bike Expeditions</Link>
