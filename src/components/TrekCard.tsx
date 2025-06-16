@@ -1,32 +1,30 @@
 import React from "react";
 import Link from "next/link";
 interface TrekCardProps {
+  idkey: number;
   imageSrc: string;
   title: string;
   location: string;
-  dates: string;
   duration: string;
   distance: string;
   difficulty: string;
   locationIconSrc: string;
-  dateIconSrc: string;
   distanceIconSrc: string;
   difficultyIconSrc: string;
 }
 const TrekCard: React.FC<TrekCardProps> = ({
+  idkey,
   imageSrc,
   title,
   location,
-  dates,
   duration,
   distance,
   difficulty,
   locationIconSrc,
-  dateIconSrc,
   distanceIconSrc,
   difficultyIconSrc
 }) => {
-  return <div className="min-w-60 w-[302px] hover:scale-120 rounded-lg will-change-scroll">
+  return <div className="min-w-60 w-[302px] rounded-lg will-change-scroll">
       <img src={imageSrc} alt={title} className="aspect-[1.06] w-[302px] max-w-full rounded-xl" />
       <div className="w-full text-sm text-[#717171] font-medium leading-none mt-3">
         <div className="flex w-full flex-col">
@@ -36,10 +34,6 @@ const TrekCard: React.FC<TrekCardProps> = ({
           <div className="flex items-center gap-2  mt-[5px]">
             <img src={locationIconSrc} alt="Location" className="aspect-[1] object-contain w-3.5 self-stretch shrink-0 my-auto" />
             <div className="self-stretch my-auto">{location}</div>
-          </div>
-          <div className="flex items-center gap-2 mt-[5px]">
-            <img src={dateIconSrc} alt="Date" className="aspect-[1] object-contain w-3 self-stretch shrink-0 my-auto" />
-            <div className="self-stretch my-auto">{dates}</div>
           </div>
           <div className="self-stretch gap-2 mt-[5px]">{duration}</div>
           <div className="self-stretch flex w-full gap-5 mt-[5px]">
@@ -55,7 +49,7 @@ const TrekCard: React.FC<TrekCardProps> = ({
         </div>
       </div>
       <button className="self-stretch bg-[rgba(1,124,109,1)] min-h-[49px] w-full gap-[3px] text-base text-white font-bold leading-loose mt-3 px-[26px] py-3 rounded-xl max-md:px-5 hover:bg-[rgba(1,104,89,1)] transition-colors">
-        <Link href="/trekking">Book Now</Link>
+        <Link href={`/trek/${idkey}`}>Book Now</Link>
       </button>
     </div>;
 };

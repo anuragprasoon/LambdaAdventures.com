@@ -13,8 +13,7 @@ import { type FilterOption } from "@/components/FilterTabs";
 
 
 
-export default function Trek() {
-  const [activeFilter, setActiveFilter] = useState<FilterOption>("all");
+export default function Expeditions() {
   const [popularTreks, setPopularTreks] = useState<any[]>([]);
   const locationIconSrc= "https://cdn.builder.io/api/v1/image/assets/TEMP/de023415d53ab049720a040eb55a9360db4799c4"
   const dateIconSrc = "https://cdn.builder.io/api/v1/image/assets/TEMP/42e83d894df0ef448ab8a8c643e384428952fc00"
@@ -36,17 +35,7 @@ export default function Trek() {
 }, []);
 
     
-    const filteredTreks = popularTreks.filter(trek => {
-      if (activeFilter === "all") return true;
-      if (activeFilter === "treks" && trek.type === "Trek") return true;
-      if (activeFilter === "expeditions" && trek.type === "Expeditions") return true;
-      if (activeFilter === "yoga" && trek.type === "Yoga Retreat") return true;
-      return false;
-    });
 
-    const handleFilterChange = (filter: FilterOption) => {
-      setActiveFilter(filter);
-    };
 
     return(
         <>
@@ -59,10 +48,9 @@ export default function Trek() {
       
       <div className="px-[6%]">
       <HeroSection/>
-      <FilterTabs onFilterChange={handleFilterChange}/>
       <div className="flex w-full gap-[36px] justify-center mt-[20px] flex-wrap max-md:mt-5 pb-4 ml-auto mr-auto">
-      {filteredTreks.length > 0 ? (
-          filteredTreks.map((trek, index) => (
+      {popularTreks.length > 0 ? (
+          popularTreks.map((trek, index) => (
             <TrekCard 
               key={index} 
               idkey={trek.id}

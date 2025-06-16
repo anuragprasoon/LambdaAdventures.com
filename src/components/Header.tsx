@@ -58,7 +58,7 @@ const Header: React.FC = () => {
           <Link  href={'/trek'} onClick={()=>setIsOpen(false)}>Treks</Link>
         </div>
     <div className=" cursor-pointer hover:text-black">
-          <Link href={'/comingsoon'} onClick={()=>setIsOpen(false)}>Expeditions</Link>  
+          <Link href={'/expeditions'} onClick={()=>setIsOpen(false)}>Expeditions</Link>  
     </div>
     <div className=" cursor-pointer hover:text-black">
           <Link href={'/comingsoon'} onClick={()=>setIsOpen(false)}>Bike Expedition</Link>  
