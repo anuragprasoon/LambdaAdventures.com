@@ -1,8 +1,10 @@
 import React, { useState } from "react";
+import CustomTrip from "./CustomForm";
 interface TrekAboutProps {
   payFunc: () => void;
 }
 const TrekAbout: React.FC<TrekAboutProps> = ({ payFunc }) => {
+  const [showModal, setShowModal] = useState(false);
   const [expanded, setExpanded] = useState(false);
   console.log("hello",payFunc)
   const fullText = `At Lambda Adventures, every trek is more than just a journey—it's a path to growth, connection, and unforgettable memories. Born from a passion for the outdoors and driven by trust, care, and authenticity, we pride ourselves on crafting transformative adventures that stay true to our word. From the moment you book with us, we become your trusted partner in exploration, prioritizing your safety, comfort, and satisfaction at every step. Our experienced guides don't just lead treks—they share knowledge, build relationships, and tailor each experience to with us, we become your trusted partner in exploration, prioritizing your safety, comfort, and satisfaction at every step. Our experienced guides don't just lead treks—they share knowledge, build relationships, and tailor each experience to with us, we become your trusted partner in exploration, prioritizing your safety, comfort, and satisfaction at every step. Our experienced guides don't just lead treks—they share knowledge, build relationships, and tailor each experience to with us, we become your trusted partner in exploration, prioritizing your safety, comfort, and satisfaction at every step. Our experienced guides don't just lead treks—they share knowledge, build relationships, and tailor each experience to`;
@@ -38,8 +40,7 @@ const TrekAbout: React.FC<TrekAboutProps> = ({ payFunc }) => {
       <div className=" sm:text-lg"><i className="fa-regular fa-clock"></i>  5 Days, 6 Nights</div>
       <div className=" sm:text-lg"><i className="fa-regular fa-compass"></i> 9 Km</div>
       <div className=" sm:text-lg"><i className="fa-regular fa-map"></i> Moderate</div>
-  <button className="block w-full border-1  rounded-sm p-2 mt-3">Share</button>
-  <button className="block w-full rounded-sm p-2 bg-[#017C6D] mt-1 text-white font-bold" onClick={payFunc}>Book Now</button>
+  <button className="block w-full rounded-sm p-2 bg-[#017C6D] mt-1 text-white font-bold" onClick={()=> setShowModal(true)}>Book Now</button>
   </div>
   </div>
 
@@ -92,7 +93,7 @@ const TrekAbout: React.FC<TrekAboutProps> = ({ payFunc }) => {
       <span className="text-2xl block pb-3 text-[#017C6D] font-semibold">Itinerary</span>
       <div className="border-1 rounded-sm p-3 mb-1">
           <span className="text-xl block text-[#017C6D] font-semibold">Day 1: Title</span>
-        <ul className="p-2 hidden hover:block ">
+        <ul className="p-2 hidden ">
           <li>1. High-quality Dome tents.</li>
           <li>2. Sleeping bags.</li>
           <li>3. High-quality Dome tents.</li>
@@ -123,6 +124,7 @@ const TrekAbout: React.FC<TrekAboutProps> = ({ payFunc }) => {
   </div>
 
 </div>
+{showModal && <CustomTrip closeFunc={()=>setShowModal(false)}/>}
   </>);
 };
 

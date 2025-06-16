@@ -26,11 +26,10 @@ export default async function handler(req:NextApiRequest,res:NextApiResponse) {
         }
         
         const trip_name = tripData?.title
-        const {data, error}= await supabase.from('query').insert({name,phone,email,address,passengers,startDate,day,night,trip_name})
+        const {data, error}= await supabase.from('query').insert({name,trip_name,phone,email,address,passengers,startDate,day,night})
         if(error){
             res.status(500).send('Failed to save the data')
         }
-
         try {
             await transporter.sendMail({
                 from: `"${name}" <${process.env.GMAIL_USER}>`,

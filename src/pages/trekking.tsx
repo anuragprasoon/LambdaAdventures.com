@@ -1,10 +1,11 @@
 import Head from "next/head"
 import TrekAbout from "@/components/About"
 import Razorpay from "razorpay"
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import CustomTrip from "@/components/CustomForm";
 
 export default function trekking() {
+  
 
   useEffect(() => {
       const script = document.createElement("script");
@@ -60,7 +61,6 @@ export default function trekking() {
       </Head>
       <TrekAbout payFunc={ handlePayment }/>
       <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1yCZDSeqrxtbLSdFFVJ_fLb8ODkDxEOs&ehbc=2E312F&noprof=1" className="w-full p-10 h-[500px]"></iframe>
-      <CustomTrip/>
     </>
     )
 }

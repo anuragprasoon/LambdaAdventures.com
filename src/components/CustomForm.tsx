@@ -1,12 +1,15 @@
 import { useState } from "react";
 import React from "react"
-const CustomTrip:React.FC =()=>{
+interface CustomTripProp {
+   closeFunc: () => void;  
+}
+const CustomTrip:React.FC<CustomTripProp> =({closeFunc})=>{
     const [formData, setFormData] = useState({
         name: "",
         phone: "",
         email: "",
         address:"",
-        passenger: "",
+        passengers: "",
         startDate:"",
         day:"",
         night:"",
@@ -23,7 +26,7 @@ const CustomTrip:React.FC =()=>{
     
       const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        let tripi=83
+        let tripi=77
         const res = await fetch("/api/query", { 
           method: "POST", headers: {
           "Content-Type": "application/json"},
@@ -32,7 +35,7 @@ const CustomTrip:React.FC =()=>{
             phone: formData.phone,
             email: formData.email,
             address: formData.address,
-            passenger: formData.passenger,
+            passengers: formData.passengers,
             startDate: formData.startDate,
             day: formData.day,
             night: formData.night,
@@ -41,25 +44,25 @@ const CustomTrip:React.FC =()=>{
           })
       });
     
-        console.log("Form submitted:", formData);
-        alert("Thank You! Your Request has been sent");
-    
         setFormData({
           name: "",
           phone: "",
           email: "",
           address:"",
-          passenger: "",
+          passengers: "",
           startDate:"",
           day:"",
           night:"",
         });
+
+        closeFunc();
       };
 
 
     return(
-        <>
-            <div className="card p-10 text-black">
+        <div className="fixed inset-0 justify-center flex items-center border border-gray-500 backdrop-blur-md bg-white/30 rounded-lg p-5">
+
+            <div className="card p-10 text-black bg-white border-1 w-[320px]">
                 <span className="text-[24px] p-3 mb-10">Plan A Trip</span>
                 <form onSubmit={handleSubmit}>
                     <input type="text" name="name" onChange={handleChange} value={formData.name} className="outline-none  border-b-1 border-b-[#017C6D] mb-3 p-2 block "  placeholder="Name" required/>
@@ -67,7 +70,7 @@ const CustomTrip:React.FC =()=>{
                     <input type="e-mail" name="email" onChange={handleChange} value={formData.email} className="outline-none  border-b-1 border-b-[#017C6D] mb-3 p-2 block" placeholder="E-Mail" required/>
                     <input type="text"name="address" onChange={handleChange} value={formData.address} className="outline-none  border-b-1 border-b-[#017C6D] mb-3 p-2 block "  placeholder="City, State" required/>
                     
-                    <input type="text" name="passenger" onChange={handleChange} value={formData.passenger} className="outline-none  border-b-1 border-b-[#017C6D] mb-3 p-2 block" placeholder="No. of Travellers" required/>
+                    <input type="text" name="passengers" onChange={handleChange} value={formData.passengers} className="outline-none  border-b-1 border-b-[#017C6D] mb-3 p-2 block" placeholder="No. of Travellers" required/>
                     <div className="pt-3 pb-3">
                         <label className="text-[14px] block mb-2">Starting Date</label> 
                         <input type="date" name="startDate" onChange={handleChange} value={formData.startDate} className="outline-1 outline-[#017C6D] mb-3 p-2" placeholder="Trip Starting Date" required/>
@@ -79,7 +82,7 @@ const CustomTrip:React.FC =()=>{
                     <button type="submit" className="btn block p-3 w-[200px] bg-[#017C6D] text-white">Plan A Trip </button>
                 </form>
             </div>
-        </>
+        </div>
     )
 
 }
