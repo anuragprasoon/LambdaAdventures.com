@@ -15,10 +15,6 @@ import { type FilterOption } from "@/components/FilterTabs";
 
 export default function Expeditions() {
   const [popularTreks, setPopularTreks] = useState<any[]>([]);
-  const locationIconSrc= "https://cdn.builder.io/api/v1/image/assets/TEMP/de023415d53ab049720a040eb55a9360db4799c4"
-  const dateIconSrc = "https://cdn.builder.io/api/v1/image/assets/TEMP/42e83d894df0ef448ab8a8c643e384428952fc00"
-  const distanceIconSrc= "https://cdn.builder.io/api/v1/image/assets/TEMP/d63f0c5ce5909640a5c01e5dff030e5468f696d8"
-  const difficultyIconSrc= "https://cdn.builder.io/api/v1/image/assets/TEMP/2182ab57bc4f0c3fb9f520096d2f2dcd6f8f1bec"
 
   useEffect(() => {
   async function fetchTreks() {
@@ -60,9 +56,6 @@ export default function Expeditions() {
               duration={trek.duration} 
               distance={trek.distance} 
               difficulty={trek.difficulty} 
-              locationIconSrc={locationIconSrc} 
-              distanceIconSrc={distanceIconSrc} 
-              difficultyIconSrc={difficultyIconSrc} 
             />
           ))
         ) : (

@@ -59,7 +59,7 @@ export default function trekking() {
         <meta property="og:image:alt" content="Chandratal Lake Trek from Manali in Himachal Pradesh with LambdaAdventure.com" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <TrekAbout payFunc={ handlePayment }/>
+      {/*<TrekAbout payFunc={ handlePayment } />*/}
       <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1yCZDSeqrxtbLSdFFVJ_fLb8ODkDxEOs&ehbc=2E312F&noprof=1" className="w-full p-10 h-[500px]"></iframe>
     </>
     )
