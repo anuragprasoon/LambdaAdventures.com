@@ -2,8 +2,59 @@ import Head from "next/head";
 import TrekAbout from "@/components/About";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
+import TrekSection from "@/components/TrekSection";
 
 export default function DynamicTrek() {
+  const popularTreks = [{
+  "id":79,
+  "imageSrc": "https://res.cloudinary.com/dibrmj6nh/image/upload/v1745905052/Everest-Base-Camp_exwewg.webp",
+  "title": "Everest Base Camp Trek",
+  "location": "Nepal",
+  "dates": "10 May - 16 May",
+  "duration": "16 Days",
+  "distance": "130 km",
+  "difficulty": "Difficult",
+},
+{
+  "id":80,
+  "imageSrc": "https://res.cloudinary.com/dibrmj6nh/image/upload/v1745905140/bali-pass_c7wakm.webp",
+  "title": "Bali Pass",
+  "location": "Uttarakhand",
+  "dates": "10 May - 18 May",
+  "duration": "8 Days",
+  "distance": "66 km",
+  "difficulty": "Difficult",
+},
+{
+  "id":81,
+  "imageSrc": "https://res.cloudinary.com/dibrmj6nh/image/upload/v1745905148/beas-kund_bbmw24.webp",
+  "title": "Beas Kund",
+  "location": "Himachal Pradesh",
+  "dates": "10 May - 14 May",
+  "duration": "4 Days",
+  "distance": "15 km",
+  "difficulty": "Easy to Moderate",
+},
+{
+  "id":82,
+  "imageSrc": "https://res.cloudinary.com/dibrmj6nh/image/upload/v1745905887/bhrigu-lake_lc3o4l.webp",
+  "title": "Bhrigu Lake Trek",
+  "location": "Himachal Pradesh",
+  "dates": "10 May - 14 May",
+  "duration": "4 Days",
+  "distance": "10 km",
+  "difficulty": "Moderate",
+},
+{
+  "id":83,
+  "imageSrc": "https://res.cloudinary.com/dibrmj6nh/image/upload/v1745909314/buran-ghati_laaalk.webp",
+  "title": "Buran Ghati Trek",
+  "location": "Himachal Pradesh",
+  "dates": "10 May - 18 May",
+  "duration": "8 Days",
+  "distance": "65 Kms",
+  "difficulty": "Moderate to Difficult",
+}];
   const router = useRouter();
   const { id } = router.query;
 
@@ -75,6 +126,9 @@ export default function DynamicTrek() {
         src="https://www.google.com/maps/d/u/0/embed?mid=1yCZDSeqrxtbLSdFFVJ_fLb8ODkDxEOs&ehbc=2E312F&noprof=1"
         className="w-full p-10 h-[500px]"
       ></iframe>
+      <div className="pl-10 pr-10 pb-10">
+        <TrekSection title="Trips You May Like" treks={popularTreks} />
+      </div>
     </>
   );
 }
