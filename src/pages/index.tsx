@@ -37,18 +37,27 @@ const testimonials = [{
   location: "Ranchi, India"
 }];
 
-const upcomingTreks = [    {
-  "imageSrc": "https://res.cloudinary.com/dibrmj6nh/image/upload/v1745909217/Chandrashila-Trek_cbwfkp.webp",
-  "title": "Chandrashila Trek",
-  "location": "Uttarakhand",
-  "dates": "10 May - 13 May",
-  "duration": "3 Days, 2 Nights",
-  "distance": "9 km",
-  "difficulty": "Easy-Moderate",
-  "locationIconSrc": "https://cdn.builder.io/api/v1/image/assets/TEMP/c78b42c43ac18291961706e53a80daf2860c05cd",
-  "dateIconSrc": "https://cdn.builder.io/api/v1/image/assets/TEMP/42e83d894df0ef448ab8a8c643e384428952fc00",
-  "distanceIconSrc": "https://cdn.builder.io/api/v1/image/assets/TEMP/a9a5f3e1e17750cac30fb8dedd1d89c542cf7c3e",
-  "difficultyIconSrc": "https://cdn.builder.io/api/v1/image/assets/TEMP/2182ab57bc4f0c3fb9f520096d2f2dcd6f8f1bec"
+const upcomingTreks = [{
+    "id": 111,
+    "created_at": "2025-05-16T18:26:59.463123+00:00",
+    "title": "Chandrashila Trek",
+    "type": "Trek",
+    "status": null,
+    "imageSrc": "https://lambdaadventures.com/wp-content/uploads/2024/03/Chandrashila-Trek-800x600.jpg",
+    "location": "Uttarakhand",
+    "duration": "3 Days",
+    "difficulty": "Easy–Moderate",
+    "altitude": "12100 Ft",
+    "distance": "9Km",
+    "price": "₹9500",
+    "description": null,
+    "itinerary": null,
+    "inclusions": null,
+    "exclusions": null,
+    "images": null,
+    "youtube": null,
+    "mapurl": null,
+    "slots": null
 },
 {
   "imageSrc": "https://res.cloudinary.com/dibrmj6nh/image/upload/v1745909231/Chandratal-Trek_iudmmv.webp",

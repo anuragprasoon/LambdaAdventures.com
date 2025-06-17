@@ -17,7 +17,7 @@ const TrekAbout: React.FC<TrekAboutProps> = ({ payFunc, trip }) => {
   return (<>
 
 <div id="hero" className="relative">
-    <img src={trip.imageSrc} className="md:h-300px"/>
+    <img src={trip.imageSrc} className="w-full object-cover sm:h-[400px] md:h-300px"/>
     <div className="sm:block hidden absolute w-full bottom-0 text-white justify-center p-5 bg-linear-to-t from-white/40 to-white/0 mix-blend-lighten">
     
     	<span className=" text-3xl text-center block pb-3">{trip.title}</span>

@@ -8,9 +8,6 @@ interface TrekCardProps {
   duration: string;
   distance: string;
   difficulty: string;
-  locationIconSrc: string;
-  distanceIconSrc: string;
-  difficultyIconSrc: string;
 }
 const TrekCard: React.FC<TrekCardProps> = ({
   idkey,
@@ -20,10 +17,12 @@ const TrekCard: React.FC<TrekCardProps> = ({
   duration,
   distance,
   difficulty,
-  locationIconSrc,
-  distanceIconSrc,
-  difficultyIconSrc
 }) => {
+
+  const locationIconSrc= "https://cdn.builder.io/api/v1/image/assets/TEMP/de023415d53ab049720a040eb55a9360db4799c4"
+  const distanceIconSrc= "https://cdn.builder.io/api/v1/image/assets/TEMP/d63f0c5ce5909640a5c01e5dff030e5468f696d8"
+  const difficultyIconSrc= "https://cdn.builder.io/api/v1/image/assets/TEMP/2182ab57bc4f0c3fb9f520096d2f2dcd6f8f1bec"
+
   return <div className="min-w-60 w-[302px] rounded-lg will-change-scroll">
       <img src={imageSrc} alt={title} className="aspect-[1.06] w-[302px] max-w-full rounded-xl" />
       <div className="w-full text-sm text-[#717171] font-medium leading-none mt-3">
