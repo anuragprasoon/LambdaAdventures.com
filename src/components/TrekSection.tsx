@@ -12,10 +12,6 @@ interface TrekSectionProps {
     duration: string;
     distance: string;
     difficulty: string;
-    locationIconSrc: string;
-    dateIconSrc: string;
-    distanceIconSrc: string;
-    difficultyIconSrc: string;
   }>;
 }
 const TrekSection: React.FC<TrekSectionProps> = ({
@@ -33,7 +29,7 @@ const TrekSection: React.FC<TrekSectionProps> = ({
         </div>
       </div>
       <div className="flex w-full gap-[34px] justify-between mt-[20px] overflow-x-auto [&::-webkit-scrollbar]:hidden max-md:max-w-full max-md:mt-5 pt-4 pb-4">
-        {treks.map((trek, index) => <TrekCard key={index} idkey={trek.id} imageSrc={trek.imageSrc} title={trek.title} location={trek.location} duration={trek.duration} distance={trek.distance} difficulty={trek.difficulty} locationIconSrc={trek.locationIconSrc}  distanceIconSrc={trek.distanceIconSrc} difficultyIconSrc={trek.difficultyIconSrc} />)}
+        {treks.map((trek, index) => <TrekCard key={index} idkey={trek.id} imageSrc={trek.imageSrc} title={trek.title} location={trek.location} duration={trek.duration} distance={trek.distance} difficulty={trek.difficulty} />)}
       </div>
     </div>;
 };
