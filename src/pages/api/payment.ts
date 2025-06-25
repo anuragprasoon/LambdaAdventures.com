@@ -19,9 +19,7 @@ export default async function handler(req:NextApiRequest, res:NextApiResponse) {
     const data= await instance.orders.create(order)
     let jdata = JSON.parse(JSON.stringify(data))
     console.log(jdata.id)
-    return res.status(200).send(jdata)
-
-    
+    return res.status(200).send(jdata)    
   }
 
     

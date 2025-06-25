@@ -55,7 +55,7 @@ const Footer: React.FC = () => {
                 <Link href={'/trek'}>Trek & Expeditions</Link>
               </div>
               <div className="mt-6 hover:text-white transition-colors cursor-pointer">
-                Yoga Retreat
+                <Link href={'https://sacredpause.in'}>Yoga Retreat</Link>
               </div>
               <div className="mt-6 hover:text-white transition-colors cursor-pointer">
                 Adventure Camps
