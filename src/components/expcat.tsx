@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 const ExpCategories = () => {
-  const [activeTab, setActiveTab] = useState("Trending");
+  const [activeTab, setActiveTab] = useState<any>("Trending");
 
   const categories = {
     "Trending":[],

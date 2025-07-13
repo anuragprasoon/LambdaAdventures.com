@@ -6,7 +6,7 @@ import { useEffect } from "react";
 
 
 const TrekCategories = () => {
-  const [activeTab, setActiveTab] = useState("Trending");
+  const [activeTab, setActiveTab] = useState<any>("Trending");
 
   useEffect(()=>{
   AOS.init();
