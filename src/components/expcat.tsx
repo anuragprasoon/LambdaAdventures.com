@@ -46,19 +46,25 @@ const ExpCategories = () => {
 
       {/* Selected Category Content */}
       <div className="flex gap-5 mt-3 overflow-x-auto hide-scrollbar">
-        {categories[activeTab].map((item, idx) => (
-          <div key={idx} className="relative w-[200px] h-[100px] rounded">
-            <img
-              className="object-cover rounded w-[200px] h-[100px]"
-              src={item.img}
-              alt={item.label}
-            />
-            <span className="absolute top-[40%] text-white font-bold text-center w-full">
-              {item.label}
-            </span>
-          </div>
-        ))}
+  {Array.isArray(categories[activeTab]) && categories[activeTab].length > 0 ? (
+    categories[activeTab].map((item, idx) => (
+      <div key={idx} className="relative w-[200px] h-[100px] rounded">
+        <img
+          className="object-cover rounded w-[200px] h-[100px]"
+          src={item.img}
+          alt={item.label}
+        />
+        <span className="absolute top-[40%] text-white font-bold text-center w-full">
+          {item.label}
+        </span>
       </div>
+    ))
+  ) : (
+    <div className="text-gray-500 italic px-4 py-6">
+    </div>
+  )}
+</div>
+
     </div>
   );
 };
