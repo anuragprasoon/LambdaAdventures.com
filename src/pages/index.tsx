@@ -9,6 +9,12 @@ import AdventureCallout from "@/components/AdventureCallout";
 import TrekSection from "@/components/TrekSection";
 import FeaturesSection from "@/components/FeatureSection";
 import Hero from "@/components/Hero";
+import PopUp from "@/components/popup";
+import AOS from "aos";
+import 'aos/dist/aos.css'
+import { useEffect } from "react";
+
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -175,6 +181,10 @@ const features = [{
 }];
 
 export default function Home() {
+  useEffect(()=>{
+  AOS.init();
+},[]) 
+
   return (
     <>
       <Head>
@@ -188,23 +198,23 @@ export default function Home() {
       <TrekSection title="Upcoming" treks={upcomingTreks} />
       <TrekSection title="Popular" treks={popularTreks} />
        <div>
-        <h1 className="text-[rgba(1,124,109,1)] text-4xl font-bold leading-none text-center max-md:max-w-full max-md:text-[28px] mt-10">
+        <h1 className="text-[rgba(1,124,109,1)] text-4xl font-bold leading-none text-center max-md:max-w-full max-md:text-[28px] mt-10" data-aos="slide-right">
           Our Travel Stories
       </h1>
         <div className="flex py-[40px] w-full justify-between gap-5 overflow-x-auto [&::-webkit-scrollbar]:hidden max-md:max-w-full">
-          <div className="relative w-full">
+          <div className="relative w-full" data-aos="slide-right">
           <img src="https://res.cloudinary.com/dibrmj6nh/image/upload/v1745909231/Chandratal-Trek_iudmmv.webp" className=" h-[400px] hidden"/>
 
           <iframe className=" rounded-lg h-[350px] w-full min-w-[280px]" src="https://www.youtube-nocookie.com/embed/u5orczW-tFk?si=WfNR0LPPxOBK2mCf" title="YouTube video player"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen={true}></iframe>
           </div>
 
-          <div className="relative w-full">
+          <div className="relative w-full" data-aos="slide-up">
           <img src="https://res.cloudinary.com/dibrmj6nh/image/upload/v1745909231/Chandratal-Trek_iudmmv.webp" className=" h-[400px] hidden "/>
 
           <iframe className="rounded-lg h-[350px] w-full min-w-[280px]" src="https://www.youtube-nocookie.com/embed/Ua4iV8uU-mA?si=D4fkAGoQ6TxBb5nu" title="YouTube video player"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen={true}></iframe>
           </div>
 
-          <div className="relative w-full">
+          <div className="relative w-full" data-aos="slide-left">
           <img src="https://res.cloudinary.com/dibrmj6nh/image/upload/v1745909231/Chandratal-Trek_iudmmv.webp" className=" h-[400px] hidden "/>
 
           <iframe className="rounded-lg  h-[350px] w-full min-w-[280px]" src="https://www.youtube-nocookie.com/embed/bNX8gD8L-_8?si=VAWS5PpFiRN5Nf1Q" title="YouTube video player"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen={true}></iframe>
@@ -212,7 +222,7 @@ export default function Home() {
           
         </div>
       </div>
-      <div className="max-sm:hidden">
+      <div className="max-sm:hidden" data-aos="flip-right">
       <Link href={'/contact'}><Image
   src="https://res.cloudinary.com/anuragprasoon/image/upload/v1745615313/adventurecallout_kdpc4k.png"
   alt="Adventure Callout"
@@ -223,7 +233,7 @@ export default function Home() {
       </div>
      
 
-<div className="sm:hidden">
+<div className="sm:hidden" data-aos="flip-right">
       <Link href={'/contact'}><Image
   src="https://res.cloudinary.com/anuragprasoon/image/upload/v1745647359/adventurecallout-md_peiee0.png"
   alt="Adventure Callout"
@@ -234,16 +244,14 @@ export default function Home() {
 /></Link>
 </div>
       <FeaturesSection features={features}/>
-      <TestimonialsSection testimonials={testimonials}/>
+      <TestimonialsSection />
       </div>
-      <section id="contact">
-      <ContactForm/>
-      </section>
       <div className="fixed bottom-2 right-2">
         <a href="https://api.whatsapp.com/send/?phone=919065550642&text=Hi%20Lambda%20Adventures,%20I%20want%20to%20plan%20a%20trip">
           <img src="https://res.cloudinary.com/dibrmj6nh/image/upload/v1747946474/Frame_1597884222_xnchxt.png" className="w-[50px]"/>
         </a>
       </div>
+      <PopUp/>
     </>
   );
 }

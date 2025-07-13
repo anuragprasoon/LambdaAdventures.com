@@ -9,18 +9,18 @@ export default function Info() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <StoryHero/>
-      <div className="px-[6%] mb-[140px]">
+      <div className="px-[6%] mb-[140px] text-black">
+        <img  data-aos="fade-up" className="mb-5 mt-5 object-cover h-[300px] w-full rounded anim" src="https://res.cloudinary.com/anuragprasoon/image/upload/v1752374904/lambda-adventures/trip_thumb/mtyun.webp"/> 
       <section id="terms" className="mb-[20px]">
       <h1 className="w-full text-4xl text-[rgba(1,124,109,1)] font-bold text-center leading-loose max-md:max-w-full max-md:text-[28px] mt-[10px">
         Terms & Condition
       </h1>
-      <p className="w-full text-base text-[rgba(67,67,67,1)] font-normal leading-[30px] max-md:max-w-full">
+      <p className="w-full text-base  font-normal leading-[30px] max-md:max-w-full">
     The domain name www.Lambda Adventures.com (“Website”) is owned by Lambda Adventures (“Lambda Adventures”), a company incorporated under the Companies Act, 2013 with its registered office at 135B-Pocket A2, Mayur Vihar Phase 3, Delhi – 110096.
   
     By accessing or using this Website, you (“you” or “your”) agree to comply with and be bound by these Terms &amp; Conditions, our Privacy Policy, and any other relevant policies or notices posted on the Website. If you do not agree with any part of these terms, please do not use the Website.
   </p><br></br>
-  <ul className="w-full text-base text-[rgba(67,67,67,1)] font-normal leading-[30px] list-decimal pl-5 max-md:max-w-full">
+  <ul className="w-full text-base  font-normal leading-[30px] list-decimal pl-5 max-md:max-w-full">
     <li>
       The content on this Website is for general information and use only. It is subject to change without notice.
     </li>
@@ -49,7 +49,7 @@ export default function Info() {
       Your use of this Website and any dispute arising out of such use is subject to the laws of India.
     </li>
   </ul>
-  <p className="w-full text-base text-[rgba(67,67,67,1)] font-normal leading-[30px] max-md:max-w-full mt-4">
+  <p className="w-full text-base  font-normal leading-[30px] max-md:max-w-full mt-4">
     By using this Website, you acknowledge that you have read, understood, and agree to be bound by these Terms &amp; Conditions. For any questions or concerns, please contact us at info@Lambda Adventures.com.
   </p>
       
@@ -58,8 +58,8 @@ export default function Info() {
       <h1 className="w-full text-4xl text-[rgba(1,124,109,1)] font-bold text-center leading-loose max-md:max-w-full max-md:text-[28px]">
         Cancellation Policy
       </h1>
-      <p className="w-full text-base text-[rgba(67,67,67,1)] font-normal leading-[30px]  max-md:max-w-full">
-      <ul className="w-full text-base text-[rgba(67,67,67,1)] font-normal leading-[30px] list-disc pl-5 max-md:max-w-full">
+      <p className="w-full text-base  font-normal leading-[30px]  max-md:max-w-full">
+      <ul className="w-full text-base  font-normal leading-[30px] list-disc pl-5 max-md:max-w-full">
     <li>
       <span className="font-semibold">Cancellation 30 days before the trek start date:</span> Refund will be processed after deducting 10% as cancellation charges.
     </li>
@@ -79,7 +79,7 @@ export default function Info() {
       <h1 className="w-full text-4xl text-[rgba(1,124,109,1)] font-bold text-center leading-loose max-md:max-w-full max-md:text-[28px]">
         Privacy Policy
       </h1>
-      <p className="w-full text-base text-[rgba(67,67,67,1)] font-normal leading-[30px] max-md:max-w-full">
+      <p className="w-full text-base  font-normal leading-[30px] max-md:max-w-full">
       This Privacy Policy explains how Lambda Adventures (“we”, “us”, or “our”) collects, uses, and protects your personal information when you use our website, Lambda Adventures.com. We collect information you provide directly (such as when you fill out forms or leave comments), as well as technical data like your IP address and browser information for security and analytics. We may use cookies to enhance your experience and remember your preferences.
     <br /><br />
     We use your data to provide and improve our services, respond to your inquiries, and ensure the website’s security. Your information is not sold and is only shared with trusted third parties when necessary for website functionality (such as spam detection or embedded content). Comments and user data may be retained indefinitely for moderation and support purposes. You have the right to request, update, or delete your personal data, except where retention is required for legal or security reasons.
@@ -91,20 +91,27 @@ export default function Info() {
       <h1 className="w-full text-4xl text-[rgba(1,124,109,1)] font-bold text-center leading-loose max-md:max-w-full max-md:text-[28px]">
         Disclaimer
       </h1>
-      <p className="w-full text-base text-[rgba(67,67,67,1)] font-normal leading-[30px] max-md:max-w-full">
+      <p className="w-full text-base  font-normal leading-[30px] max-md:max-w-full">
       The domain name Lambda Adventures.com (“Website”) is owned by Lambda Adventures, a company incorporated under the Companies Act, 2013 with its registered office at 135B-Pocket A2, Mayur Vihar Phase 3, Delhi – 110096.
       </p><br></br>
-      <p className="w-full text-base text-[rgba(67,67,67,1)] font-normal leading-[30px] max-md:max-w-full">
+      <p className="w-full text-base  font-normal leading-[30px] max-md:max-w-full">
       The information on this Website is for general purposes only. While we strive for accuracy, Lambda Adventures makes no guarantees about the completeness, reliability, or suitability of any content, products, or services. Any reliance on the information is at your own risk. Content is not professional advice; please consult relevant professionals for specific needs. We are not responsible for the accuracy of third-party links.
       </p><br></br>
-      <p className="w-full text-base text-[rgba(67,67,67,1)] font-normal leading-[30px] max-md:max-w-full">
+      <p className="w-full text-base  font-normal leading-[30px] max-md:max-w-full">
       Testimonials reflect individual experiences and may not represent all users. Results may vary. Testimonials are reviewed for clarity but are not paid for or influenced by Lambda Adventures. They are not intended as claims regarding the diagnosis, treatment, or prevention of any medical condition.
       </p><br></br>
-      <p className="w-full text-base text-[rgba(67,67,67,1)] font-normal leading-[30px] max-md:max-w-full">
+      <p className="w-full text-base  font-normal leading-[30px] max-md:max-w-full">
       All Website content is protected by copyright and intellectual property laws. Unauthorized use or reproduction is prohibited. Use of this Website is subject to our Terms and Conditions. Lambda Adventures is not liable for any direct or indirect damages arising from your use of this Website or its content, including lost profits, data, or property.
       </p>
     </section>
     </div>
+    <div className="flex mt-5 gap-2 overflow-x-auto hide-scrollbar bg-[#02070a] p-10 rounded">
+                <img className="h-[300px] w-[400px] object-cover rounded" src="https://res.cloudinary.com/anuragprasoon/image/upload/v1752405701/lambda-adventures/trip_thumb/Shivay-Rental-Sar-Pass-Trek.jpg"/>
+
+                <img className="h-[300px] w-[400px] object-cover rounded" src="https://res.cloudinary.com/anuragprasoon/image/upload/v1752405146/lambda-adventures/trip_thumb/har-ki-dun.jpg"/>
+
+                <img className="h-[300px] w-[400px] object-cover rounded" src="https://res.cloudinary.com/anuragprasoon/image/upload/v1752374904/lambda-adventures/trip_thumb/mtyun.webp"/>
+            </div>
         </>
     )
 }

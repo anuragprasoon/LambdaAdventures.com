@@ -50,7 +50,7 @@ const TrekAbout: React.FC<TrekAboutProps> = ({ payFunc, trip }) => {
   <div className="p-10 sm:order-first">
       <span className=" hidden sm:block text-2xl block pb-3 text-[#017C6D] font-semibold">{trip.title}</span>
       <span className=" block sm:hidden text-2xl block pb-3 text-[#017C6D] font-semibold">About</span>
-      <p>At Lambda Adventures, every trek is more than just a journey—it’s a path to growth, connection, and unforgettable memories. Born from a passion for the outdoors and driven by trust, care, and authenticity, we pride ourselves on crafting transformative adventures that stay true to our word. From the moment you book with us, we become your trusted partner in exploration, prioritizing your safety, comfort, and satisfaction at every step. Our experienced guides don’t just lead treks—they share knowledge, build relationships, and tailor each experience to  with us, we become your trusted partner in exploration, prioritizing your safety, comfort, and satisfaction at every step. Our experienced guides don’t just lead treks—they share knowledge, build relationships, and tailor each experience to with us, we become your trusted partner in exploration, prioritizing your safety, comfort, and satisfaction at every step. Our experienced guides don’t just lead treks—they share knowledge, build relationships, and tailor each experience to with us, we become your trusted partner in exploration, prioritizing your safety, comfort, and satisfaction at every step. Our experienced guides don’t just lead treks—they share knowledge, build relationships, and tailor each experience to  Read More ....
+      <p>{trip.description}
       </p>
   </div>
 

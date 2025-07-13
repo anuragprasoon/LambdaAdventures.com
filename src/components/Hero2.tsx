@@ -1,18 +1,35 @@
+import React, { useState, useEffect } from "react";
 
-import React, { useState } from "react";
+interface HeroProps {
+  searchQuery: string;
+  setSearchQuery: React.Dispatch<React.SetStateAction<string>>;
+}
 
-export const HeroSection: React.FC = () => {
-  const [searchQuery, setSearchQuery] = useState("");
+export const HeroSection: React.FC<HeroProps> = ({ searchQuery, setSearchQuery }) => {
+  const [placeholder, setPlaceholder] = useState("Search Treks & Expeditions");
+
+  const phrases = [
+    "Search Weekend Treks",
+    "Search Himalayan Peaks",
+    "Search Chandrashila Trek"
+  ];
+
+  useEffect(() => {
+    let index = 0;
+    const interval = setInterval(() => {
+      setPlaceholder(phrases[index % phrases.length]);
+      index++;
+    }, 1500);
+    return () => clearInterval(interval);
+  }, []);
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
-    // Implement search functionality here
     console.log("Searching for:", searchQuery);
   };
-
   return (
     <div className="self-center w-full text-white ">
-      <div className="flex flex-col relative min-h-[329px] w-full items-center justify-center px-20 py-[59px]  max-md:max-w-full max-md:px-5">
+      <div className="flex flex-col relative min-h-[329px] w-full items-center justify-center px-20 py-[59px] max-md:max-w-full max-md:px-5">
         <img
           src="https://res.cloudinary.com/anuragprasoon/image/upload/v1745677807/carousel3_f4saji.png"
           alt="Adventure background"
@@ -35,10 +52,10 @@ export const HeroSection: React.FC = () => {
                 />
                 <input
                   type="text"
-                  placeholder="Search Treks & Expeditions"
+                  placeholder={placeholder}
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="self-stretch min-w-60 my-auto bg-transparent border-none outline-none text-white placeholder-white w-full"
+                  className="self-stretch min-w-60 my-auto bg-transparent border-none outline-none text-white placeholder-white w-full transition-all duration-300 ease-in-out"
                 />
               </div>
             </div>

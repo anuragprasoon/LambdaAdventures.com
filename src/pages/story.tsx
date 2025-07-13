@@ -10,28 +10,22 @@ export default function Story() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <StoryHero/>
-      <div className="px-[6%]">
-      <section className="mb-10 max-md:mb-[20px]">
-      <h1 className="w-full text-4xl text-[rgba(1,124,109,1)] font-bold text-center leading-loose max-md:max-w-full max-md:text-[28px] max-md:mt-[30px]">
-        About Us
-      </h1>
-      <p className="w-full text-base text-[rgba(67,67,67,1)] font-normal leading-[30px] mt-[10px] max-md:max-w-full">
-      At Lambda Adventures, our journeys start with a simple idea: exploring together. When you sign up for a trek, mountain climb, or yoga retreat with us, you’re not just booking a trip-you’re joining a group of people who care about the outdoors and each other. We know what it’s like to feel both excited and a little unsure before heading into the mountains, so we make sure you always have someone to count on, from your first question to your last step.
-      </p>
-      <p className="w-full text-base text-[rgba(67,67,67,1)] font-normal leading-[30px] mt-[10px] max-md:max-w-full">
-      Along the way, our guides are there to walk beside you. They’ll share stories from the trail, help you through tough moments, and make sure everyone feels included. We listen to what you want from your adventure, whether it’s reaching a summit, trying something new, or just enjoying a quiet moment in nature. Our trips are shaped by the people who join us, and we do our best to make everyone feel welcome.
-      </p>
-      <p className="w-full text-base text-[rgba(67,67,67,1)] font-normal leading-[30px] mt-[10px] max-md:max-w-full">
-      When the journey ends, what stays with you isn’t just the view or the challenge-it’s the people you met and the moments you shared. At Lambda Adventures, we focus on honest connections and real experiences, helping you discover something new about the world and yourself, one step at a time.
-      </p>
-    </section>
-    <section className="mb-40 max-md:mb-[20px]">
-      <h1 className="w-full text-4xl text-[rgba(1,124,109,1)] font-bold text-center leading-loose max-md:max-w-full max-md:text-[28px] max-md:mt-[30px]">
+       <div className="px-[6%] text-black bg-white">
+            <img  data-aos="fade-up" className="mb-5 mt-5 object-cover h-[300px] w-full rounded anim" src="https://res.cloudinary.com/anuragprasoon/image/upload/v1752374904/lambda-adventures/trip_thumb/mtyun.webp"/> 
+            <h2 className="urbanist text-4xl text-[rgba(1,124,109,1)] font-bold anim" data-aos="fade-up">Our Story</h2><br/>
+            <p className="urbanist anim" data-aos="fade-right">
+            <b>Lambda Adventures</b> is an India-based trekking and adventure travel company dedicated to creating unforgettable experiences for nature lovers and thrill-seekers across the country. Our philosophy centers on the belief that every journey is an opportunity for growth, connection, and self-discovery. Our core values are encapsulated in the motto: <b>Explore, Experience, Evolve—encouraging</b> participants to delve into the wilderness, enjoy personalized adventures, and return with renewed inspiration and purpose.
+            </p><br/>
+            <p className="urbanist" data-aos="fade-right">
+            Lambda Adventures aims to bridge the gap between dreamers and the challenges of high-altitude expeditions, making adventure accessible, safe, and transformative for all participants. Our focus remains on fostering a spirit of exploration, responsible travel, and personal evolution through nature-based experiences.
+            </p>
+          </div>
+          <div className="p-10">
+      <h1 className="w-full mb-5 text-4xl text-[rgba(1,124,109,1)] font-bold text-center leading-loose max-md:max-w-full max-md:text-[28px] max-md:mt-[30px]">
         Our Team
       </h1>
       <div className="sm:flex gap-5 text-black">
-        <div className="sm:flex border-1">
+        <div className="sm:flex ">
           <img src="https://lambdaadventures.com/wp-content/uploads/2024/03/t2.jpg" className="min-w-[180px] object-cover"/>
           <div className="p-5">
             <span className="text-[2vm] font-semibold">Shashi</span>
@@ -40,7 +34,7 @@ export default function Story() {
           </div>
         </div>
   
-        <div className="sm:flex border-1">
+        <div className="sm:flex ">
         <img src="https://lambdaadventures.com/wp-content/uploads/2024/03/t4.jpg" className="min-w-[180px] object-cover "/>
           <div className="p-5">
             <span className="text-[2vm] font-semibold">Rahul</span>
@@ -51,7 +45,7 @@ export default function Story() {
       </div>
 
       <div className="sm:flex gap-5 text-black mt-5">
-        <div className="sm:flex border-1">
+        <div className="sm:flex">
           <img src="https://lambdaadventures.com/wp-content/uploads/2024/03/t6.jpg" className="min-w-[180px] object-cover"/>
           <div className="p-5">
             <span className="text-[2vm] font-semibold">Ankit</span>
@@ -60,7 +54,7 @@ export default function Story() {
           </div>
         </div>
   
-        <div className="sm:flex border-1">
+        <div className="sm:flex">
         <img src="https://lambdaadventures.com/wp-content/uploads/2024/03/t3.jpg" className="min-w-[180px] object-cover "/>
           <div className="p-5">
             <span className="text-[2vm] font-semibold">Manoj
@@ -71,8 +65,15 @@ export default function Story() {
         </div>
       </div>
       
-    </section>
     </div>
+          <div className="flex mt-5 gap-2 overflow-x-auto hide-scrollbar bg-[#02070a] p-10 rounded">
+                <img className="h-[300px] w-[400px] object-cover rounded" src="https://res.cloudinary.com/anuragprasoon/image/upload/v1752405701/lambda-adventures/trip_thumb/Shivay-Rental-Sar-Pass-Trek.jpg"/>
+
+                <img className="h-[300px] w-[400px] object-cover rounded" src="https://res.cloudinary.com/anuragprasoon/image/upload/v1752405146/lambda-adventures/trip_thumb/har-ki-dun.jpg"/>
+
+                <img className="h-[300px] w-[400px] object-cover rounded" src="https://res.cloudinary.com/anuragprasoon/image/upload/v1752374904/lambda-adventures/trip_thumb/mtyun.webp"/>
+            </div>
+
         </>
     )
 }

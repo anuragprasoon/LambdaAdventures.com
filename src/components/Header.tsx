@@ -11,7 +11,7 @@ const Header: React.FC = () => {
     const [isOpen, setIsOpen] = React.useState(false);
   return (
     <>
-    <div className="bg-white flex w-full items-center gap-[40px_100px] overflow-hidden text-[16px] text-black font-medium leading-none justify-between flex-wrap pl-[78px] pr-20 py-5 mx-auto max-md:max-w-full max-md:mr-0.5 max-md:px-5">
+    <div className=" urbanist bg-white flex w-full items-center gap-[40px_100px] overflow-hidden text-[16px] text-black font-medium leading-none justify-between flex-wrap pl-[78px] pr-20 py-5 mx-auto max-md:max-w-full max-md:mr-0.5 max-md:px-5">
       <Link href="/"><img
         src="https://cdn.builder.io/api/v1/image/assets/TEMP/b2fa7c30181431a02d611b8ae9935850086686e9?placeholderIfAbsent=true"
         alt="Company Logo"
@@ -32,9 +32,6 @@ const Header: React.FC = () => {
         </div>
         <div className=" max-md:hidden self-stretch my-auto cursor-pointer hover:text-[rgba(1,124,109,1)]">
           <Link href={'https://sacredpause.in'}>Yoga Retreat</Link>
-        </div>
-        <div className="max-md:hidden self-stretch whitespace-nowrap my-auto cursor-pointer hover:text-[rgba(1,124,109,1)]">
-          <Link href={'/comingsoon'}>Blog</Link>
         </div>
         <div className="max-md:hidden self-stretch my-auto cursor-pointer hover:text-[rgba(1,124,109,1)]">
         <Link  href={'/contact'}>Contact Us</Link>
@@ -68,9 +65,6 @@ const Header: React.FC = () => {
     </div>
     <div className=" cursor-pointer hover:text-black">
          <Link  href={'/story'} onClick={()=>setIsOpen(false)}>About Us</Link>
-    </div>
-    <div className=" cursor-pointer hover:text-black">
-        <Link href={'/comingsoon'} onClick={()=>setIsOpen(false)}>Blog</Link>
     </div>
     <div className=" cursor-pointer hover:text-black">
         <Link  href={'/contact'} onClick={()=>setIsOpen(false)}>Contact Us</Link>

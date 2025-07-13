@@ -1,4 +1,13 @@
 import React from "react";
+import AOS from "aos";
+import { useEffect } from "react";
+import 'aos/dist/aos.css'
+
+
+
+
+      
+
 
 interface FeatureCardProps {
   iconSrc: string;
@@ -11,8 +20,12 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
   title,
   description,
 }) => {
+
+  
+
+
   return (
-    <div className="border flex min-h-[327px] grow flex-col overflow-hidden items-stretch text-center justify-center px-5 py-[20px] rounded-[20px] border-[rgba(1,124,109,1)] border-solid hover:shadow-md transition-shadow">
+    <div className="border flex min-h-[327px] grow flex-col overflow-hidden items-stretch text-center justify-center px-5 py-[20px] rounded-[20px] hover:shadow-md transition-shadow">
       <img
         src={iconSrc}
         alt={title}

@@ -1,5 +1,8 @@
 import React from "react";
 import Link from "next/link";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from "react";
 interface TrekCardProps {
   idkey: number;
   imageSrc: string;
@@ -23,8 +26,12 @@ const TrekCard: React.FC<TrekCardProps> = ({
   const distanceIconSrc= "https://cdn.builder.io/api/v1/image/assets/TEMP/d63f0c5ce5909640a5c01e5dff030e5468f696d8"
   const difficultyIconSrc= "https://cdn.builder.io/api/v1/image/assets/TEMP/2182ab57bc4f0c3fb9f520096d2f2dcd6f8f1bec"
 
-  return <div className="min-w-60 w-[302px] rounded-lg will-change-scroll">
-      <img src={imageSrc} alt={title} className="aspect-[1.06] w-[302px] max-w-full rounded-xl" />
+  useEffect(()=>{
+  AOS.init();
+},[]);
+
+  return <div className="min-w-60 w-[302px] rounded-lg will-change-scroll" data-aos="fade-up">
+      <img src={imageSrc} alt={title} className="aspect-[1.06] w-[302px] max-w-full rounded-xl object-cover" />
       <div className="w-full text-sm text-[#717171] font-medium leading-none mt-3">
         <div className="flex w-full flex-col">
           <div className="self-stretch w-full gap-8 text-base text-[rgba(34,34,34,1)] font-bold leading-none">
@@ -34,7 +41,6 @@ const TrekCard: React.FC<TrekCardProps> = ({
             <img src={locationIconSrc} alt="Location" className="aspect-[1] object-contain w-3.5 self-stretch shrink-0 my-auto" />
             <div className="self-stretch my-auto">{location}</div>
           </div>
-          <div className="self-stretch gap-2 mt-[5px]">{duration}</div>
           <div className="self-stretch flex w-full gap-5 mt-[5px]">
             <div className="flex items-center gap-2 justify-center">
               <img src={distanceIconSrc} alt="Distance" className="aspect-[1] object-contain w-3.5 self-stretch shrink-0 my-auto" />

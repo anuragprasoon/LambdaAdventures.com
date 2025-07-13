@@ -8,6 +8,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState,  useEffect } from 'react';
 import { type FilterOption } from "@/components/FilterTabs";
+import TrekCategories from "@/components/trekcat";
 
 
 
@@ -55,7 +56,9 @@ export default function Trek() {
       
       <div className="px-[6%]">
       <HeroSection/>
-      <FilterTabs onFilterChange={handleFilterChange}/>
+      <h2 className="text-4xl font-bold py-5 sm:px-10 text-black"> Discover </h2>
+      <TrekCategories/>
+      <h2 className="text-2xl font-semibold mt-5 sm:px-10 text-black"> Treks For You </h2>
       <div className="flex w-full gap-[36px] justify-center mt-[20px] flex-wrap max-md:mt-5 pb-4 ml-auto mr-auto">
       {filteredTreks.length > 0 ? (
           filteredTreks.map((trek, index) => (

@@ -8,12 +8,22 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState,  useEffect } from 'react';
 import { type FilterOption } from "@/components/FilterTabs";
+import ExpCategories from "@/components/expcat";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
+
+
+
+
 
 
 
 
 
 export default function Expeditions() {
+  const [searchQuery, setSearchQuery] = useState("");
+  const [activeFilter, setActiveFilter] = useState<FilterOption>("expeditions");
   const [popularTreks, setPopularTreks] = useState<any[]>([]);
 
   useEffect(() => {
@@ -31,7 +41,30 @@ export default function Expeditions() {
 }, []);
 
     
+   const filteredTreks = popularTreks.filter(trek => {
+  const matchesFilter =
+    activeFilter === "all" ||
+    (activeFilter === "treks" && trek.type === "Trek") ||
+    (activeFilter === "expeditions" && trek.type === "Expeditions") ||
+    (activeFilter === "yoga" && trek.type === "Yoga Retreat");
 
+  const matchesSearch =
+    trek.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    trek.location.toLowerCase().includes(searchQuery.toLowerCase());
+
+  return matchesFilter && matchesSearch;
+});
+
+
+    const handleFilterChange = (filter: FilterOption) => {
+      setActiveFilter(filter);
+    };
+
+
+
+useEffect(()=>{
+  AOS.init();
+},[]) 
 
     return(
         <>
@@ -43,10 +76,16 @@ export default function Expeditions() {
       </Head>
       
       <div className="px-[6%]">
-      <HeroSection/>
-      <div className="flex w-full gap-[36px] justify-center mt-[20px] flex-wrap max-md:mt-5 pb-4 ml-auto mr-auto">
-      {popularTreks.length > 0 ? (
-          popularTreks.map((trek, index) => (
+      <HeroSection
+  searchQuery={searchQuery}
+  setSearchQuery={setSearchQuery}
+/>
+      <h2 className="text-4xl font-bold py-5 sm:px-10 text-black"> Discover</h2>
+      <ExpCategories/>
+      <h2 className="text-2xl font-semibold mt-5 sm:px-10 text-black"> Expeditions For You </h2>
+      <div className="flex w-full gap-[36px] justify-center mt-[20px] flex-wrap max-md:mt-5 pb-4 ml-auto mr-auto" >
+      {filteredTreks.length > 0 ? (
+          filteredTreks.map((trek, index) => (
             <TrekCard 
               key={index} 
               idkey={trek.id}
@@ -55,7 +94,7 @@ export default function Expeditions() {
               location={trek.location} 
               duration={trek.duration} 
               distance={trek.distance} 
-              difficulty={trek.difficulty} 
+              difficulty={trek.difficulty}
             />
           ))
         ) : (
@@ -66,7 +105,7 @@ export default function Expeditions() {
       </div>
       
       <div className="mb-[100px] max-sm:hidden ">
-      <Link href={'/contact'}><Image
+      <Link href={'/customtrek'}><Image
   src="https://res.cloudinary.com/anuragprasoon/image/upload/v1745615313/adventurecallout_kdpc4k.png"
   alt="Adventure Callout"
   width={1200}
@@ -77,7 +116,7 @@ export default function Expeditions() {
 </div>
 
 <div className="sm:hidden mb-[50px]">
-      <Link href={'/contact'}><Image
+      <Link href={'//customtrek'}><Image
   src="https://res.cloudinary.com/anuragprasoon/image/upload/v1745647359/adventurecallout-md_peiee0.png"
   alt="Adventure Callout"
   width={1200} // Original width of the image

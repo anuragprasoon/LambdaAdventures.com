@@ -58,25 +58,22 @@ const Footer: React.FC = () => {
                 <Link href={'https://sacredpause.in'}>Yoga Retreat</Link>
               </div>
               <div className="mt-6 hover:text-white transition-colors cursor-pointer">
-                Adventure Camps
-              </div>
-              <div className="mt-6 hover:text-white transition-colors cursor-pointer">
-                Custom Treks
+                <Link href={'/customtrek'}>Custom Trips</Link>
               </div>
             </div>
             <div className="max-md:hidden">
-              <h3 className="text-white font-bold">Upcoming Treks</h3>
+              <h3 className="text-white font-bold">Treks & Expeditions</h3>
               <div className="mt-6 hover:text-white transition-colors cursor-pointer">
-                Brahmatal Trek
+                <Link href={'/trek/79'}>Everest Base Camp</Link>
               </div>
               <div className="mt-6 hover:text-white transition-colors cursor-pointer">
-                Chandrashila Tungnath
+                <Link href={'/trek/78'}>Ali Bedni Bugyal</Link>
               </div>
               <div className="mt-6 hover:text-white transition-colors cursor-pointer">
-                Kedarkantha
+                <Link href={'/trek/91'}> Chandrakhani Pass </Link>
               </div>
               <div className="mt-6 hover:text-white transition-colors cursor-pointer">
-                Kuari Pass Trek
+               <Link href={'/trek/81'}>Beas Kund</Link>
               </div>
             </div>
           </div>

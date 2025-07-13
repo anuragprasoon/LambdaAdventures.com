@@ -9,7 +9,7 @@ interface FilterTabsProps {
 
 export const FilterTabs: React.FC<FilterTabsProps> = ({ 
   onFilterChange, 
-  initialFilter = "all" 
+  initialFilter = "treks" 
 }) => {
   const [activeFilter, setActiveFilter] = useState<FilterOption>(initialFilter);
 
