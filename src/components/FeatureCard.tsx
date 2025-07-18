@@ -2,6 +2,7 @@ import React from "react";
 import AOS from "aos";
 import { useEffect } from "react";
 import 'aos/dist/aos.css'
+import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 
 
 
@@ -26,10 +27,11 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
 
   return (
     <div className="border flex min-h-[327px] grow flex-col overflow-hidden items-stretch text-center justify-center px-5 py-[20px] rounded-[20px] hover:shadow-md transition-shadow">
-      <img
+      <DotLottieReact
         src={iconSrc}
-        alt={title}
-        className="aspect-[1] object-contain w-[63px] self-center"
+        loop
+        autoplay
+        className="aspect-[1] object-contain w-[63px] self-center bg-[rgba(1,124,109,1)] p-5 rounded-full"
       />
       <div className="w-full mt-2.5 px-2.5">
         <h3 className="text-[rgba(1,124,109,1)] text-[20px] font-semibold leading-[31px]">

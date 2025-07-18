@@ -13,7 +13,6 @@ const TrekCategories = () => {
 },[]) 
 
   const categories = {
-    "Trending":[],
     "Weekend Treks": [
       { label: "3 Day Treks", img: "https://res.cloudinary.com/anuragprasoon/image/upload/v1752374551/lambda-adventures/trip_thumb/AliandBedniBugyal.webp" },
       { label: "5 Day Treks", img: "https://res.cloudinary.com/anuragprasoon/image/upload/v1746992130/lambda-adventures/bb7a2675-a0e2-40f4-9550-5df531932665.png" },

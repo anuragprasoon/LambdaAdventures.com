@@ -28,7 +28,7 @@ const Header: React.FC = () => {
         <Link  href={'/expeditions'}>Expeditions</Link>
         </div>
         <div className="max-md:hidden self-stretch my-auto cursor-pointer hover:text-[rgba(1,124,109,1)]">
-        <Link  href={'/comingsoon'}>Bike Expeditions</Link>
+        <Link  href={'/bike'}>Bike Expeditions</Link>
         </div>
         <div className=" max-md:hidden self-stretch my-auto cursor-pointer hover:text-[rgba(1,124,109,1)]">
           <Link href={'https://sacredpause.in'}>Yoga Retreat</Link>
@@ -58,7 +58,7 @@ const Header: React.FC = () => {
           <Link href={'/expeditions'} onClick={()=>setIsOpen(false)}>Expeditions</Link>  
     </div>
     <div className=" cursor-pointer hover:text-black">
-          <Link href={'/comingsoon'} onClick={()=>setIsOpen(false)}>Bike Expedition</Link>  
+          <Link href={'/bike'} onClick={()=>setIsOpen(false)}>Bike Expedition</Link>  
     </div>
     <div className=" cursor-pointer hover:text-black">
           <Link href={'https://sacredpause.in'} onClick={()=>setIsOpen(false)}>Yoga Retreat</Link>  

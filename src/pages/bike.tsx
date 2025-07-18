@@ -14,14 +14,7 @@ import 'aos/dist/aos.css';
 
 
 
-
-
-
-
-
-
-
-export default function Expeditions() {
+export default function Bike() {
   const [searchQuery, setSearchQuery] = useState("");
   const [activeFilter, setActiveFilter] = useState<FilterOption>("expeditions");
   const [popularTreks, setPopularTreks] = useState<any[]>([]);
@@ -69,40 +62,72 @@ useEffect(()=>{
     return(
         <>
         <Head>
-        <title>Lambda Adventures - All Treks & Expeditions </title>
+        <title>Lambda Adventures - All Bikes </title>
         <meta name="description" content=" Lambda Adventures - India's trusted trekking and trip planning company. Experience expertly guided treks, personalized service, and unforgettable adventures across India. Join us for safe, authentic, and value-packed journeys that inspire and connect. Your next adventure starts here!" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       
       <div className="px-[6%]">
-      <HeroSection herotext="Move Mountains With Us" srcUrl="https://cdn.pixabay.com/video/2015/11/27/1408-147169812_medium.mp4" searchplaceholder="Search Expeditions"
+      <HeroSection herotext="Explore Our Bike Expeditions" srcUrl="https://res.cloudinary.com/anuragprasoon/video/upload/v1752800511/lambda-adventures/bike-exp.mp4" searchplaceholder="Search Bike Trips"
   searchQuery={searchQuery}
   setSearchQuery={setSearchQuery}
 />
-      <h2 className="text-4xl font-bold py-5 sm:px-10 text-black"> Discover</h2>
-      <ExpCategories/>
-      <h2 className="text-2xl font-semibold mt-5 sm:px-10 text-black"> Expeditions For You </h2>
-      <div className="flex w-full gap-[36px] justify-center mt-[20px] flex-wrap max-md:mt-5 pb-4 ml-auto mr-auto" >
-      {filteredTreks.length > 0 ? (
-          filteredTreks.map((trek, index) => (
-            <TrekCard 
-              key={index} 
-              idkey={trek.id}
-              imageSrc={trek.imageSrc} 
-              title={trek.title} 
-              location={trek.location} 
-              duration={trek.duration} 
-              distance={trek.distance} 
-              difficulty={trek.difficulty}
-            />
-          ))
-        ) : (
-          <div className="w-full text-center py-8 text-gray-500">
-            No adventures found for this category.
-          </div>
-        )}
+      <h2 className="sm:text-4xl text-2xl font-bold py-5 sm:px-10 text-black">All Our Bike Expeditions</h2>
+      <div className="flex w-full gap-[36px] justify-center flex-wrap max-md:mt-5 pb-4 ml-auto mr-auto ">
+        <TrekCard
+        key={1}
+        idkey={10}
+        imageSrc="https://images.pexels.com/photos/3392154/pexels-photo-3392154.jpeg"
+        title="Ladakh Bike Expedition"
+        location="Ladakh"
+        distance="500 km"
+        duration="10 Days"
+        difficulty="Moderate"
+        />
+
+        <TrekCard
+        key={2}                   
+        idkey={11}
+        imageSrc="https://images.pexels.com/photos/30255571/pexels-photo-30255571.jpeg"
+        title="Spiti Bike Expedition" 
+        location="Spiti"
+        distance="600 km"
+        duration="12 Days"
+        difficulty="Moderate"
+        />
+        <TrekCard
+        key={3}
+        idkey={12}
+        imageSrc="https://images.pexels.com/photos/4625460/pexels-photo-4625460.jpeg"
+        title="Jasalmair Bike Expedition"
+        location="Jasalmair"
+        distance="400 km"
+        duration="8 Days"
+        difficulty="Easy"
+        />
+        <TrekCard
+        key={4}
+        idkey={13}
+        imageSrc="https://images.pexels.com/photos/18358076/pexels-photo-18358076.jpeg"
+        title="North East Bike Expedition"
+        location="North East India"
+        distance="700 km"
+        duration="14 Days"
+        difficulty="Moderate"
+        />
+        <TrekCard
+        key={5}
+        idkey={14}
+        imageSrc="https://images.pexels.com/photos/14094513/pexels-photo-14094513.jpeg"
+        title="Nepal (Mustang) Bike Expedition"
+        location="Nepal"
+        distance="800 km"
+        duration="15 Days"
+        difficulty="Challenging"
+        />
       </div>
+    
       
       <div className="mb-[100px] max-sm:hidden ">
       <Link href={'/customtrek'}><Image

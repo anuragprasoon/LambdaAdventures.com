@@ -2,6 +2,9 @@ import React from "react";
 import Link from "next/link";
 
 const Footer: React.FC = () => {
+  const date= new Date();
+  const year=date.getFullYear();
+
   return <>
       <div className="bg-[rgba(2,7,10,1)] flex min-h-[222px] w-full mt-[104px] max-md:max-w-full max-md:mt-[0px]" />
       <div className="z-10 mt-[-326px] w-full max-md:max-w-full max-md:mt-[-200px]">
@@ -10,7 +13,7 @@ const Footer: React.FC = () => {
             <div className="max-w-full w-[285px] text-[14px] text-[rgba(188,188,188,1)] font-normal">
             <Link href={'/'}><img src="https://cdn.builder.io/api/v1/image/assets/TEMP/f5d86b31aeefa680477dfb00b45ee4bad0741df4?placeholderIfAbsent=true" alt="Footer Logo" className="aspect-[1.11] object-contain w-[59px]" /></Link>
               <div className="mt-6">
-                © 2025 Lambda Adventures
+                © {year} Lambda Adventures
                 <br />
                 All images are copyrighted by their respective authors.
               </div>
@@ -56,6 +59,9 @@ const Footer: React.FC = () => {
               </div>
               <div className="mt-6 hover:text-white transition-colors cursor-pointer">
                 <Link href={'https://sacredpause.in'}>Yoga Retreat</Link>
+              </div>
+              <div className="mt-6 hover:text-white transition-colors cursor-pointer">
+                <Link href={'/bike'}>Bike Expeditions</Link>
               </div>
               <div className="mt-6 hover:text-white transition-colors cursor-pointer">
                 <Link href={'/customtrek'}>Custom Trips</Link>

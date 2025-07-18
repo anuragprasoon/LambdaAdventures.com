@@ -1,14 +1,13 @@
 import React, { useState } from "react";
 
 const ExpCategories = () => {
-  const [activeTab, setActiveTab] = useState<any>("Trending");
 
   const categories = {
-    "Trending":[],
     "Height/Altitude": [
       { label: "0-1000m", img: "https://res.cloudinary.com/anuragprasoon/image/upload/v1752374551/lambda-adventures/trip_thumb/AliandBedniBugyal.webp" },
       { label: "1000-3000m", img: "https://res.cloudinary.com/anuragprasoon/image/upload/v1746992130/lambda-adventures/bb7a2675-a0e2-40f4-9550-5df531932665.png" },
       { label: "3000m+", img: "https://res.cloudinary.com/anuragprasoon/image/upload/v1746992253/lambda-adventures/f0dba2af-34f4-4900-ad8a-5fd63fa651d8.png" },
+      { label: "5000m+", img: "https://res.cloudinary.com/anuragprasoon/image/upload/v1746992253/lambda-adventures/f0dba2af-34f4-4900-ad8a-5fd63fa651d8.png" },
     ],
     "Difficulty": [
       { label: "Easy", img: "https://res.cloudinary.com/anuragprasoon/image/upload/v1752374551/lambda-adventures/trip_thumb/AliandBedniBugyal.webp" },
@@ -24,6 +23,8 @@ const ExpCategories = () => {
       { label: "Uttarakhand Treks", img: "your-image-url-6" },
     ]
   };
+
+  const [activeTab, setActiveTab] = useState<any>("Trending");
 
   return (
     <div className="sm:px-10">
@@ -60,7 +61,7 @@ const ExpCategories = () => {
       </div>
     ))
   ) : (
-    <div className="text-gray-500 italic px-4 py-6">
+    <div className="text-gray-500 italic">
     </div>
   )}
 </div>

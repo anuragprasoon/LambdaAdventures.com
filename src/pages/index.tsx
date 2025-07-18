@@ -163,19 +163,19 @@ const popularTreks = [{
 }];
 
 const features = [{
-  iconSrc: "https://cdn.builder.io/api/v1/image/assets/TEMP/35b29ad2017f182697e06c654cc76765ff7f857f",
+  iconSrc: "/Note.json",
   title: "Expertly Organized",
   description: "With years of experience, we plan every trek to perfection—ensuring a smooth, safe, and unforgettable adventure."
 }, {
-  iconSrc: "https://cdn.builder.io/api/v1/image/assets/TEMP/f9fde748476ec68c0fd7523185facd845b94e6d3",
+  iconSrc: "/Shield.json",
   title: "Scenic & Safe Routes",
   description: "We choose the best and safest trails, prioritizing your security while showcasing nature's finest views."
 }, {
-  iconSrc: "https://cdn.builder.io/api/v1/image/assets/TEMP/4fc371824c8eb26dccaf61c5b5e10b217943c420",
+  iconSrc: "/User.json",
   title: "Local Expert Guides",
   description: "Our friendly, knowledgeable guides are locals who offer deep insight into the region's culture, wildlife, and terrain."
 }, {
-  iconSrc: "https://cdn.builder.io/api/v1/image/assets/TEMP/b07c606800e261d8f5e2852dc83af300fc568a17",
+  iconSrc: "/Leaf.json",
   title: "Eco-Friendly Treks",
   description: "We trek responsibly—following sustainable practices to protect and preserve nature every step of the way."
 }];

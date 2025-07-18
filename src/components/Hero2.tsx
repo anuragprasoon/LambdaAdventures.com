@@ -3,10 +3,13 @@ import React, { useState, useEffect } from "react";
 interface HeroProps {
   searchQuery: string;
   setSearchQuery: React.Dispatch<React.SetStateAction<string>>;
+  herotext?: string;
+  searchplaceholder?: string;
+  srcUrl?: string;
 }
 
-export const HeroSection: React.FC<HeroProps> = ({ searchQuery, setSearchQuery }) => {
-  const [placeholder, setPlaceholder] = useState("Search Treks & Expeditions");
+export const HeroSection: React.FC<HeroProps> = ({ searchQuery, setSearchQuery, herotext, searchplaceholder, srcUrl }) => {
+  const [placeholder, setPlaceholder] = useState(searchplaceholder || "Search Treks & Expeditions");
 
   const phrases = [
     "Search Weekend Treks",
@@ -30,14 +33,19 @@ export const HeroSection: React.FC<HeroProps> = ({ searchQuery, setSearchQuery }
   return (
     <div className="self-center w-full text-white ">
       <div className="flex flex-col relative min-h-[329px] w-full items-center justify-center px-20 py-[59px] max-md:max-w-full max-md:px-5">
-        <img
-          src="https://res.cloudinary.com/anuragprasoon/image/upload/v1745677807/carousel3_f4saji.png"
-          alt="Adventure background"
+        <video
+          src={srcUrl || "https://res.cloudinary.com/anuragprasoon/video/upload/v1752800626/trek_qkh3di.mp4"}
+          autoPlay
+          loop
+          muted
+          playsInline
+          disablePictureInPicture
+          preload="auto"
           className="absolute h-full w-full object-cover inset-0 rounded-[19px]"
         />
         <div className="relative flex w-[777px] max-w-full flex-col items-stretch">
           <h1 className="text-[64px] font-bold leading-[60px] text-center max-md:max-w-full max-md:text-[40px] max-md:leading-[41px]">
-            Your Next Great Adventure Starts Here
+            {herotext || 'Your Next Great Adventure Starts Here'}
           </h1>
           <form
             onSubmit={handleSearch}

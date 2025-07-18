@@ -14,7 +14,9 @@ import TrekCategories from "@/components/trekcat";
 
 
 
+
 export default function Trek() {
+  const [searchQuery, setSearchQuery] = useState("");
   const [activeFilter, setActiveFilter] = useState<FilterOption>("all");
   const [popularTreks, setPopularTreks] = useState<any[]>([]);
 
@@ -33,13 +35,20 @@ export default function Trek() {
 }, []);
 
     
-    const filteredTreks = popularTreks.filter(trek => {
-      if (activeFilter === "all") return true;
-      if (activeFilter === "treks" && trek.type === "Trek") return true;
-      if (activeFilter === "expeditions" && trek.type === "Expeditions") return true;
-      if (activeFilter === "yoga" && trek.type === "Yoga Retreat") return true;
-      return false;
-    });
+   const filteredTreks = popularTreks.filter(trek => {
+  const matchesFilter =
+    activeFilter === "all" ||
+    (activeFilter === "treks" && trek.type === "Trek") ||
+    (activeFilter === "expeditions" && trek.type === "Expeditions") ||
+    (activeFilter === "yoga" && trek.type === "Yoga Retreat");
+
+  const matchesSearch =
+    trek.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    trek.location.toLowerCase().includes(searchQuery.toLowerCase());
+
+  return matchesFilter && matchesSearch;
+});
+
 
     const handleFilterChange = (filter: FilterOption) => {
       setActiveFilter(filter);
@@ -55,7 +64,10 @@ export default function Trek() {
       </Head>
       
       <div className="px-[6%]">
-      <HeroSection/>
+      <HeroSection srcUrl="https://res.cloudinary.com/anuragprasoon/video/upload/v1752800626/trek_qkh3di.mp4"
+  searchQuery={searchQuery}
+  setSearchQuery={setSearchQuery}
+/>
       <h2 className="text-4xl font-bold py-5 sm:px-10 text-black"> Discover </h2>
       <TrekCategories/>
       <h2 className="text-2xl font-semibold mt-5 sm:px-10 text-black"> Treks For You </h2>

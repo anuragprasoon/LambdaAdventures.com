@@ -49,3 +49,10 @@ a {
 .hide-scrollbar::-webkit-scrollbar {
   display: none;
 }
+
+@layer utilities {
+  .text-outline {
+    -webkit-text-stroke: 0.3px black;
+    color: white; /* or transparent for hollow text */
+  }
+}

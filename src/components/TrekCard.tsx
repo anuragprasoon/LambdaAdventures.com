@@ -3,6 +3,7 @@ import Link from "next/link";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useEffect } from "react";
+import CallIcon from '@mui/icons-material/Call';
 interface TrekCardProps {
   idkey: number;
   imageSrc: string;
@@ -53,9 +54,17 @@ const TrekCard: React.FC<TrekCardProps> = ({
           </div>
         </div>
       </div>
-      <button className="self-stretch bg-[rgba(1,124,109,1)] min-h-[49px] w-full gap-[3px] text-base text-white font-bold leading-loose mt-3 px-[26px] py-3 rounded-xl max-md:px-5 hover:bg-[rgba(1,104,89,1)] transition-colors">
-        <Link href={`/trek/${idkey}`}>Book Now</Link>
+      <div class="flex w-full justify-center mt-3 p-[1px] gap-1">
+        <Link href="tel:+919065550642" className="self-stretch h-full">
+        <button className=" min-h-[49px] gap-[3px] text-base text-[rgba(1,104,89,1)] font-bold leading-loose mt-3 px-4 py-3  rounded-xl  hover:bg-[rgba(1,104,89,1)] outline-1 outline-[rgba(1,104,89,1)] hover:text-white transition-colors">
+        <CallIcon/>
       </button>
+      </Link>
+      <Link href={`/trek/${idkey}`} className="self-stretch w-full">
+      <button className="self-stretch bg-[rgba(1,124,109,1)] min-h-[49px] w-full gap-[3px] text-base text-white font-bold leading-loose mt-3 px-[26px] py-3 rounded-xl max-md:px-5 hover:bg-[rgba(1,104,89,1)] transition-colors">
+        Book Now</button>
+      </Link>
+      </div>
     </div>;
 };
 export default TrekCard;

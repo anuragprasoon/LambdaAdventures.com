@@ -1,9 +1,12 @@
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 const Hero: React.FC = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const images = ["https://res.cloudinary.com/anuragprasoon/image/upload/v1745677813/carousel1_zb49us.png","https://res.cloudinary.com/anuragprasoon/image/upload/v1745677807/carousel2_ogw8bo.png", "https://res.cloudinary.com/anuragprasoon/image/upload/v1745677807/carousel3_f4saji.png"];
+  const images = ["https://cdn.pixabay.com/video/2025/02/16/258656_large.mp4"];
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -12,6 +15,10 @@ const Hero: React.FC = () => {
     return () => clearInterval(interval);
   }, []);
 
+  
+    useEffect(()=>{
+    AOS.init();
+  },[]);
 
   const goToImage = (index: number) => {
     setCurrentImageIndex(index);
@@ -20,14 +27,17 @@ const Hero: React.FC = () => {
       <div className="self-stretch min-w-60 w-[1361px] my-auto rounded-[19px]">
         <div className="t-0 flex flex-col relative w-full items-center pt-[147px] pb-[41px] px-20 rounded-[19px] max-md:max-w-full max-md:pt-[100px] max-md:px-5">
           <div className="carousel-container absolute inset-0 w-full h-full overflow-hidden rounded-[19px]">
-            {images.map((src, index) => <Image key={index} width={1311} height={600} src={src} alt={`Hero Background ${index + 1}`} className={`absolute h-[500px] w-full object-cover object-center inset-0 transition-opacity rounded-[19px] duration-1000 ${index === currentImageIndex ? 'opacity-100' : 'opacity-0'}`} />)}
+            {images.map((src, index) => <video key={index} width={1311} height={600} src={src} alt={`Hero Background ${index + 1}`} className={`absolute h-[500px] w-full object-cover object-center inset-0 transition-opacity rounded-[19px] duration-1000 ${index === currentImageIndex ? 'opacity-100' : 'opacity-0'}`} autoPlay loop muted
+          playsInline
+          disablePictureInPicture
+          preload="auto"/>)}
           </div>
           <div className="z-0 flex w-[773px] max-w-full flex-col mt-[-70px] max-md:mt-[-30px] rounded-[19px]">
             <div className="w-full text-white text-left max-md:max-w-full">
-              <h1 className="text-[73px] font-extrabold italic leading-[80px] max-md:max-w-full max-md:text-[40px] max-md:leading-[48px] max-sd:text-[20px] text-center">EXPLORE<br/>
+              <h1 className="text-[73px]  drop-shadow-[0_1px_1px_rgba(0,0,0,0.8)] font-extrabold urbanist leading-[80px] max-md:max-w-full max-md:text-[40px] max-md:leading-[48px] max-sd:text-[20px] text-center">EXPLORE<br/>
 EXPERIENCE<br/> 
 EVOLVE</h1>
-              <p className="text-lg font-normal text-center">
+              <p className="text-lg font-bold max-sm:text-black text-center">
                 with India's Best Trekking Organization
               </p>
               <div className="w-full flex justify-center items-center">

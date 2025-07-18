@@ -10,7 +10,7 @@ const PopUp:React.FC=()=>{
     useEffect(()=>{
         setTimeout(()=>{
             setPopview(true);
-        },5000)
+        },15000)
     },[])
 
 
