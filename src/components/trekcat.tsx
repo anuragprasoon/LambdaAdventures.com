@@ -35,6 +35,7 @@ const TrekCategories = () => {
 
   return (
     <div className="sm:px-10">
+      {/** 
       <div className="w-full flex gap-5 overflow-x-auto content-center">
         {Object.keys(categories).map((tab) => (
           <span
@@ -51,7 +52,7 @@ const TrekCategories = () => {
         ))}
       </div>
 
-      {/* Selected Category Content */}
+    
       <div className="flex gap-5 mt-3 overflow-x-auto hide-scrollbar" >
         {categories[activeTab].map((item, idx) => (
           <div key={idx} className="relative w-[200px] h-[100px] rounded" data-aos="fade-down">
@@ -66,6 +67,7 @@ const TrekCategories = () => {
           </div>
         ))}
       </div>
+      */}
     </div>
   );
 };

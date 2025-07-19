@@ -24,12 +24,12 @@ const ExpCategories = () => {
     ]
   };
 
-  const [activeTab, setActiveTab] = useState<any>("Height/Altitude");
+  const [activeTab, setActiveTab] = useState("Height/Altitude");
 
   return (
     <div className="sm:px-10">
-      {/* Tabs */}
-      <div className="w-full flex gap-5 overflow-x-auto content-center">
+
+      {/**<div className="w-full flex gap-5 overflow-x-auto content-center">
         {Object.keys(categories).map((tab) => (
           <span
             key={tab}
@@ -45,7 +45,6 @@ const ExpCategories = () => {
         ))}
       </div>
 
-      {/* Selected Category Content */}
       <div className="flex gap-5 mt-3 overflow-x-auto hide-scrollbar">
   {Array.isArray(categories[activeTab]) && categories[activeTab].length > 0 ? (
     categories[activeTab].map((item, idx) => (
@@ -65,7 +64,7 @@ const ExpCategories = () => {
     </div>
   )}
 </div>
-
+*/}
     </div>
   );
 };
