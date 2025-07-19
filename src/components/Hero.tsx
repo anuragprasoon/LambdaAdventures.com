@@ -27,7 +27,7 @@ const Hero: React.FC = () => {
       <div className="self-stretch min-w-60 w-[1361px] my-auto rounded-[19px]">
         <div className="t-0 flex flex-col relative w-full items-center pt-[147px] pb-[41px] px-20 rounded-[19px] max-md:max-w-full max-md:pt-[100px] max-md:px-5">
           <div className="carousel-container absolute inset-0 w-full h-full overflow-hidden rounded-[19px]">
-            {images.map((src, index) => <video key={index} width={1311} height={600} src={src} alt={`Hero Background ${index + 1}`} className={`absolute h-[500px] w-full object-cover object-center inset-0 transition-opacity rounded-[19px] duration-1000 ${index === currentImageIndex ? 'opacity-100' : 'opacity-0'}`} autoPlay loop muted
+            {images.map((src, index) => <video key={index} width={1311} height={600} src={src} className={`absolute h-[500px] w-full object-cover object-center inset-0 transition-opacity rounded-[19px] duration-1000 ${index === currentImageIndex ? 'opacity-100' : 'opacity-0'}`} autoPlay loop muted
           playsInline
           disablePictureInPicture
           preload="auto"/>)}

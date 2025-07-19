@@ -6,7 +6,7 @@ import { useEffect } from "react";
 
 
 const TrekCategories = () => {
-  const [activeTab, setActiveTab] = useState<any>("Trending");
+  const [activeTab, setActiveTab] = useState<any>("Weekend Treks");
 
   useEffect(()=>{
   AOS.init();
@@ -35,7 +35,6 @@ const TrekCategories = () => {
 
   return (
     <div className="sm:px-10">
-      {/* Tabs */}
       <div className="w-full flex gap-5 overflow-x-auto content-center">
         {Object.keys(categories).map((tab) => (
           <span

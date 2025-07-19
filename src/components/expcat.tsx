@@ -24,7 +24,7 @@ const ExpCategories = () => {
     ]
   };
 
-  const [activeTab, setActiveTab] = useState<any>("Trending");
+  const [activeTab, setActiveTab] = useState<any>("Height/Altitude");
 
   return (
     <div className="sm:px-10">

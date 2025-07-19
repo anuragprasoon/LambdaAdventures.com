@@ -9,6 +9,7 @@ import Image from "next/image";
 import { useState,  useEffect } from 'react';
 import { type FilterOption } from "@/components/FilterTabs";
 import TrekCategories from "@/components/trekcat";
+import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 
 
 
@@ -69,8 +70,8 @@ export default function Trek() {
   setSearchQuery={setSearchQuery}
 />
       <h2 className="text-4xl font-bold py-5 sm:px-10 text-black"> Discover </h2>
-      <TrekCategories/>
-      <h2 className="text-2xl font-semibold mt-5 sm:px-10 text-black"> Treks For You </h2>
+      {/**<TrekCategories/>
+      <h2 className="text-2xl font-semibold mt-5 sm:px-10 text-black"> Treks For You </h2>*/}
       <div className="flex w-full gap-[36px] justify-center mt-[20px] flex-wrap max-md:mt-5 pb-4 ml-auto mr-auto">
       {filteredTreks.length > 0 ? (
           filteredTreks.map((trek, index) => (
@@ -87,7 +88,8 @@ export default function Trek() {
           ))
         ) : (
           <div className="w-full text-center py-8 text-gray-500">
-            No adventures found for this category.
+            <DotLottieReact src="/Scene-1.json" width="200px" height="200px" autoplay loop />
+            Hmmm... No treks found matching your criteria.
           </div>
         )}
       </div>

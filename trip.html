@@ -11,6 +11,20 @@ body {
 }
 </style>
 <body class="p-10">
+<div class="flex">
+        
+<div class="sm:p-10 min-w-[300px] relative">
+  <div class="p-5 sm:border-1 rounded-md fixed">
+      <div class="sm:hidden text-2xl font-semibold mb-3">{trip.titles}</div>
+      <div class=" sm:text-lg"><i class="fa-solid fa-location-dot"></i> {trip.location}</div>
+      <div class=" sm:text-lg"><i class="fa-regular fa-clock"></i>  {trip.duration}</div>
+      <div class=" sm:text-lg"><i class="fa-regular fa-compass"></i> {trip.distance}</div>
+      <div class=" sm:text-lg"><i class="fa-regular fa-map"></i> {trip.difficulty}</div>
+  <button class="block w-full rounded-sm p-2 bg-[#017C6D] mt-1 text-white font-bold" onClick={()=> setShowModal(true)}>Book Now</button>
+  </div>
+  </div>
+
+<div class="w-[70%] order-first">
 <img class="w-full h-[500px] object-cover rounded mb-4" src="https://images.pexels.com/photos/5201435/pexels-photo-5201435.jpeg"/>
 <h1 class="text-3xl font-bold p-4">Trip Name</h1>
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent volutpat justo nec arcu fermentum, non eleifend lectus tempor. In rutrum metus a nunc gravida, at laoreet sem pharetra. Vivamus finibus metus sed nisi bibendum, vel vehicula velit iaculis. Etiam nec rhoncus nibh. Sed fringilla nisi vel odio lacinia, sit amet vestibulum justo dictum. Quisque eget velit et augue sagittis ullamcorper. Suspendisse nec vestibulum felis.</p>
@@ -79,6 +93,8 @@ block
   <li>Item Two</li>
   <li>Item Three</li>
 </ul>
+</div>
 
+</div>
 </body>
 </html>

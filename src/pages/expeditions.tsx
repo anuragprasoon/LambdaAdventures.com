@@ -81,8 +81,8 @@ useEffect(()=>{
   setSearchQuery={setSearchQuery}
 />
       <h2 className="text-4xl font-bold py-5 sm:px-10 text-black"> Discover</h2>
-      <ExpCategories/>
-      <h2 className="text-2xl font-semibold mt-5 sm:px-10 text-black"> Expeditions For You </h2>
+      {/**<ExpCategories/>
+      <h2 className="text-2xl font-semibold mt-5 sm:px-10 text-black"> Expeditions For You </h2>*/}
       <div className="flex w-full gap-[36px] justify-center mt-[20px] flex-wrap max-md:mt-5 pb-4 ml-auto mr-auto" >
       {filteredTreks.length > 0 ? (
           filteredTreks.map((trek, index) => (

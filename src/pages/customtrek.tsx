@@ -19,7 +19,7 @@ export default function CustomTrek() {
 
 <div className=" w-[360px] ml-auto mr-auto">
 <h3 className=" font-bold text-[24px] mb-3">Custom Trip</h3>
-  <form>
+  <form >
     <input className="urbanist rounded p-2 w-full outline-1 outline-black mb-3"type="text" placeholder="Name"/>
     <input className="urbanist rounded p-2 w-full outline-1 outline-black mb-3"type="number" placeholder="Phone"/>
     <input className="urbanist rounded p-2 w-full outline-1 outline-black mb-3"type="email" placeholder="E-Mail"/>
