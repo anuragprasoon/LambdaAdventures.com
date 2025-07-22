@@ -230,6 +230,7 @@ export default function DynamicTrek() {
 <div className="max-sm:hidden min-w-[300px] sm:w-[30%] ">
   <div className="p-5 border-1 rounded-md w-full">
       <div className="w-full text-2xl font-semibold mb-2">{trip.title}</div>
+      <div className="w-full text-2xl font-bold mb-2">{trip.price}</div>
       <div className=" sm:text-lg flex item-center mb-2"><LocationOnIcon className="text-[#017C6D] mr-3" /> <text>{trip.location}</text></div>
       <div className="  sm:text-lg flex item-center mb-2"><DateRangeIcon className="text-[#017C6D] mr-3" />  <text>{trip.duration}</text></div>
       <div className=" sm:text-lg flex  item-center mb-2"><MapIcon className="text-[#017C6D] mr-3" /><text>{trip.distance}</text></div>
@@ -243,7 +244,7 @@ export default function DynamicTrek() {
         <input className="urbanist rounded p-2 w-full outline-1 outline-black mb-3"type="text" placeholder="Name" name="name" value={formData.name} onChange={handleChange}/>
         <input className="urbanist rounded p-2 w-full outline-1 outline-black mb-3"type="number" placeholder="Phone" name="phone" value={formData.phone} onChange={handleChange}/>
         <input className="urbanist rounded p-2 w-full outline-1 outline-black mb-3"type="email" placeholder="E-Mail" name="email" value={formData.email} onChange={handleChange}/>
-        <input className="urbanist rounded p-2 w-full outline-1 outline-black mb-3"type="text" placeholder="Trip Location" name="address" value={formData.address} onChange={handleChange}/>
+        <input className="urbanist rounded p-2 w-full outline-1 outline-black mb-3"type="text" placeholder="Address" name="address" value={formData.address} onChange={handleChange}/>
         <input className="urbanist rounded p-2 w-full outline-1 outline-black mb-3"type="number" placeholder="No. of Passengers" name="passengers" value={formData.passengers} onChange={handleChange}/>
         <input className="urbanist rounded p-2 w-full outline-1 outline-black mb-3"type="text" placeholder="Trip Starting Date : mm/dd/yy" name="startDate" value={formData.startDate} onChange={handleChange}/>
         <input className="urbanist rounded p-2 w-full outline-1 outline-black mb-3"type="number" placeholder="No. of Days" name="day" value={formData.day} onChange={handleChange}/>
@@ -258,6 +259,7 @@ export default function DynamicTrek() {
 
 <h1 className="text-3xl font-bold py-4">{trip.title}</h1>
 <div className="sm:hidden rounded-md w-full mb-5">
+      <div className="w-full text-3xl font-bold mb-2">{trip.price}</div>
       <div className=" sm:text-lg flex item-center mb-2"><LocationOnIcon className="text-[#017C6D] mr-3" /> <text>{trip.location}</text></div>
       <div className="  sm:text-lg flex item-center mb-2"><DateRangeIcon className="text-[#017C6D] mr-3" />  <text>{trip.duration}</text></div>
       <div className=" sm:text-lg flex  item-center mb-2"><MapIcon className="text-[#017C6D] mr-3" /><text>{trip.distance}</text></div>

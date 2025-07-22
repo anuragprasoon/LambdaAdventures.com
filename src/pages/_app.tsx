@@ -28,7 +28,7 @@ export default function App({ Component, pageProps }: AppProps) {
     const handleComplete = () => {
       timeout = setTimeout(() => {
         setLoad(false);
-      }, 3000);
+      }, 1500);
     };
 
     router.events.on('routeChangeStart', handleStart);

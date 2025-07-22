@@ -77,7 +77,7 @@ useEffect(()=>{
       <div className="flex w-full gap-[36px] justify-center flex-wrap max-md:mt-5 pb-4 ml-auto mr-auto ">
         <TrekCard
         key={1}
-        idkey={10}
+        idkey={129}
         imageSrc="https://images.pexels.com/photos/3392154/pexels-photo-3392154.jpeg"
         title="Ladakh Bike Expedition"
         location="Ladakh"
@@ -88,7 +88,7 @@ useEffect(()=>{
 
         <TrekCard
         key={2}                   
-        idkey={11}
+        idkey={126}
         imageSrc="https://images.pexels.com/photos/30255571/pexels-photo-30255571.jpeg"
         title="Spiti Bike Expedition" 
         location="Spiti"
@@ -98,7 +98,7 @@ useEffect(()=>{
         />
         <TrekCard
         key={3}
-        idkey={12}
+        idkey={124}
         imageSrc="https://images.pexels.com/photos/4625460/pexels-photo-4625460.jpeg"
         title="Jasalmair Bike Expedition"
         location="Jasalmair"
@@ -108,9 +108,9 @@ useEffect(()=>{
         />
         <TrekCard
         key={4}
-        idkey={13}
+        idkey={125}
         imageSrc="https://images.pexels.com/photos/18358076/pexels-photo-18358076.jpeg"
-        title="North East Bike Expedition"
+        title="North East (Tawang) Bike Expedition"
         location="North East India"
         distance="700 km"
         duration="14 Days"
@@ -118,7 +118,7 @@ useEffect(()=>{
         />
         <TrekCard
         key={5}
-        idkey={14}
+        idkey={128}
         imageSrc="https://images.pexels.com/photos/14094513/pexels-photo-14094513.jpeg"
         title="Nepal (Mustang) Bike Expedition"
         location="Nepal"
