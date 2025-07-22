@@ -1,10 +1,20 @@
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
+import { Poppins } from "next/font/google";
 import Image from "next/image";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
+const poppins = Poppins({
+  subsets: ['latin'],
+  display: 'swap',
+  weight: ['400', '700'],
+});
+
 const Hero: React.FC = () => {
+
+  
+
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const images = ["https://cdn.pixabay.com/video/2025/02/16/258656_large.mp4"];
 
@@ -34,9 +44,9 @@ const Hero: React.FC = () => {
           </div>
           <div className="z-0 flex w-[773px] max-w-full flex-col mt-[-70px] max-md:mt-[-30px] rounded-[19px]">
             <div className="w-full text-white text-left max-md:max-w-full">
-              <h1 className="text-[73px]  drop-shadow-[0_1px_1px_rgba(0,0,0,0.8)] font-extrabold urbanist leading-[80px] max-md:max-w-full max-md:text-[40px] max-md:leading-[48px] max-sd:text-[20px] text-center">EXPLORE<br/>
+              <h1 className="text-[73px]  drop-shadow-[0_1px_1px_rgba(0,0,0,0.8)] font-extrabold urbanist leading-[80px] max-md:max-w-full max-md:text-[40px] max-md:leading-[48px] max-sd:text-[20px] text-center"><text className={poppins.className}>EXPLORE<br/>
 EXPERIENCE<br/> 
-EVOLVE</h1>
+EVOLVE</text></h1>
               <p className="text-lg font-bold max-sm:text-black text-center">
                 with India's Best Trekking Organization
               </p>

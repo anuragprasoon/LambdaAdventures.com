@@ -201,7 +201,7 @@ export default function Home() {
         <h1 className="text-[rgba(1,124,109,1)] text-4xl font-bold leading-none text-center max-md:max-w-full max-md:text-[28px] mt-10" data-aos="slide-right">
           Our Travel Stories
       </h1>
-        <div className="flex py-[40px] w-full justify-between gap-5 overflow-x-auto [&::-webkit-scrollbar]:hidden max-md:max-w-full">
+        <div className="flex py-[40px] w-full justify-between gap-5 overflow-y-none overflow-x-auto [&::-webkit-scrollbar]:hidden max-md:max-w-full">
           <div className="relative w-full" data-aos="slide-right">
           <img src="https://res.cloudinary.com/dibrmj6nh/image/upload/v1745909231/Chandratal-Trek_iudmmv.webp" className=" h-[400px] hidden"/>
 

@@ -19,8 +19,18 @@ export default function App({ Component, pageProps }: AppProps) {
   const [isload, setLoad]=useState(false);
 
   useEffect(() => {
-    const handleStart = () => setLoad(true);
-    const handleComplete = () => setLoad(false);
+    let timeout: NodeJS.Timeout | null = null;
+
+    const handleStart = () => {
+      setLoad(true);
+    };
+
+    const handleComplete = () => {
+      timeout = setTimeout(() => {
+        setLoad(false);
+      }, 3000);
+    };
+
     router.events.on('routeChangeStart', handleStart);
     router.events.on('routeChangeComplete', handleComplete);
     router.events.on('routeChangeError', handleComplete);

@@ -11,8 +11,82 @@ import DateRangeIcon from '@mui/icons-material/DateRange';
 import MapIcon from '@mui/icons-material/Map';
 import SpeedIcon from '@mui/icons-material/Speed';
 import Link from "next/link";
+import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 
 export default function DynamicTrek() {
+
+  const [showAnimation, setShowAnimation] = useState(false);
+  const [popup, setPopup] = useState(false);
+
+  const popOpen = () => {
+    setPopup(true);
+  };
+
+  const [formData, setFormData] = useState({
+          name: "",
+          phone: "",
+          email: "",
+          address:"",
+          passengers: "",
+          startDate:"",
+          day:"",
+          night:"",
+        });
+  
+  const handleChange = (
+          e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+        ) => {
+          const { name, value } = e.target;
+          setFormData((prev) => ({
+            ...prev,
+            [name]: value,
+          }));
+        };
+      
+        const handleSubmit = async (e: React.FormEvent) => {
+          e.preventDefault();
+
+          setShowAnimation(true);
+          
+          const res = await fetch("/api/query", { 
+            method: "POST", headers: {
+            "Content-Type": "application/json"},
+            body: JSON.stringify({
+              name: formData.name,
+              phone: formData.phone,
+              email: formData.email,
+              address: formData.address,
+              passengers: formData.passengers,
+              startDate: formData.startDate,
+              day: formData.day,
+              night: formData.night,
+              tripid: trip.id,
+            })
+        });
+        
+        
+        setTimeout(() => setShowAnimation(false), 2500);
+        setPopup(false);
+        console.log("Form submitted:", formData);
+        alert("Thank You! Your Message has been sent");
+      
+          setFormData({
+            name: "",
+            phone: "",
+            email: "",
+            address:"",
+            passengers: "",
+            startDate:"",
+            day:"",
+            night:"",
+          });
+          
+  
+        };
+
+        
+
+
   const popularTreks = [{
   "id":79,
   "imageSrc": "https://res.cloudinary.com/dibrmj6nh/image/upload/v1745905052/Everest-Base-Camp_exwewg.webp",
@@ -91,6 +165,7 @@ export default function DynamicTrek() {
 
     fetchTrip();
   }, [id]);
+  
 
   const handlePayment = async () => {
     const price = trip?.price || 1000;
@@ -127,7 +202,29 @@ export default function DynamicTrek() {
         <meta property="og:image" content={trip.imageSrc} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
+      {showAnimation ? (
+              <div className="flex justify-center items-center h-[250px]">
+                <DotLottieReact src="/Scene-1.json" width="200px" height="200px" autoplay loop />
+              </div>
+            ) : (
+              <div>
+      { Boolean(popup) && (
+        <div className="absolute fixed z-[2] top-10  p-10 rounded w-[70%] left-0 right-0 mx-auto text-black bg-white w-full">
+          <button className="bg-white rounded-full text-bold m-2 absolute top-10 right-10" onClick={e => setPopup(false)}>X</button>
+      <h3 className=" font-semibold text-[24px] mb-3" id="plan-trip">Plan A Trip with Us Now</h3>
+      <form onSubmit={handleSubmit}>
+        <input className="urbanist rounded p-2 w-full outline-1 outline-black mb-3"type="text" placeholder="Name" name="name" value={formData.name} onChange={handleChange}/>
+        <input className="urbanist rounded p-2 w-full outline-1 outline-black mb-3"type="number" placeholder="Phone" name="phone" value={formData.phone} onChange={handleChange}/>
+        <input className="urbanist rounded p-2 w-full outline-1 outline-black mb-3"type="email" placeholder="E-Mail" name="email" value={formData.email} onChange={handleChange}/>
+        <input className="urbanist rounded p-2 w-full outline-1 outline-black mb-3"type="text" placeholder="Trip Location" name="address" value={formData.address} onChange={handleChange}/>
+        <input className="urbanist rounded p-2 w-full outline-1 outline-black mb-3"type="number" placeholder="No. of Passengers" name="passengers" value={formData.passengers} onChange={handleChange}/>
+        <input className="urbanist rounded p-2 w-full outline-1 outline-black mb-3"type="text" placeholder="Trip Starting Date : mm/dd/yy" name="startDate" value={formData.startDate} onChange={handleChange}/>
+        <input className="urbanist rounded p-2 w-full outline-1 outline-black mb-3"type="number" placeholder="No. of Days" name="day" value={formData.day} onChange={handleChange}/>
+        <input className="urbanist rounded p-2 w-full outline-1 outline-black mb-3"type="number" placeholder="No. of Nights" name="night" value={formData.night} onChange={handleChange}/>
+        <button className="bg-[#017C6D] text-white p-2 w-[150px] rounded w-full" type="submit">Send Enquiry</button>
+     </form>
+  </div>
+            )}
       <div className="sm:flex gap-5 px-10 text-black">
 
 <div className="max-sm:hidden min-w-[300px] sm:w-[30%] ">
@@ -138,20 +235,19 @@ export default function DynamicTrek() {
       <div className=" sm:text-lg flex  item-center mb-2"><MapIcon className="text-[#017C6D] mr-3" /><text>{trip.distance}</text></div>
       <div className=" sm:text-lg flex  item-center mb-2"><SpeedIcon className="text-[#017C6D] mr-3" /> <text>{trip.difficulty}</text></div>
       <Link href="/customtrek"><button className="block w-full rounded-sm p-2 mb-2 border-1 border-[#017C6D] mt-1 text-[#017C6D] font-bold">Request A Custom Trip</button></Link>
-      <Link href="#plan-trip"><button className="block w-full rounded-sm p-2 bg-[#017C6D] mt-1 text-white font-bold">Send A Enquiry</button></Link>
-
+      <Link href="#plan-trip"><button className="max-sm:hidden block w-full rounded-sm p-2 bg-[#017C6D] mt-1 text-white font-bold">Send A Enquiry</button></Link>
   </div>
   <div className="max-sm:hidden p-5 mt-5 border-1 rounded-md">
       <h3 className=" font-semibold text-[24px] mb-3" id="plan-trip">Plan A Trip with Us Now</h3>
-      <form >
-        <input className="urbanist rounded p-2 w-full outline-1 outline-black mb-3"type="text" placeholder="Name"/>
-        <input className="urbanist rounded p-2 w-full outline-1 outline-black mb-3"type="number" placeholder="Phone"/>
-        <input className="urbanist rounded p-2 w-full outline-1 outline-black mb-3"type="email" placeholder="E-Mail"/>
-        <input className="urbanist rounded p-2 w-full outline-1 outline-black mb-3"type="text" placeholder="Trip Location"/>
-        <input className="urbanist rounded p-2 w-full outline-1 outline-black mb-3"type="number" placeholder="No. of Passengers"/>
-        <input className="urbanist rounded p-2 w-full outline-1 outline-black mb-3"type="text" placeholder="Trip Starting Date : mm/dd/yy"/>
-        <input className="urbanist rounded p-2 w-full outline-1 outline-black mb-3"type="number" placeholder="No. of Days"/>
-        <input className="urbanist rounded p-2 w-full outline-1 outline-black mb-3"type="number" placeholder="No. of Nights"/>
+      <form onSubmit={handleSubmit}>
+        <input className="urbanist rounded p-2 w-full outline-1 outline-black mb-3"type="text" placeholder="Name" name="name" value={formData.name} onChange={handleChange}/>
+        <input className="urbanist rounded p-2 w-full outline-1 outline-black mb-3"type="number" placeholder="Phone" name="phone" value={formData.phone} onChange={handleChange}/>
+        <input className="urbanist rounded p-2 w-full outline-1 outline-black mb-3"type="email" placeholder="E-Mail" name="email" value={formData.email} onChange={handleChange}/>
+        <input className="urbanist rounded p-2 w-full outline-1 outline-black mb-3"type="text" placeholder="Trip Location" name="address" value={formData.address} onChange={handleChange}/>
+        <input className="urbanist rounded p-2 w-full outline-1 outline-black mb-3"type="number" placeholder="No. of Passengers" name="passengers" value={formData.passengers} onChange={handleChange}/>
+        <input className="urbanist rounded p-2 w-full outline-1 outline-black mb-3"type="text" placeholder="Trip Starting Date : mm/dd/yy" name="startDate" value={formData.startDate} onChange={handleChange}/>
+        <input className="urbanist rounded p-2 w-full outline-1 outline-black mb-3"type="number" placeholder="No. of Days" name="day" value={formData.day} onChange={handleChange}/>
+        <input className="urbanist rounded p-2 w-full outline-1 outline-black mb-3"type="number" placeholder="No. of Nights" name="night" value={formData.night} onChange={handleChange}/>
         <button className="bg-[#017C6D] text-white p-2 w-[150px] rounded w-full" type="submit">Send Enquiry</button>
      </form>
   </div>
@@ -167,70 +263,47 @@ export default function DynamicTrek() {
       <div className=" sm:text-lg flex  item-center mb-2"><MapIcon className="text-[#017C6D] mr-3" /><text>{trip.distance}</text></div>
       <div className=" sm:text-lg flex  item-center mb-2"><SpeedIcon className="text-[#017C6D] mr-3" /> <text>{trip.difficulty}</text></div>
       <Link href="/customtrek"><button className="block w-full rounded-sm p-2 mb-2 border-1 border-[#017C6D] mt-1 text-[#017C6D] font-bold">Request A Custom Trip</button></Link>
-      <button className="block w-full rounded-sm p-2 bg-[#017C6D] mt-1 text-white font-bold">Book Now</button>
+      <button className="sm:hidden block w-full rounded-sm p-2 bg-[#017C6D] mt-1 text-white font-bold" onClick={popOpen}>Send A Enquiry</button>
 
   </div>
  <p>{trip.description}</p><br/>
-
-<p>Aliquam erat volutpat. Integer ac felis at sem congue maximus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec congue tincidunt libero, nec posuere libero. Ut sed blandit nulla. Morbi eu tortor rhoncus, eleifend libero sit amet, congue nulla. Sed auctor imperdiet orci, a tristique lorem consequat a. Nunc suscipit ante a nisi placerat, in pretium sapien convallis.</p>
-
 <h2 className="mt-4 text-3xl font-bold py-4">What's Inside the Package?</h2>
 <div className="sm:flex mb-4  rounded gap-2">
 
 	<div className=" p-5 rounded">
     	<h3 className="text-2xl font-bold mb-3">Inclusions</h3>
-        <div className="flex items-center">
-        	<CheckCircle className="text-[#175725] mr-3" /><text>3 nights stay in Maldives with breakfast, lunch, and dinner</text>
+      { trip.inclusions && trip.inclusions.map((inclusion: string, index: number) => (
+        <div className="flex items-center" key={index}>
+          <CheckCircle className="text-[#175725] mr-3" />
+          <text>{inclusion}</text>
         </div>
-
-        <div className="flex items-center">
-        <CheckCircle className="text-[#175725] mr-3" /><text>3 nights stay in Maldives with breakfast, lunch, and dinner</text>
-        </div>
-
-        <div className="flex items-center">
-        	<CheckCircle className="text-[#175725] mr-3" /><text>3 nights stay in Maldives with breakfast, lunch, and dinner</text>
-        </div>
-
-        <div className="flex items-center">
-        	<CheckCircle className="text-[#175725] mr-3" /><text>3 nights stay in Maldives with breakfast, lunch, and dinner</text>
-        </div>
-        <div className="flex items-center">
-        	<CheckCircle className="text-[#175725] mr-3" /><text>3 nights stay in Maldives with breakfast, lunch, and dinner</text>
-        </div>
-        <div className="flex items-center">
-        	<CheckCircle className="text-[#175725] mr-3" /><text>3 nights stay in Maldives with breakfast, lunch, and dinner</text>
-        </div>
-        <div className="flex items-center">
-        	<CheckCircle className="text-[#175725] mr-3" /><text>3 nights stay in Maldives with breakfast, lunch, and dinner</text>
-        </div>
+      ))}
     </div>
 
     <div className="  p-5 rounded">
     	<h3 className="text-2xl font-bold mb-3">Exclusions</h3>
-        <div className="flex items-center">
-    <Block className="text-[#ff0000] mr-3" />
-        	<text>3 nights stay in Maldives with breakfast, lunch, and dinner</text>
-        </div>
-
-        <div className="flex items-center">
+      {trip.exclusions && trip.exclusions.map((exclusion:string, index:number)=>(
+        <div className="flex items-center" key={index}>
         <Block className="text-[#ff0000] mr-3" />
-        	<text>3 nights stay in Maldives with breakfast, lunch, and dinner</text>
+        	<text>{exclusion}</text>
         </div>
 
-        <div className="flex items-center">
-        	<Block className="text-[#ff0000] mr-3" /><text>3 nights stay in Maldives with breakfast, lunch, and dinner</text>
-        </div>
-        <div className="flex items-center">
-        	<Block className="text-[#ff0000] mr-3" /><text>3 nights stay in Maldives with breakfast, lunch, and dinner</text>
-        </div>
+      ))}
     </div>
 
 </div>
 <h2 className="text-3xl font-bold py-4">Know Before You Go</h2>
 <ul className="px-5 list-disc">
-  <li>Item One</li>
-  <li>Item Two</li>
-  <li>Item Three</li>
+  <li>Engage in regular cardiovascular exercises like hiking, jogging, or cycling to build stamina and endurance.</li>
+  <li>Incorporate strength training exercises to strengthen leg muscles and core stability.</li>
+  <li>Practice hiking with a loaded backpack to simulate trekking conditions.</li>
+  <li>Plan for at least a day or two of acclimatization in Lukla or nearby areas before starting the trek.</li>
+  <li>Stay hydrated and avoid alcohol and smoking to minimize the risk of altitude sickness.</li>
+   <li>Ascend gradually and listen to your body’s signals to recognize symptoms of altitude sickness.</li>
+  <li>Stay informed about weather forecasts and trail conditions before and during the trek.</li>
+  <li>Follow the guidance of experienced trekking guides and adhere to safety protocols at all times.</li>
+  <li>Stay together as a group, avoid straying off the designated trail, and be mindful of potential hazards like loose rocks, steep cliffs, or slippery surfaces.</li>
+  <li>Keep emergency contact information handy and communicate regularly with your trekking companions and support staff.</li>
 </ul>
 </div>
 
@@ -249,6 +322,9 @@ export default function DynamicTrek() {
           <img src="https://res.cloudinary.com/dibrmj6nh/image/upload/v1747946474/Frame_1597884222_xnchxt.png" className="w-[50px]"/>
         </a>
       </div>
+      </div>
+            )}
+            
     </>
   );
 }

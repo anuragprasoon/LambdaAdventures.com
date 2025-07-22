@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import Link from "next/link";
 
 const Footer: React.FC = () => {
@@ -7,6 +8,7 @@ const Footer: React.FC = () => {
 
   return <>
       <div className="bg-[rgba(2,7,10,1)] flex min-h-[222px] w-full mt-[104px] max-md:max-w-full max-md:mt-[0px]" />
+  
       <div className="z-10 mt-[-326px] w-full max-md:max-w-full max-md:mt-[-200px]">
         <div className="bg-[rgba(2,7,10,1)] flex min-h-[406px] w-full flex-wrap px-6 py-[60px] max-md:max-w-full max-md:px-5">
           <div className="max-md:mb-[30px] flex min-w-60 flex-col items-stretch grow shrink w-[279px] px-8 max-md:px-5">
