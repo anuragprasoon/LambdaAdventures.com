@@ -68,6 +68,9 @@ const Footer: React.FC = () => {
               <div className="mt-6 hover:text-white transition-colors cursor-pointer">
                 <Link href={'/customtrek'}>Custom Trips</Link>
               </div>
+              <div className="mt-6 hover:text-white transition-colors cursor-pointer">
+                <Link href="https://drive.google.com/file/d/17G5KArepCtFCE7ps8tizF34dtDUqgKoG/view">Our Brochure</Link>
+              </div>
             </div>
             <div className="max-md:hidden">
               <h3 className="text-white font-bold">Treks & Expeditions</h3>
