@@ -213,22 +213,22 @@ export default function DynamicTrek() {
           <button className="bg-white rounded-full text-bold m-2 absolute top-10 right-10" onClick={e => setPopup(false)}>X</button>
       <h3 className=" font-semibold text-[24px] mb-3" id="plan-trip">Plan A Trip with Us Now</h3>
       <form onSubmit={handleSubmit}>
-        <input className="urbanist rounded p-2 w-full outline-1 outline-black mb-3"type="text" placeholder="Name" name="name" value={formData.name} onChange={handleChange}/>
-        <input className="urbanist rounded p-2 w-full outline-1 outline-black mb-3"type="number" placeholder="Phone" name="phone" value={formData.phone} onChange={handleChange}/>
-        <input className="urbanist rounded p-2 w-full outline-1 outline-black mb-3"type="email" placeholder="E-Mail" name="email" value={formData.email} onChange={handleChange}/>
-        <input className="urbanist rounded p-2 w-full outline-1 outline-black mb-3"type="text" placeholder="Trip Location" name="address" value={formData.address} onChange={handleChange}/>
-        <input className="urbanist rounded p-2 w-full outline-1 outline-black mb-3"type="number" placeholder="No. of Passengers" name="passengers" value={formData.passengers} onChange={handleChange}/>
-        <input className="urbanist rounded p-2 w-full outline-1 outline-black mb-3"type="text" placeholder="Trip Starting Date : mm/dd/yy" name="startDate" value={formData.startDate} onChange={handleChange}/>
-        <input className="urbanist rounded p-2 w-full outline-1 outline-black mb-3"type="number" placeholder="No. of Days" name="day" value={formData.day} onChange={handleChange}/>
-        <input className="urbanist rounded p-2 w-full outline-1 outline-black mb-3"type="number" placeholder="No. of Nights" name="night" value={formData.night} onChange={handleChange}/>
-        <button className="bg-[#017C6D] text-white p-2 w-[150px] rounded w-full" type="submit">Send Enquiry</button>
+        <input className="urbanist rounded p-2 w-full border-1 border-[#d7d7d9] mb-3"type="text" placeholder="Name" name="name" value={formData.name} onChange={handleChange}/>
+        <input className="urbanist rounded p-2 w-full border-1 border-[#d7d7d9] mb-3"type="number" placeholder="Phone" name="phone" value={formData.phone} onChange={handleChange}/>
+        <input className="urbanist rounded p-2 w-full border-1 border-[#d7d7d9] mb-3"type="email" placeholder="E-Mail" name="email" value={formData.email} onChange={handleChange}/>
+        <input className="urbanist rounded p-2 w-full border-1 border-[#d7d7d9] mb-3"type="text" placeholder="Trip Location" name="address" value={formData.address} onChange={handleChange}/>
+        <input className="urbanist rounded p-2 w-full border-1 border-[#d7d7d9] mb-3"type="number" placeholder="No. of Passengers" name="passengers" value={formData.passengers} onChange={handleChange}/>
+        <input className="urbanist rounded p-2 w-full border-1 border-[#d7d7d9] mb-3"type="text" placeholder="Trip Starting Date : mm/dd/yy" name="startDate" value={formData.startDate} onChange={handleChange}/>
+        <input className="urbanist rounded p-2 w-full border-1 border-[#d7d7d9] mb-3"type="number" placeholder="No. of Days" name="day" value={formData.day} onChange={handleChange}/>
+        <input className="urbanist rounded p-2 w-full border-1 border-[#d7d7d9] mb-3"type="number" placeholder="No. of Nights" name="night" value={formData.night} onChange={handleChange}/>
+        <button className="bg-[#017C6D] font-bold text-white p-2 w-[150px] rounded w-full" type="submit">Send Enquiry</button>
      </form>
   </div>
             )}
       <div className="sm:flex gap-5 px-10 text-black">
 
 <div className="max-sm:hidden min-w-[300px] sm:w-[30%] ">
-  <div className="p-5 border-1 rounded-md w-full">
+  <div className="p-5 border-1 rounded-md border-[#d7d7d9] w-full">
       <div className="w-full text-2xl font-semibold mb-2">{trip.title}</div>
       <div className="w-full text-2xl font-bold mb-2">{trip.price}</div>
       <div className=" sm:text-lg flex item-center mb-2"><LocationOnIcon className="text-[#017C6D] mr-3" /> <text>{trip.location}</text></div>
@@ -238,18 +238,19 @@ export default function DynamicTrek() {
       <Link href="/customtrek"><button className="block w-full rounded-sm p-2 mb-2 border-1 border-[#017C6D] mt-1 text-[#017C6D] font-bold">Request A Custom Trip</button></Link>
       <Link href="#plan-trip"><button className="max-sm:hidden block w-full rounded-sm p-2 bg-[#017C6D] mt-1 text-white font-bold">Send A Enquiry</button></Link>
   </div>
-  <div className="max-sm:hidden p-5 mt-5 border-1 rounded-md">
+  <div className="max-sm:hidden p-5 mt-5 border-1 border-[#d7d7d9] rounded-md">
       <h3 className=" font-semibold text-[24px] mb-3" id="plan-trip">Plan A Trip with Us Now</h3>
       <form onSubmit={handleSubmit}>
-        <input className="urbanist rounded p-2 w-full outline-1 outline-black mb-3"type="text" placeholder="Name" name="name" value={formData.name} onChange={handleChange}/>
-        <input className="urbanist rounded p-2 w-full outline-1 outline-black mb-3"type="number" placeholder="Phone" name="phone" value={formData.phone} onChange={handleChange}/>
-        <input className="urbanist rounded p-2 w-full outline-1 outline-black mb-3"type="email" placeholder="E-Mail" name="email" value={formData.email} onChange={handleChange}/>
-        <input className="urbanist rounded p-2 w-full outline-1 outline-black mb-3"type="text" placeholder="Address" name="address" value={formData.address} onChange={handleChange}/>
-        <input className="urbanist rounded p-2 w-full outline-1 outline-black mb-3"type="number" placeholder="No. of Passengers" name="passengers" value={formData.passengers} onChange={handleChange}/>
-        <input className="urbanist rounded p-2 w-full outline-1 outline-black mb-3"type="text" placeholder="Trip Starting Date : mm/dd/yy" name="startDate" value={formData.startDate} onChange={handleChange}/>
-        <input className="urbanist rounded p-2 w-full outline-1 outline-black mb-3"type="number" placeholder="No. of Days" name="day" value={formData.day} onChange={handleChange}/>
-        <input className="urbanist rounded p-2 w-full outline-1 outline-black mb-3"type="number" placeholder="No. of Nights" name="night" value={formData.night} onChange={handleChange}/>
-        <button className="bg-[#017C6D] text-white p-2 w-[150px] rounded w-full" type="submit">Send Enquiry</button>
+        <input className="urbanist rounded p-2 w-full border-1 border-[#d7d7d9] mb-3"type="text" placeholder="Name" name="name" value={formData.name} onChange={handleChange}/>
+        <input className="urbanist rounded p-2 w-full border-1 border-[#d7d7d9] mb-3"type="number" placeholder="Phone" name="phone" value={formData.phone} onChange={handleChange}/>
+        <input className="urbanist rounded p-2 w-full border-1 border-[#d7d7d9] mb-3"type="email" placeholder="E-Mail" name="email" value={formData.email} onChange={handleChange}/>
+        <input className="urbanist rounded p-2 w-full border-1 border-[#d7d7d9] mb-3"type="text" placeholder="Address" name="address" value={formData.address} onChange={handleChange}/>
+        <input className="urbanist rounded p-2 w-full border-1 border-[#d7d7d9] mb-3"type="number" placeholder="No. of Passengers" name="passengers" value={formData.passengers} onChange={handleChange}/>
+        <span className="urbanist rounded w-full text-[#7f878b] py-10 mb-3">Trip Starting Date</span>
+        <input className="urbanist rounded p-2 w-full border-1 border-[#d7d7d9] mb-3"type="date" placeholder=" Start Date" name="startDate" value={formData.startDate} onChange={handleChange}/>
+        <input className="urbanist rounded p-2 w-full border-1 border-[#d7d7d9] mb-3"type="number" placeholder="No. of Days" name="day" value={formData.day} onChange={handleChange}/>
+        <input className="urbanist rounded p-2 w-full border-1 border-[#d7d7d9] mb-3"type="number" placeholder="No. of Nights" name="night" value={formData.night} onChange={handleChange}/>
+        <button className="bg-[#017C6D] font-bold text-white p-2 w-[150px] rounded w-full" type="submit">Send Enquiry</button>
      </form>
   </div>
   </div>
@@ -258,6 +259,10 @@ export default function DynamicTrek() {
 <img className="w-full h-[350px] object-cover rounded mb-4" src={trip.imageSrc} alt={trip.title} />
 
 <h1 className="text-3xl font-bold py-4">{trip.title}</h1>
+<div className="text-lg text-gray-700 mb-4 flex rounded">
+  <Link className="hover:bg-[#017C6D] hover:text-white  border-1 border-[#d7d7d9] px-5 py-1" href="#description">Details</Link> <Link className="hover:text-white hover:bg-[#017C6D] border-1 border-[#d7d7d9] px-5 py-1" href="#inclusions">Inclusions</Link>
+  <Link href="#exclusions" className="hover:bg-[#017C6D] hover:text-white border-1 border-[#d7d7d9] px-5 py-1">Exclusions</Link> <Link href="#faqs" className="hidden border-1 border-[#d7d7d9] px-5 py-1">FAQs</Link>
+</div>
 <div className="sm:hidden rounded-md w-full mb-5">
       <div className="w-full text-3xl font-bold mb-2">{trip.price}</div>
       <div className=" sm:text-lg flex item-center mb-2"><LocationOnIcon className="text-[#017C6D] mr-3" /> <text>{trip.location}</text></div>
@@ -268,12 +273,12 @@ export default function DynamicTrek() {
       <button className="sm:hidden block w-full rounded-sm p-2 bg-[#017C6D] mt-1 text-white font-bold" onClick={popOpen}>Send A Enquiry</button>
 
   </div>
- <p>{trip.description}</p><br/>
+ <p id="description">{trip.description}</p><br/>
 <h2 className="mt-4 text-3xl font-bold py-4">What's Inside the Package?</h2>
 <div className="sm:flex mb-4  rounded gap-2">
 
 	<div className=" p-5 rounded">
-    	<h3 className="text-2xl font-bold mb-3">Inclusions</h3>
+    	<h3 className="text-2xl font-bold mb-3" id="inclusions">Inclusions</h3>
       { trip.inclusions && trip.inclusions.map((inclusion: string, index: number) => (
         <div className="flex items-center" key={index}>
           <CheckCircle className="text-[#175725] mr-3" />
@@ -283,7 +288,7 @@ export default function DynamicTrek() {
     </div>
 
     <div className="  p-5 rounded">
-    	<h3 className="text-2xl font-bold mb-3">Exclusions</h3>
+    	<h3 className="text-2xl font-bold mb-3" id="exclusions">Exclusions</h3>
       {trip.exclusions && trip.exclusions.map((exclusion:string, index:number)=>(
         <div className="flex items-center" key={index}>
         <Block className="text-[#ff0000] mr-3" />
@@ -294,7 +299,7 @@ export default function DynamicTrek() {
     </div>
 
 </div>
-<h2 className="text-3xl font-bold py-4">Know Before You Go</h2>
+<h2 className="text-3xl font-bold py-4" id="faqs">Know Before You Go</h2>
 <ul className="px-5 list-disc">
   <li>Engage in regular cardiovascular exercises like hiking, jogging, or cycling to build stamina and endurance.</li>
   <li>Incorporate strength training exercises to strengthen leg muscles and core stability.</li>
