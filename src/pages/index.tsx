@@ -201,7 +201,7 @@ export default function Home() {
         <h1 className="text-[rgba(1,124,109,1)] text-4xl font-bold leading-none text-center max-md:max-w-full max-md:text-[28px] mt-10" data-aos="slide-right">
           Our Travel Stories
       </h1>
-        <div className="flex py-[40px] w-full justify-between gap-5 overflow-y-none overflow-x-auto [&::-webkit-scrollbar]:hidden max-md:max-w-full">
+        <div className="flex py-[40px] w-full justify-between gap-5 overflow-y-none overflow-x-auto [&::-webkit-scrollbar]:hidden max-md:max-w-full overflow-y-clip">
           <div className="relative w-full" data-aos="slide-right">
           <img src="https://res.cloudinary.com/dibrmj6nh/image/upload/v1745909231/Chandratal-Trek_iudmmv.webp" className=" h-[400px] hidden"/>
 
@@ -222,27 +222,38 @@ export default function Home() {
           
         </div>
       </div>
-      <div className="max-sm:hidden" data-aos="flip-right">
-      <Link href={'/contact'}><Image
-  src="https://res.cloudinary.com/anuragprasoon/image/upload/v1745615313/adventurecallout_kdpc4k.png"
-  alt="Adventure Callout"
-  width={1200}
-  height={800}
-  layout="responsive"
-  loader={({ src }) => src}/></Link>
-      </div>
-     
 
-<div className="sm:hidden" data-aos="flip-right">
-      <Link href={'/contact'}><Image
-  src="https://res.cloudinary.com/anuragprasoon/image/upload/v1745647359/adventurecallout-md_peiee0.png"
-  alt="Adventure Callout"
-  width={1200} // Original width of the image
-  height={800} // Original height of the image
-  layout="responsive"
-  loader={({ src }) => src} // Makes the image responsive and adjusts based on container width
-/></Link>
-</div>
+      <div className=" rounded-lg  w-full sm:flex border relative">
+         <video src="https://videos.pexels.com/video-files/32142741/13704724_2560_1440_60fps.mp4" data-aos="fade-up" 
+         autoPlay
+          loop
+          muted
+          playsInline
+          disablePictureInPicture
+          preload="auto"
+         className="w-full h-[350px] object-cover rounded-lg" />
+         
+        <div className="p-10 text-white text-[16px] font-normal absolute top-1/2 -translate-y-1/2 " data-aos="fade-up">
+          <h3 className="text-white text-4xl font-bold leading-none mb-4" >
+            Plan a Custom Trip with us
+          </h3>
+          <p>
+           <text className="font-bold ">“Bag bharo, doston ko tag karo, aur chalo kahin door 🏔️…”</text><br/>
+You drop the destination, we’ll handle the rest, <text className="font-bold">no Excel sheets, no chinta, just vibes.</text>
+          </p><br/>
+          <Link href="/custom-trip" className=""><button className="bg-[rgb(1,124,109)] text-white max-sm:w-[300px] p-4 rounded-lg font-semibold">Plan a Trip</button></Link>
+        </div>
+       
+
+
+
+      </div>
+      
+
+
+
+
+
       <FeaturesSection features={features}/>
       <TestimonialsSection />
       </div>

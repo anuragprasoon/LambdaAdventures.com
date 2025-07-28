@@ -56,3 +56,15 @@ a {
     color: white; /* or transparent for hollow text */
   }
 }
+
+.footer-bg {
+  background-image: url('/rock.svg'); /* Place your SVG in public/footer-bg.svg */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  transition: filter 0.3s;
+}
+
+.footer-bg:hover {
+  filter: brightness(1.2) drop-shadow(0 0 10px #017c6d);
+}

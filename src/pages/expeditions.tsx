@@ -41,12 +41,12 @@ export default function Expeditions() {
 }, []);
 
     
-   const filteredTreks = popularTreks.filter(trek => {
+  const filteredTreks = popularTreks.filter(trek => {
   const matchesFilter =
     activeFilter === "all" ||
     (activeFilter === "treks" && trek.type === "Trek") ||
     (activeFilter === "expeditions" && trek.type === "Expeditions") ||
-    (activeFilter === "yoga" && trek.type === "Yoga Retreat");
+    (activeFilter === "bike" && trek.type === "Bike");
 
   const matchesSearch =
     trek.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -76,7 +76,7 @@ useEffect(()=>{
       </Head>
       
       <div className="px-[6%]">
-      <HeroSection herotext="Move Mountains With Us" srcUrl="https://cdn.pixabay.com/video/2015/11/27/1408-147169812_medium.mp4" searchplaceholder="Search Expeditions"
+      <HeroSection herotext="Move Mountains With Us" srcUrl="https://cdn.pixabay.com/video/2015/11/27/1408-147169812_medium.mp4" searchplaceholder="Search Expeditions" phrases={["Search Everest Base Camp", "Search Bali Pass", "Search Mt. Yunam Expedition"]}
   searchQuery={searchQuery}
   setSearchQuery={setSearchQuery}
 />

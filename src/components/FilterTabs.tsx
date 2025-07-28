@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export type FilterOption = "all" | "treks" | "expeditions" | "yoga";
+export type FilterOption = "all" | "treks" | "expeditions" | "bike";
 
 interface FilterTabsProps {
   onFilterChange: (filter: FilterOption) => void;
@@ -51,14 +51,14 @@ export const FilterTabs: React.FC<FilterTabsProps> = ({
         Expeditions
       </button>
       <button
-        onClick={() => handleFilterChange("yoga")}
+        onClick={() => handleFilterChange("bike")}
         className={`self-stretch min-h-[30px] gap-2.5 px-5 py-[5px] rounded-[0px_10px_10px_0px] border-[rgba(1,124,109,1)] border-t border-r border-b ${
-          activeFilter === "yoga"
+          activeFilter === "bike"
             ? "bg-[rgba(1,124,109,1)] text-white"
             : "bg-transparent"
         }`}
       >
-        Yoga Retreat
+        Bike Expeditions
       </button>
     </div>
   );

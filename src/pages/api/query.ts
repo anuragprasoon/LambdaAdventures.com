@@ -15,8 +15,8 @@ const transporter = nodemailer.createTransport({
 
 export default async function handler(req:NextApiRequest,res:NextApiResponse) {
     if(req.method=="POST"){
-        const {name,phone,email,address,passengers,startDate,day,night,tripid} = req.body
-        if(!name || !phone || !email || !address || !passengers || !startDate || !day || !night ||!tripid){
+        const {name,phone,email,startDate,tripid, coupon} = req.body
+        if(!name || !phone || !email || !startDate ||!tripid || !coupon) {
             res.status(400).send("Some data might be missing")
         }
         const { data: tripData, error: tripError } = await supabase.from('trips').select('title').eq('id', tripid).single()
@@ -26,7 +26,7 @@ export default async function handler(req:NextApiRequest,res:NextApiResponse) {
         }
         
         const trip_name = tripData?.title
-        const {data, error}= await supabase.from('query').insert({name,trip_name,phone,email,address,passengers,startDate,day,night})
+        const {data, error}= await supabase.from('query').insert({name,trip_name,phone,email,startDate,coupon})
         if(error){
             res.status(500).send('Failed to save the data')
         }

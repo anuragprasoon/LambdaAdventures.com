@@ -16,7 +16,7 @@ import 'aos/dist/aos.css';
 
 export default function Bike() {
   const [searchQuery, setSearchQuery] = useState("");
-  const [activeFilter, setActiveFilter] = useState<FilterOption>("expeditions");
+  const [activeFilter, setActiveFilter] = useState<FilterOption>("bike");
   const [popularTreks, setPopularTreks] = useState<any[]>([]);
 
   useEffect(() => {
@@ -34,12 +34,12 @@ export default function Bike() {
 }, []);
 
     
-   const filteredTreks = popularTreks.filter(trek => {
+  const filteredTreks = popularTreks.filter(trek => {
   const matchesFilter =
     activeFilter === "all" ||
     (activeFilter === "treks" && trek.type === "Trek") ||
     (activeFilter === "expeditions" && trek.type === "Expeditions") ||
-    (activeFilter === "yoga" && trek.type === "Yoga Retreat");
+    (activeFilter === "bike" && trek.type === "Bike");
 
   const matchesSearch =
     trek.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -69,63 +69,30 @@ useEffect(()=>{
       </Head>
       
       <div className="px-[6%]">
-      <HeroSection herotext="Explore Our Bike Expeditions" srcUrl="https://res.cloudinary.com/anuragprasoon/video/upload/v1752800511/lambda-adventures/bike-exp.mp4" searchplaceholder="Search Bike Trips"
+      <HeroSection herotext="Explore Our Bike Expeditions" srcUrl="https://res.cloudinary.com/anuragprasoon/video/upload/v1752800511/lambda-adventures/bike-exp.mp4" searchplaceholder="Search Bike Trips" phrases={["Search Ladakh Bike Trips", "Search Spiti Bike Trips", "Search Jasalmair Bike Trips"]}
   searchQuery={searchQuery}
   setSearchQuery={setSearchQuery}
 />
       <h2 className="sm:text-4xl text-2xl font-bold py-5 sm:px-10 text-black">All Our Bike Expeditions</h2>
       <div className="flex w-full gap-[36px] justify-center flex-wrap max-md:mt-5 pb-4 ml-auto mr-auto ">
-        <TrekCard
-        key={1}
-        idkey={129}
-        imageSrc="https://images.pexels.com/photos/3392154/pexels-photo-3392154.jpeg"
-        title="Ladakh Bike Expedition"
-        location="Ladakh"
-        distance="500 km"
-        duration="10 Days"
-        difficulty="Moderate"
-        />
-
-        <TrekCard
-        key={2}                   
-        idkey={126}
-        imageSrc="https://images.pexels.com/photos/30255571/pexels-photo-30255571.jpeg"
-        title="Spiti Bike Expedition" 
-        location="Spiti"
-        distance="600 km"
-        duration="12 Days"
-        difficulty="Moderate"
-        />
-        <TrekCard
-        key={3}
-        idkey={124}
-        imageSrc="https://images.pexels.com/photos/4625460/pexels-photo-4625460.jpeg"
-        title="Jasalmair Bike Expedition"
-        location="Jasalmair"
-        distance="400 km"
-        duration="8 Days"
-        difficulty="Easy"
-        />
-        <TrekCard
-        key={4}
-        idkey={125}
-        imageSrc="https://images.pexels.com/photos/18358076/pexels-photo-18358076.jpeg"
-        title="North East (Tawang) Bike Expedition"
-        location="North East India"
-        distance="700 km"
-        duration="14 Days"
-        difficulty="Moderate"
-        />
-        <TrekCard
-        key={5}
-        idkey={128}
-        imageSrc="https://images.pexels.com/photos/14094513/pexels-photo-14094513.jpeg"
-        title="Nepal (Mustang) Bike Expedition"
-        location="Nepal"
-        distance="800 km"
-        duration="15 Days"
-        difficulty="Challenging"
-        />
+        {filteredTreks.length > 0 ? (
+          filteredTreks.map((trek, index) => (
+            <TrekCard 
+              key={index} 
+              idkey={trek.id}
+              imageSrc={trek.imageSrc} 
+              title={trek.title} 
+              location={trek.location} 
+              duration={trek.duration} 
+              distance={trek.distance} 
+              difficulty={trek.difficulty}
+            />
+          ))
+        ) : (
+          <div className="w-full text-center py-8 text-gray-500">
+            No adventures found for this category.
+          </div>
+        )}
       </div>
     
       

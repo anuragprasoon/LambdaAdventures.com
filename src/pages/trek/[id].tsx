@@ -26,11 +26,8 @@ export default function DynamicTrek() {
           name: "",
           phone: "",
           email: "",
-          address:"",
-          passengers: "",
           startDate:"",
-          day:"",
-          night:"",
+          coupon: "",
         });
   
   const handleChange = (
@@ -55,12 +52,9 @@ export default function DynamicTrek() {
               name: formData.name,
               phone: formData.phone,
               email: formData.email,
-              address: formData.address,
-              passengers: formData.passengers,
               startDate: formData.startDate,
-              day: formData.day,
-              night: formData.night,
               tripid: trip.id,
+              coupon: formData.coupon,
             })
         });
         
@@ -74,11 +68,8 @@ export default function DynamicTrek() {
             name: "",
             phone: "",
             email: "",
-            address:"",
-            passengers: "",
             startDate:"",
-            day:"",
-            night:"",
+            coupon: "",
           });
           
   
@@ -212,16 +203,22 @@ export default function DynamicTrek() {
         <div className="absolute fixed z-[2] top-10  p-10 rounded w-[70%] left-0 right-0 mx-auto text-black bg-white w-full">
           <button className="bg-white rounded-full text-bold m-2 absolute top-10 right-10" onClick={e => setPopup(false)}>X</button>
       <h3 className=" font-semibold text-[24px] mb-3" id="plan-trip">Plan A Trip with Us Now</h3>
+      <div className="flex justify-center items-center">
+        <img src={trip.imageSrc} alt={trip.title} className="w-[100px] h-[100px] object-cover rounded mb-4" />
+        <div className="p-5">
+          <h1 className="text-lg font-bold">{trip.title}</h1>
+          <p className="text-2xl text-[#017C6D] font-bold mb-2">{trip.price}</p>
+        </div>
+      </div>
       <form onSubmit={handleSubmit}>
         <input className="urbanist rounded p-2 w-full border-1 border-[#d7d7d9] mb-3"type="text" placeholder="Name" name="name" value={formData.name} onChange={handleChange}/>
         <input className="urbanist rounded p-2 w-full border-1 border-[#d7d7d9] mb-3"type="number" placeholder="Phone" name="phone" value={formData.phone} onChange={handleChange}/>
         <input className="urbanist rounded p-2 w-full border-1 border-[#d7d7d9] mb-3"type="email" placeholder="E-Mail" name="email" value={formData.email} onChange={handleChange}/>
-        <input className="urbanist rounded p-2 w-full border-1 border-[#d7d7d9] mb-3"type="text" placeholder="Trip Location" name="address" value={formData.address} onChange={handleChange}/>
-        <input className="urbanist rounded p-2 w-full border-1 border-[#d7d7d9] mb-3"type="number" placeholder="No. of Passengers" name="passengers" value={formData.passengers} onChange={handleChange}/>
-        <input className="urbanist rounded p-2 w-full border-1 border-[#d7d7d9] mb-3"type="text" placeholder="Trip Starting Date : mm/dd/yy" name="startDate" value={formData.startDate} onChange={handleChange}/>
-        <input className="urbanist rounded p-2 w-full border-1 border-[#d7d7d9] mb-3"type="number" placeholder="No. of Days" name="day" value={formData.day} onChange={handleChange}/>
-        <input className="urbanist rounded p-2 w-full border-1 border-[#d7d7d9] mb-3"type="number" placeholder="No. of Nights" name="night" value={formData.night} onChange={handleChange}/>
-        <button className="bg-[#017C6D] font-bold text-white p-2 w-[150px] rounded w-full" type="submit">Send Enquiry</button>
+        <span className="urbanist rounded w-full text-[#7f878b] py-10 mb-3">Trip Starting Date</span>
+        <input className="urbanist rounded p-2 w-full border-1 border-[#d7d7d9] mb-3"type="date" placeholder="Start Date" name="startDate" value={formData.startDate} onChange={handleChange}/>
+        <input className="urbanist rounded p-2 w-full border-1 border-[#d7d7d9]" type="text" placeholder="Refferal Code" name="coupon" value={formData.coupon} onChange={handleChange}/>
+
+        <button className="bg-[#017C6D] font-bold text-white p-2 w-[150px] rounded w-full" type="submit">Prebook Now</button>
      </form>
   </div>
             )}
@@ -236,21 +233,25 @@ export default function DynamicTrek() {
       <div className=" sm:text-lg flex  item-center mb-2"><MapIcon className="text-[#017C6D] mr-3" /><text>{trip.distance}</text></div>
       <div className=" sm:text-lg flex  item-center mb-2"><SpeedIcon className="text-[#017C6D] mr-3" /> <text>{trip.difficulty}</text></div>
       <Link href="/customtrek"><button className="block w-full rounded-sm p-2 mb-2 border-1 border-[#017C6D] mt-1 text-[#017C6D] font-bold">Request A Custom Trip</button></Link>
-      <Link href="#plan-trip"><button className="max-sm:hidden block w-full rounded-sm p-2 bg-[#017C6D] mt-1 text-white font-bold">Send A Enquiry</button></Link>
+      <Link href="#plan-trip"><button className="max-sm:hidden block w-full rounded-sm p-2 bg-[#017C6D] mt-1 text-white font-bold">Prebook Now</button></Link>
   </div>
   <div className="max-sm:hidden p-5 mt-5 border-1 border-[#d7d7d9] rounded-md">
       <h3 className=" font-semibold text-[24px] mb-3" id="plan-trip">Plan A Trip with Us Now</h3>
+        <div className="flex justify-center items-center">
+          <img src={trip.imageSrc} alt={trip.title} className="w-[100px] h-[100px] object-cover rounded mb-4" />
+          <div className="p-5">
+            <h1 className="text-lg font-bold">{trip.title}</h1>
+            <p className="text-2xl text-[#017C6D] font-bold mb-2">{trip.price}</p>
+          </div>
+        </div>
       <form onSubmit={handleSubmit}>
         <input className="urbanist rounded p-2 w-full border-1 border-[#d7d7d9] mb-3"type="text" placeholder="Name" name="name" value={formData.name} onChange={handleChange}/>
         <input className="urbanist rounded p-2 w-full border-1 border-[#d7d7d9] mb-3"type="number" placeholder="Phone" name="phone" value={formData.phone} onChange={handleChange}/>
         <input className="urbanist rounded p-2 w-full border-1 border-[#d7d7d9] mb-3"type="email" placeholder="E-Mail" name="email" value={formData.email} onChange={handleChange}/>
-        <input className="urbanist rounded p-2 w-full border-1 border-[#d7d7d9] mb-3"type="text" placeholder="Address" name="address" value={formData.address} onChange={handleChange}/>
-        <input className="urbanist rounded p-2 w-full border-1 border-[#d7d7d9] mb-3"type="number" placeholder="No. of Passengers" name="passengers" value={formData.passengers} onChange={handleChange}/>
         <span className="urbanist rounded w-full text-[#7f878b] py-10 mb-3">Trip Starting Date</span>
         <input className="urbanist rounded p-2 w-full border-1 border-[#d7d7d9] mb-3"type="date" placeholder=" Start Date" name="startDate" value={formData.startDate} onChange={handleChange}/>
-        <input className="urbanist rounded p-2 w-full border-1 border-[#d7d7d9] mb-3"type="number" placeholder="No. of Days" name="day" value={formData.day} onChange={handleChange}/>
-        <input className="urbanist rounded p-2 w-full border-1 border-[#d7d7d9] mb-3"type="number" placeholder="No. of Nights" name="night" value={formData.night} onChange={handleChange}/>
-        <button className="bg-[#017C6D] font-bold text-white p-2 w-[150px] rounded w-full" type="submit">Send Enquiry</button>
+        <input className="urbanist rounded p-2 w-full border-1 border-[#d7d7d9] mb-3" type="text" placeholder="Refferal Code" name="coupon" value={formData.coupon} onChange={handleChange}/>
+        <button className="bg-[#017C6D] font-bold text-white p-2 w-[150px] rounded w-full" type="submit">Prebook Now</button>
      </form>
   </div>
   </div>
@@ -270,7 +271,7 @@ export default function DynamicTrek() {
       <div className=" sm:text-lg flex  item-center mb-2"><MapIcon className="text-[#017C6D] mr-3" /><text>{trip.distance}</text></div>
       <div className=" sm:text-lg flex  item-center mb-2"><SpeedIcon className="text-[#017C6D] mr-3" /> <text>{trip.difficulty}</text></div>
       <Link href="/customtrek"><button className="block w-full rounded-sm p-2 mb-2 border-1 border-[#017C6D] mt-1 text-[#017C6D] font-bold">Request A Custom Trip</button></Link>
-      <button className="sm:hidden block w-full rounded-sm p-2 bg-[#017C6D] mt-1 text-white font-bold" onClick={popOpen}>Send A Enquiry</button>
+      <button className="sm:hidden block w-full rounded-sm p-2 bg-[#017C6D] mt-1 text-white font-bold" onClick={popOpen}>Prebook Now</button>
 
   </div>
  <p id="description">{trip.description}</p><br/>

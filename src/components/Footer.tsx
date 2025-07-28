@@ -7,7 +7,7 @@ const Footer: React.FC = () => {
   const year=date.getFullYear();
 
   return <>
-      <div className="bg-[rgba(2,7,10,1)] flex min-h-[222px] w-full mt-[104px] max-md:max-w-full max-md:mt-[0px]" />
+      <div className="bg-[rgba(2,7,10,1)] flex min-h-[222px] w-full mt-[104px] max-md:max-w-full max-md:mt-[0px] footer-bg" />
   
       <div className="z-10 mt-[-326px] w-full max-md:max-w-full max-md:mt-[-200px]">
         <div className="bg-[rgba(2,7,10,1)] flex min-h-[406px] w-full flex-wrap px-6 py-[60px] max-md:max-w-full max-md:px-5">

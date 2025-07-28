@@ -6,12 +6,13 @@ interface HeroProps {
   herotext?: string;
   searchplaceholder?: string;
   srcUrl?: string;
+  phrases?: string[];
 }
 
-export const HeroSection: React.FC<HeroProps> = ({ searchQuery, setSearchQuery, herotext, searchplaceholder, srcUrl }) => {
+export const HeroSection: React.FC<HeroProps> = ({ searchQuery, setSearchQuery, herotext, searchplaceholder, srcUrl, phrases }) => {
   const [placeholder, setPlaceholder] = useState(searchplaceholder || "Search Treks & Expeditions");
 
-  const phrases = [
+  const phrase = phrases || [
     "Search Weekend Treks",
     "Search Himalayan Peaks",
     "Search Chandrashila Trek"
@@ -20,7 +21,7 @@ export const HeroSection: React.FC<HeroProps> = ({ searchQuery, setSearchQuery, 
   useEffect(() => {
     let index = 0;
     const interval = setInterval(() => {
-      setPlaceholder(phrases[index % phrases.length]);
+      setPlaceholder(phrase[index % phrase.length]);
       index++;
     }, 1500);
     return () => clearInterval(interval);
