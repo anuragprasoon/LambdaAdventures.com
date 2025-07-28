@@ -241,7 +241,7 @@ export default function Home() {
            <text className="font-bold ">“Bag bharo, doston ko tag karo, aur chalo kahin door 🏔️…”</text><br/>
 You drop the destination, we’ll handle the rest, <text className="font-bold">no Excel sheets, no chinta, just vibes.</text>
           </p><br/>
-          <Link href="/custom-trip" className=""><button className="bg-[rgb(1,124,109)] text-white max-sm:w-[300px] p-4 rounded-lg font-semibold">Plan a Trip</button></Link>
+          <Link href="/customtrek" className=""><button className="bg-[rgb(1,124,109)] text-white max-sm:w-[300px] p-4 rounded-lg font-semibold">Plan a Trip</button></Link>
         </div>
        
 
