@@ -43,6 +43,13 @@ const Header: React.FC = () => {
       </div>
     </div>
 
+    {isOpen && (
+      <div
+        className="fixed inset-0 z-40 bg-opacity-80"
+        onClick={() => setIsOpen(false)}
+      />
+    )}
+
     <div className={`md:hidden ${isOpen ? "flex" : "hidden"} top-0 right-0 h-screen w-[200px] float-right bg-[rgba(1,124,109,1)] flex-col items-start justify-start space-y-10 p-6 fixed z-50`}>
 
     <div className=" cursor-pointer hover:text-black">
