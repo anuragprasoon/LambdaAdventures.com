@@ -41,7 +41,7 @@ export default function Trek() {
     activeFilter === "all" ||
     (activeFilter === "treks" && trek.type === "Trek") ||
     (activeFilter === "expeditions" && trek.type === "Expeditions") ||
-    (activeFilter === "yoga" && trek.type === "Yoga Retreat");
+    (activeFilter === "bike" && trek.type === "Bike");
 
   const matchesSearch =
     trek.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
