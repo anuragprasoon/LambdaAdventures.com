@@ -4,6 +4,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useEffect } from "react";
 import CallIcon from '@mui/icons-material/Call';
+
 interface TrekCardProps {
   idkey: number;
   imageSrc: string;
