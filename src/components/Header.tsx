@@ -22,11 +22,13 @@ const Header: React.FC = () => {
           <Link  href={'/'}>Home</Link>
         </div>
         <div className="max-md:hidden self-stretch my-auto cursor-pointer hover:text-[rgba(1,124,109,1)]">
-          <Link  href={'/trek'}>Treks</Link>
-        </div>
-        <div className="max-md:hidden self-stretch my-auto cursor-pointer hover:text-[rgba(1,124,109,1)]">
         <Link  href={'/expeditions'}>Expeditions</Link>
         </div>
+
+        <div className="max-md:hidden self-stretch my-auto cursor-pointer hover:text-[rgba(1,124,109,1)]">
+          <Link  href={'/trek'}>Treks</Link>
+        </div>
+        
         <div className="max-md:hidden self-stretch my-auto cursor-pointer hover:text-[rgba(1,124,109,1)]">
         <Link  href={'/bike'}>Bike Expeditions</Link>
         </div>
@@ -50,7 +52,7 @@ const Header: React.FC = () => {
       />
     )}
 
-    <div className={`md:hidden ${isOpen ? "flex" : "hidden"} top-0 right-0 h-screen w-[200px] float-right bg-[rgba(1,124,109,1)] flex-col items-start justify-start space-y-10 p-6 fixed z-50`}>
+    <div className={`md:hidden ${isOpen ? "flex" : "hidden"} top-0 left-0 h-screen w-[200px] float-right bg-[rgba(1,124,109,1)] flex-col items-start justify-start space-y-10 p-6 fixed z-50`}>
 
     <div className=" cursor-pointer hover:text-black">
         <CloseIcon className="text-white text-2xl" onClick={() => setIsOpen(false)}/>
@@ -58,12 +60,15 @@ const Header: React.FC = () => {
     <div className="cursor-pointer hover:text-black">
           <Link  href={'/'} onClick={()=>setIsOpen(false)}>Home</Link>
         </div>
-    <div className="cursor-pointer hover:text-black">
-          <Link  href={'/trek'} onClick={()=>setIsOpen(false)}>Treks</Link>
-        </div>
+
     <div className=" cursor-pointer hover:text-black">
           <Link href={'/expeditions'} onClick={()=>setIsOpen(false)}>Expeditions</Link>  
     </div>
+
+    <div className="cursor-pointer hover:text-black">
+          <Link  href={'/trek'} onClick={()=>setIsOpen(false)}>Treks</Link>
+        </div>
+    
     <div className=" cursor-pointer hover:text-black">
           <Link href={'/bike'} onClick={()=>setIsOpen(false)}>Bike Expedition</Link>  
     </div>

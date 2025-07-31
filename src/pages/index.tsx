@@ -225,7 +225,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className=" rounded-lg  w-full sm:flex border relative">
+      {/*<div className=" rounded-lg  w-full sm:flex border relative">
          <video src="https://videos.pexels.com/video-files/32142741/13704724_2560_1440_60fps.mp4" data-aos="fade-up" 
          autoPlay
           loop
@@ -245,11 +245,8 @@ You drop the destination, we’ll handle the rest, <text className="font-bold">n
           </p><br/>
           <Link href="/customtrek" className=""><button className="bg-[rgb(1,124,109)] text-white max-sm:w-[300px] p-4 rounded-lg font-semibold">Plan a Trip</button></Link>
         </div>
-       
 
-
-
-      </div>
+      </div>*/}
       
 
 
