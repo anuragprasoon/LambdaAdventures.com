@@ -1,11 +1,23 @@
 import React, { useState } from 'react';
 import { MapPin, Clock, Mountain, ChevronDown, ChevronRight } from 'lucide-react';
 
+interface ItineraryDay {
+  day: number;
+  title: string;
+  shortDescription: string;
+  fullDescription: string;
+  altitude: string;
+  duration: string;
+  accommodation: string;
+  meals: string;
+  highlights: string[];
+}
+
 const ItineraryComponent = () => {
   const [expandedDays, setExpandedDays] = useState(new Set([1])); // First day expanded by default
 
   // Sample itinerary data - replace with your actual data
-  const itinerary = [
+  const itinerary: ItineraryDay[] = [
     { 
       day: 1, 
       title: 'Arrival in Kathmandu', 
@@ -74,7 +86,8 @@ const ItineraryComponent = () => {
     }
   ];
 
-  const toggleDay = (dayNumber) => {
+  // Add type for day number
+  const toggleDay = (dayNumber: number) => {
     const newExpandedDays = new Set(expandedDays);
     if (newExpandedDays.has(dayNumber)) {
       newExpandedDays.delete(dayNumber);
