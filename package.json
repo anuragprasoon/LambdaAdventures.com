@@ -11,21 +11,26 @@
   "dependencies": {
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
+    "@headlessui/react": "^2.2.7",
+    "@heroicons/react": "^2.2.0",
     "@lottiefiles/dotlottie-react": "^0.14.3",
     "@mui/icons-material": "^7.0.2",
     "@mui/material": "^7.0.2",
     "@react-spring/web": "^10.0.1",
     "@supabase/supabase-js": "^2.49.4",
+    "@tailwindcss/typography": "^0.5.16",
     "@vercel/speed-insights": "^1.2.0",
     "aos": "^2.3.4",
     "dotenv": "^16.5.0",
+    "lucide-react": "^0.542.0",
     "next": "15.3.1",
     "nodemailer": "^7.0.3",
     "razorpay": "^2.9.6",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-lottie": "^1.2.10",
-    "supabase": "^2.22.12"
+    "supabase": "^2.22.12",
+    "swiper": "^11.2.10"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.1.4",

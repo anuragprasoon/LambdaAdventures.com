@@ -46,14 +46,49 @@ a {
   }
 }
 
+.hide-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
 .hide-scrollbar::-webkit-scrollbar {
-  display: none;
+  display: none;  /* Chrome, Safari and Opera */
+}
+
+@media (max-width: 768px) {
+  .snap-mandatory {
+    scroll-snap-type: x mandatory;
+  }
+  .grid-cols-1 > div {
+    grid-column: span 1 !important;
+    grid-row: span 1 !important;
+  }
+}
+
+/* For larger screens maintain bento layout */
+@media (min-width: 769px) {
+  .aspect-square {
+    aspect-ratio: 1;
+  }
+  
+  [class*="row-span"] {
+    height: 100%;
+  }
 }
 
 @layer utilities {
   .text-outline {
     -webkit-text-stroke: 0.3px rgb(35, 35, 35);
     color: white; /* or transparent for hollow text */
+  }
+  
+  .transition-transform {
+    transition-property: transform;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .duration-700 {
+    transition-duration: 700ms;
   }
 }
 

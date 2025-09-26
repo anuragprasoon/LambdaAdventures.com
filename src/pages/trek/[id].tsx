@@ -12,6 +12,8 @@ import MapIcon from '@mui/icons-material/Map';
 import SpeedIcon from '@mui/icons-material/Speed';
 import Link from "next/link";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
+import FAQ from '@/components/Faq'
+import ItineraryComponent from "@/components/Itinerary";
 
 export default function DynamicTrek() {
 
@@ -218,7 +220,7 @@ export default function DynamicTrek() {
         <input className="urbanist rounded p-2 w-full border-1 border-[#d7d7d9] mb-3"type="date" placeholder="Start Date" name="startDate" value={formData.startDate} onChange={handleChange}/>
         <input className="urbanist rounded p-2 w-full border-1 border-[#d7d7d9]" type="text" placeholder="Refferal Code" name="coupon" value={formData.coupon} onChange={handleChange}/>
 
-        <button className="bg-[#017C6D] font-bold text-white p-2 w-[150px] rounded w-full" type="submit">Prebook Now</button>
+        <button className="bg-[#017C6D] font-bold text-white p-2 w-[150px] rounded w-full" type="submit">Book Now</button>
      </form>
   </div>
             )}
@@ -233,7 +235,7 @@ export default function DynamicTrek() {
       <div className=" sm:text-lg flex  item-center mb-2"><MapIcon className="text-[#017C6D] mr-3" /><text>{trip.distance}</text></div>
       <div className=" sm:text-lg flex  item-center mb-2"><SpeedIcon className="text-[#017C6D] mr-3" /> <text>{trip.difficulty}</text></div>
       <Link href="/customtrek"><button className="block w-full rounded-sm p-2 mb-2 border-1 border-[#017C6D] mt-1 text-[#017C6D] font-bold">Request A Custom Trip</button></Link>
-      <Link href="#plan-trip"><button className="max-sm:hidden block w-full rounded-sm p-2 bg-[#017C6D] mt-1 text-white font-bold">Prebook Now</button></Link>
+      <Link href="#plan-trip"><button className="max-sm:hidden block w-full rounded-sm p-2 bg-[#017C6D] mt-1 text-white font-bold">Book Now</button></Link>
   </div>
   <div className="max-sm:hidden p-5 mt-5 border-1 border-[#d7d7d9] rounded-md">
       <h3 className=" font-semibold text-[24px] mb-3" id="plan-trip">Plan A Trip with Us Now</h3>
@@ -251,7 +253,7 @@ export default function DynamicTrek() {
         <span className="urbanist rounded w-full text-[#7f878b] py-10 mb-3">Trip Starting Date</span>
         <input className="urbanist rounded p-2 w-full border-1 border-[#d7d7d9] mb-3"type="date" placeholder=" Start Date" name="startDate" value={formData.startDate} onChange={handleChange}/>
         <input className="urbanist rounded p-2 w-full border-1 border-[#d7d7d9] mb-3" type="text" placeholder="Refferal Code" name="coupon" value={formData.coupon} onChange={handleChange}/>
-        <button className="bg-[#017C6D] font-bold text-white p-2 w-[150px] rounded w-full" type="submit">Prebook Now</button>
+        <button className="bg-[#017C6D] font-bold text-white p-2 w-[150px] rounded w-full" type="submit">Book Now</button>
      </form>
   </div>
   </div>
@@ -271,7 +273,7 @@ export default function DynamicTrek() {
       <div className=" sm:text-lg flex  item-center mb-2"><MapIcon className="text-[#017C6D] mr-3" /><text>{trip.distance}</text></div>
       <div className=" sm:text-lg flex  item-center mb-2"><SpeedIcon className="text-[#017C6D] mr-3" /> <text>{trip.difficulty}</text></div>
       <Link href="/customtrek"><button className="block w-full rounded-sm p-2 mb-2 border-1 border-[#017C6D] mt-1 text-[#017C6D] font-bold">Request A Custom Trip</button></Link>
-      <button className="sm:hidden block w-full rounded-sm p-2 bg-[#017C6D] mt-1 text-white font-bold" onClick={popOpen}>Prebook Now</button>
+      <button className="sm:hidden block w-full rounded-sm p-2 bg-[#017C6D] mt-1 text-white font-bold" onClick={popOpen}>Book Now</button>
 
   </div>
  <p id="description">{trip.description}</p><br/>
@@ -321,10 +323,14 @@ export default function DynamicTrek() {
         src="https://www.google.com/maps/d/u/0/embed?mid=1yCZDSeqrxtbLSdFFVJ_fLb8ODkDxEOs&ehbc=2E312F&noprof=1"
         className="w-full p-10 h-[500px]"
       ></iframe>*/}
-
+       <div className="pl-10 pr-10 pb-10">
+       <FAQ/>
+       </div>
       <div className="pl-10 pr-10 pb-10">
         <TrekSection title="Trips You May Like" treks={popularTreks} />
       </div>
+
+     
       <div className="fixed bottom-2 right-2">
         <a href="https://api.whatsapp.com/send/?phone=919065550642&text=Hi%20Lambda%20Adventures,%20I%20want%20to%20plan%20a%20trip">
           <img src="https://res.cloudinary.com/dibrmj6nh/image/upload/v1747946474/Frame_1597884222_xnchxt.png" className="w-[50px]"/>
@@ -332,6 +338,8 @@ export default function DynamicTrek() {
       </div>
       </div>
             )}
+
+      
             
     </>
   );

@@ -4,7 +4,7 @@ import Link from "next/link";
 import { Geist, Geist_Mono } from "next/font/google";
 import styles from "@/styles/Home.module.css";
 import ContactForm from "@/components/ContactForm";
-import TestimonialsSection from "@/components/TestimonialsSection";
+import GoogleReviews from "@/components/Reviews";
 import AdventureCallout from "@/components/AdventureCallout";
 import TrekSection from "@/components/TrekSection";
 import FeaturesSection from "@/components/FeatureSection";
@@ -13,6 +13,11 @@ import PopUp from "@/components/popup";
 import AOS from "aos";
 import 'aos/dist/aos.css'
 import { useEffect } from "react";
+import PhotoGallery from '../components/PhotoGallery';
+import FAQ from '../components/Faq';
+import CategorySection from '../components/CategorySection';
+import SocialMediaSection from '../components/SocialMedia';
+import CustomTrekSection from '../components/CustomTrekSection';
 
 
 
@@ -197,6 +202,8 @@ export default function Home() {
       </Head>
       <div className="px-[6%]">
       <Hero/>
+      <CategorySection />
+       <PhotoGallery />
       <TrekSection title="Upcoming" treks={upcomingTreks} />
       <TrekSection title="Popular" treks={popularTreks} />
        <div>
@@ -248,13 +255,14 @@ You drop the destination, we’ll handle the rest, <text className="font-bold">n
 
       </div>*/}
       
-
-
-
-
+     
 
       <FeaturesSection features={features}/>
-      <TestimonialsSection />
+      <GoogleReviews />
+      <CustomTrekSection />
+      <SocialMediaSection />
+      <FAQ />
+      
       </div>
       <div className="fixed bottom-2 right-2">
         <a href="https://api.whatsapp.com/send/?phone=919065550642&text=Hi%20Lambda%20Adventures,%20I%20want%20to%20plan%20a%20trip">
