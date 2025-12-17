@@ -11,7 +11,7 @@ import { type FilterOption } from "@/components/FilterTabs";
 import ExpCategories from "@/components/expcat";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-
+import CustomTrekSection from "@/components/CustomTrekSection";
 
 
 export default function Bike() {
@@ -96,31 +96,12 @@ useEffect(()=>{
       </div>
     
       
-      <div className="mb-[100px] max-sm:hidden ">
-      <Link href={'/customtrek'}><Image
-  src="https://res.cloudinary.com/anuragprasoon/image/upload/v1745615313/adventurecallout_kdpc4k.png"
-  alt="Adventure Callout"
-  width={1200}
-  height={800}
-  layout="responsive"
-  loader={({ src }) => src}
-/></Link>
-</div>
+ <CustomTrekSection/>
 
-<div className="sm:hidden mb-[50px]">
-      <Link href={'//customtrek'}><Image
-  src="https://res.cloudinary.com/anuragprasoon/image/upload/v1745647359/adventurecallout-md_peiee0.png"
-  alt="Adventure Callout"
-  width={1200} // Original width of the image
-  height={800} // Original height of the image
-  layout="responsive"
-  loader={({ src }) => src} // Makes the image responsive and adjusts based on container width
-/></Link>
-</div>
       </div>
-       <div className="fixed bottom-2 right-2">
+      <div className="fixed bottom-2 right-2 ">
         <a href="https://api.whatsapp.com/send/?phone=919065550642&text=Hi%20Lambda%20Adventures,%20I%20want%20to%20plan%20a%20trip">
-          <img src="https://res.cloudinary.com/dibrmj6nh/image/upload/v1747946474/Frame_1597884222_xnchxt.png" className="w-[50px]"/>
+          <img src="/Whatsapp.webp" className="w-[50px] hover:w-[90px]"/>
         </a>
       </div>
         </>

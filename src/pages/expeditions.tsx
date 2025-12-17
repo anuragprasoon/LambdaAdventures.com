@@ -25,6 +25,19 @@ export default function Expeditions() {
   const [searchQuery, setSearchQuery] = useState("");
   const [activeFilter, setActiveFilter] = useState<FilterOption>("expeditions");
   const [popularTreks, setPopularTreks] = useState<any[]>([]);
+  const [categoryFilter, setCategoryFilter] = useState<
+    | "all"
+    | "upto-4k"
+    | "4k-5k"
+    | "5k-6k"
+    | "6k-plus"
+    | "himachal"
+    | "uttarakhand"
+    | "kashmir"
+    | "north-east"
+    | "ladakh"
+    | "south"
+  >("all");
 
   useEffect(() => {
   async function fetchTreks() {
@@ -40,25 +53,98 @@ export default function Expeditions() {
   fetchTreks();
 }, []);
 
-    
-  const filteredTreks = popularTreks.filter(trek => {
-  const matchesFilter =
-    activeFilter === "all" ||
-    (activeFilter === "treks" && trek.type === "Trek") ||
-    (activeFilter === "expeditions" && trek.type === "Expeditions") ||
-    (activeFilter === "bike" && trek.type === "Bike");
+  const filteredTreks = popularTreks.filter((trek) => {
+    const matchesFilter =
+      activeFilter === "all" ||
+      (activeFilter === "treks" && trek.type === "Trek") ||
+      (activeFilter === "expeditions" && trek.type === "Expeditions") ||
+      (activeFilter === "bike" && trek.type === "Bike");
 
-  const matchesSearch =
-    trek.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-    trek.location.toLowerCase().includes(searchQuery.toLowerCase());
+    const title = (trek.title || "").toLowerCase();
+    const location = (trek.location || "").toLowerCase();
+    const altitudeText = (trek.altitude || "").toLowerCase();
 
-  return matchesFilter && matchesSearch;
-});
+    const altitudeMatch = altitudeText.match(/(\d+(\.\d+)?)/);
+    const altitude = altitudeMatch ? parseFloat(altitudeMatch[1]) : null;
+
+    const matchesCategory = (() => {
+      switch (categoryFilter) {
+        case "upto-4k":
+          return altitude !== null && altitude < 4000;
+        case "4k-5k":
+          return altitude !== null && altitude >= 4000 && altitude < 5000;
+        case "5k-6k":
+          return altitude !== null && altitude >= 5000 && altitude < 6000;
+        case "6k-plus":
+          return altitude !== null && altitude >= 6000;
+        case "himachal":
+          return location.includes("himachal");
+        case "uttarakhand":
+          return location.includes("uttarakhand");
+        case "kashmir":
+          return location.includes("kashmir");
+        case "north-east":
+          return (
+            location.includes("sikkim") ||
+            location.includes("arunachal") ||
+            location.includes("north east") ||
+            location.includes("meghalaya") ||
+            location.includes("assam")
+          );
+        case "ladakh":
+          return location.includes("ladakh");
+        case "south":
+          return (
+            location.includes("karnataka") ||
+            location.includes("tamil") ||
+            location.includes("kerala") ||
+            location.includes("south india")
+          );
+        case "all":
+        default:
+          return true;
+      }
+    })();
+
+    const matchesSearch =
+      title.includes(searchQuery.toLowerCase()) ||
+      location.includes(searchQuery.toLowerCase());
+
+    return matchesFilter && matchesSearch && matchesCategory;
+  });
 
 
-    const handleFilterChange = (filter: FilterOption) => {
-      setActiveFilter(filter);
-    };
+  const handleFilterChange = (filter: FilterOption) => {
+    setActiveFilter(filter);
+  };
+
+  const heightCategories = [
+    {
+      label: "Up to 4,000 m",
+      value: "upto-4k" as const,
+    },
+    {
+      label: "4,000 – 5,000 m",
+      value: "4k-5k" as const,
+    },
+    {
+      label: "5,000 – 6,000 m",
+      value: "5k-6k" as const,
+    },
+    {
+      label: "6,000 m+",
+      value: "6k-plus" as const,
+    },
+  ];
+
+  const regions = [
+    { label: "Himachal", value: "himachal" as const },
+    { label: "Uttarakhand", value: "uttarakhand" as const },
+    { label: "Kashmir", value: "kashmir" as const },
+    { label: "Ladakh", value: "ladakh" as const },
+    { label: "North-East", value: "north-east" as const },
+    { label: "South India", value: "south" as const },
+  ];
 
 
 
@@ -66,7 +152,7 @@ useEffect(()=>{
   AOS.init();
 },[]) 
 
-    return(
+  return(
         <>
         <Head>
         <title>Lambda Adventures - All Treks & Expeditions </title>
@@ -81,8 +167,68 @@ useEffect(()=>{
   setSearchQuery={setSearchQuery}
 />
       <h2 className="text-4xl font-bold py-5 sm:px-10 text-black"> Discover</h2>
-      {/**<ExpCategories/>
-      <h2 className="text-2xl font-semibold mt-5 sm:px-10 text-black"> Expeditions For You </h2>*/}
+
+      {/* Premium minimal category section (height & region) */}
+      <section className="sm:px-10 mb-6">
+        <div className="flex flex-col gap-4 rounded-3xl border border-slate-200 bg-white/70 backdrop-blur-sm px-4 py-4 sm:px-6 sm:py-5 shadow-sm">
+          <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-3">
+            <div>
+              <p className="text-xs uppercase tracking-[0.15em] text-slate-500">
+                Curated for climbers
+              </p>
+              <h3 className="text-lg sm:text-xl font-semibold text-slate-900">
+                Explore by height & region
+              </h3>
+            </div>
+          </div>
+
+          <div className="flex flex-col gap-3">
+            {/* Height */}
+            <div className="flex flex-wrap gap-2">
+              <button
+                onClick={() => setCategoryFilter("all")}
+                className={`px-3.5 py-1.5 rounded-full text-xs sm:text-sm border transition-all ${
+                  categoryFilter === "all"
+                    ? "bg-[rgba(1,124,109,1)] text-white border-transparent shadow-sm"
+                    : "bg-white text-slate-600 border-slate-200 hover:border-[rgba(1,124,109,0.4)] hover:text-slate-900"
+                }`}
+              >
+                All Expeditions
+              </button>
+              {heightCategories.map((cat) => (
+                <button
+                  key={cat.value}
+                  onClick={() => setCategoryFilter(cat.value)}
+                  className={`px-3.5 py-1.5 rounded-full text-xs sm:text-sm border transition-all ${
+                    categoryFilter === cat.value
+                      ? "bg-[rgba(1,124,109,1)] text-white border-transparent shadow-sm"
+                      : "bg-white text-slate-600 border-slate-200 hover:border-[rgba(1,124,109,0.4)] hover:text-slate-900"
+                  }`}
+                >
+                  {cat.label}
+                </button>
+              ))}
+            </div>
+
+            {/* Regions */}
+            <div className="flex flex-wrap gap-2">
+              {regions.map((region) => (
+                <button
+                  key={region.value}
+                  onClick={() => setCategoryFilter(region.value)}
+                  className={`px-3 py-1.5 rounded-full text-[11px] sm:text-xs border transition-all ${
+                    categoryFilter === region.value
+                      ? "bg-slate-900 text-white border-slate-900 shadow-sm"
+                      : "bg-slate-50 text-slate-600 border-slate-200 hover:border-slate-400 hover:text-slate-900"
+                  }`}
+                >
+                  {region.label}
+                </button>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
       <div className="flex w-full gap-[36px] justify-center mt-[20px] flex-wrap max-md:mt-5 pb-4 ml-auto mr-auto" >
       {filteredTreks.length > 0 ? (
           filteredTreks.map((trek, index) => (
@@ -103,32 +249,11 @@ useEffect(()=>{
           </div>
         )}
       </div>
-      
-      <div className="mb-[100px] max-sm:hidden ">
-      <Link href={'/customtrek'}><Image
-  src="https://res.cloudinary.com/anuragprasoon/image/upload/v1745615313/adventurecallout_kdpc4k.png"
-  alt="Adventure Callout"
-  width={1200}
-  height={800}
-  layout="responsive"
-  loader={({ src }) => src}
-/></Link>
-</div>
 
-<div className="sm:hidden mb-[50px]">
-      <Link href={'//customtrek'}><Image
-  src="https://res.cloudinary.com/anuragprasoon/image/upload/v1745647359/adventurecallout-md_peiee0.png"
-  alt="Adventure Callout"
-  width={1200} // Original width of the image
-  height={800} // Original height of the image
-  layout="responsive"
-  loader={({ src }) => src} // Makes the image responsive and adjusts based on container width
-/></Link>
-</div>
       </div>
-       <div className="fixed bottom-2 right-2">
+      <div className="fixed bottom-2 right-2 ">
         <a href="https://api.whatsapp.com/send/?phone=919065550642&text=Hi%20Lambda%20Adventures,%20I%20want%20to%20plan%20a%20trip">
-          <img src="https://res.cloudinary.com/dibrmj6nh/image/upload/v1747946474/Frame_1597884222_xnchxt.png" className="w-[50px]"/>
+          <img src="/Whatsapp.webp" className="w-[50px] hover:w-[90px]"/>
         </a>
       </div>
         </>

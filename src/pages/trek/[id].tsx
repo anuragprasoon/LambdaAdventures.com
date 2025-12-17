@@ -191,156 +191,444 @@ export default function DynamicTrek() {
     <>
       <Head>
         <title>{trip.title} | Lambda Adventures</title>
-        <meta name="description" content={trip.description || "Join the adventure with Lambda Adventures!"} />
+        <meta
+          name="description"
+          content={trip.description || "Join the adventure with Lambda Adventures!"}
+        />
         <meta property="og:image" content={trip.imageSrc} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+
       {showAnimation ? (
-              <div className="flex justify-center items-center h-[250px]">
-                <DotLottieReact src="/Scene-1.json" width="200px" height="200px" autoplay loop />
+        <div className="flex h-[250px] items-center justify-center">
+          <DotLottieReact
+            src="/Scene-1.json"
+            width="200px"
+            height="200px"
+            autoplay
+            loop
+          />
+        </div>
+      ) : (
+        <div className="min-h-screen bg-slate-50">
+          {/* Enquiry overlay */}
+          {popup && (
+            <div className="fixed inset-0 z-40 flex items-center justify-center bg-black/40 backdrop-blur-sm">
+              <div className="relative w-full max-w-lg rounded-3xl bg-white p-6 shadow-2xl sm:p-8">
+                <button
+                  className="absolute right-4 top-4 rounded-full border border-slate-200 px-2 py-1 text-xs font-medium text-slate-500 hover:bg-slate-50"
+                  onClick={() => setPopup(false)}
+                >
+                  Close
+                </button>
+                <h3
+                  className="mb-4 text-xl font-semibold text-slate-900 sm:text-2xl"
+                  id="plan-trip"
+                >
+                  Plan your trip with Lambda
+                </h3>
+                <div className="mb-4 flex items-center gap-4">
+                  <img
+                    src={trip.imageSrc}
+                    alt={trip.title}
+                    className="h-16 w-16 rounded-xl object-cover sm:h-20 sm:w-20"
+                  />
+                  <div>
+                    <h4 className="text-sm font-semibold text-slate-900 sm:text-base">
+                      {trip.title}
+                    </h4>
+                    <p className="text-lg font-bold text-[#017C6D] sm:text-xl">
+                      {trip.price}
+                    </p>
+                  </div>
+                </div>
+                <form onSubmit={handleSubmit} className="space-y-3 pt-2">
+                  <input
+                    className="w-full text-black rounded-xl border border-slate-200 px-3 py-2 text-sm outline-none ring-0 focus:border-[#017C6D] focus:ring-2 focus:ring-[#017C6D]/10"
+                    type="text"
+                    placeholder="Name"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                  />
+                  <input
+                    className="w-full text-black rounded-xl border border-slate-200 px-3 py-2 text-sm outline-none ring-0 focus:border-[#017C6D] focus:ring-2 focus:ring-[#017C6D]/10"
+                    type="tel"
+                    placeholder="Phone"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
+                  />
+                  <input
+                    className="w-full text-black rounded-xl border border-slate-200 px-3 py-2 text-sm outline-none ring-0 focus:border-[#017C6D] focus:ring-2 focus:ring-[#017C6D]/10"
+                    type="email"
+                    placeholder="E-mail"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                  />
+                  <div className="space-y-1 text-xs text-slate-500">
+                    <span>Preferred trip start date</span>
+                    <input
+                      className="w-full rounded-xl border border-slate-200 px-3 py-2 text-sm outline-none ring-0 focus:border-[#017C6D] focus:ring-2 focus:ring-[#017C6D]/10"
+                      type="date"
+                      placeholder="Start Date"
+                      name="startDate"
+                      value={formData.startDate}
+                      onChange={handleChange}
+                    />
+                  </div>
+                  <input
+                    className="w-full text-black rounded-xl border border-slate-200 px-3 py-2 text-sm outline-none ring-0 focus:border-slate-200 focus:ring-0"
+                    type="text"
+                    placeholder="Referral code (optional)"
+                    name="coupon"
+                    value={formData.coupon}
+                    onChange={handleChange}
+                  />
+
+                  <button
+                    className="mt-1 w-full rounded-xl bg-[#017C6D] px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-[#015c4f]"
+                    type="submit"
+                  >
+                    Enquire &amp; Reserve Spot
+                  </button>
+                </form>
               </div>
-            ) : (
-              <div>
-      { Boolean(popup) && (
-        <div className="absolute fixed z-[2] top-10  p-10 rounded w-[70%] left-0 right-0 mx-auto text-black bg-white w-full">
-          <button className="bg-white rounded-full text-bold m-2 absolute top-10 right-10" onClick={e => setPopup(false)}>X</button>
-      <h3 className=" font-semibold text-[24px] mb-3" id="plan-trip">Plan A Trip with Us Now</h3>
-      <div className="flex justify-center items-center">
-        <img src={trip.imageSrc} alt={trip.title} className="w-[100px] h-[100px] object-cover rounded mb-4" />
-        <div className="p-5">
-          <h1 className="text-lg font-bold">{trip.title}</h1>
-          <p className="text-2xl text-[#017C6D] font-bold mb-2">{trip.price}</p>
-        </div>
-      </div>
-      <form onSubmit={handleSubmit}>
-        <input className="urbanist rounded p-2 w-full border-1 border-[#d7d7d9] mb-3"type="text" placeholder="Name" name="name" value={formData.name} onChange={handleChange}/>
-        <input className="urbanist rounded p-2 w-full border-1 border-[#d7d7d9] mb-3"type="number" placeholder="Phone" name="phone" value={formData.phone} onChange={handleChange}/>
-        <input className="urbanist rounded p-2 w-full border-1 border-[#d7d7d9] mb-3"type="email" placeholder="E-Mail" name="email" value={formData.email} onChange={handleChange}/>
-        <span className="urbanist rounded w-full text-[#7f878b] py-10 mb-3">Trip Starting Date</span>
-        <input className="urbanist rounded p-2 w-full border-1 border-[#d7d7d9] mb-3"type="date" placeholder="Start Date" name="startDate" value={formData.startDate} onChange={handleChange}/>
-        <input className="urbanist rounded p-2 w-full border-1 border-[#d7d7d9]" type="text" placeholder="Refferal Code" name="coupon" value={formData.coupon} onChange={handleChange}/>
+            </div>
+          )}
 
-        <button className="bg-[#017C6D] font-bold text-white p-2 w-[150px] rounded w-full" type="submit">Book Now</button>
-     </form>
-  </div>
-            )}
-      <div className="sm:flex gap-5 px-10 text-black">
+          <div className="mx-auto max-w-6xl px-4 pb-16 pt-6 sm:px-6 lg:px-8">
+            {/* Hero */}
+            <section className="space-y-4">
+              <div className="relative h-[320px] overflow-hidden rounded-3xl bg-slate-900/10 sm:h-[420px]">
+                <img
+                  src={trip.imageSrc}
+                  alt={trip.title}
+                  className="h-full w-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/40 to-transparent" />
 
-<div className="max-sm:hidden min-w-[300px] sm:w-[30%] ">
-  <div className="p-5 border-1 rounded-md border-[#d7d7d9] w-full">
-      <div className="w-full text-2xl font-semibold mb-2">{trip.title}</div>
-      <div className="w-full text-2xl font-bold mb-2">{trip.price}</div>
-      <div className=" sm:text-lg flex item-center mb-2"><LocationOnIcon className="text-[#017C6D] mr-3" /> <text>{trip.location}</text></div>
-      <div className="  sm:text-lg flex item-center mb-2"><DateRangeIcon className="text-[#017C6D] mr-3" />  <text>{trip.duration}</text></div>
-      <div className=" sm:text-lg flex  item-center mb-2"><MapIcon className="text-[#017C6D] mr-3" /><text>{trip.distance}</text></div>
-      <div className=" sm:text-lg flex  item-center mb-2"><SpeedIcon className="text-[#017C6D] mr-3" /> <text>{trip.difficulty}</text></div>
-      <Link href="/customtrek"><button className="block w-full rounded-sm p-2 mb-2 border-1 border-[#017C6D] mt-1 text-[#017C6D] font-bold">Request A Custom Trip</button></Link>
-      <Link href="#plan-trip"><button className="max-sm:hidden block w-full rounded-sm p-2 bg-[#017C6D] mt-1 text-white font-bold">Book Now</button></Link>
-  </div>
-  <div className="max-sm:hidden p-5 mt-5 border-1 border-[#d7d7d9] rounded-md">
-      <h3 className=" font-semibold text-[24px] mb-3" id="plan-trip">Plan A Trip with Us Now</h3>
-        <div className="flex justify-center items-center">
-          <img src={trip.imageSrc} alt={trip.title} className="w-[100px] h-[100px] object-cover rounded mb-4" />
-          <div className="p-5">
-            <h1 className="text-lg font-bold">{trip.title}</h1>
-            <p className="text-2xl text-[#017C6D] font-bold mb-2">{trip.price}</p>
+                <div className="absolute inset-x-0 bottom-0 flex flex-col gap-4 p-6 sm:flex-row sm:items-end sm:justify-between sm:p-8">
+                  <div>
+                    <div className="mb-2 flex flex-wrap items-center gap-2 text-xs font-medium">
+                      {trip.type && (
+                        <span className="rounded-full bg-white/15 px-3 py-1 text-white backdrop-blur">
+                          {trip.type}
+                        </span>
+                      )}
+                      {trip.status && (
+                        <span className="rounded-full bg-emerald-500/90 px-3 py-1 text-white backdrop-blur">
+                          {trip.status}
+                        </span>
+                      )}
+                    </div>
+                    <h1 className="max-w-2xl text-2xl font-semibold text-white sm:text-3xl md:text-4xl">
+                      {trip.title}
+                    </h1>
+                    {trip.location && (
+                      <p className="mt-2 flex items-center gap-2 text-sm text-slate-200">
+                        <LocationOnIcon className="h-4 w-4 text-emerald-300" />
+                        <span>{trip.location}</span>
+                      </p>
+                    )}
+                  </div>
+
+                  <div className="flex flex-wrap items-end gap-2 sm:justify-end">
+                    {trip.duration && (
+                      <div className="rounded-full bg-white/90 px-3 py-1.5 text-xs font-medium text-slate-800 shadow-sm">
+                        <DateRangeIcon className="mr-1 inline-block h-4 w-4 align-middle text-emerald-600" />
+                        <span>{trip.duration}</span>
+                      </div>
+                    )}
+                    {trip.distance && (
+                      <div className="rounded-full bg-white/90 px-3 py-1.5 text-xs font-medium text-slate-800 shadow-sm">
+                        <MapIcon className="mr-1 inline-block h-4 w-4 align-middle text-emerald-600" />
+                        <span>{trip.distance}</span>
+                      </div>
+                    )}
+                    {trip.altitude && (
+                      <div className="rounded-full bg-white/90 px-3 py-1.5 text-xs font-medium text-slate-800 shadow-sm">
+                        <SpeedIcon className="mr-1 inline-block h-4 w-4 align-middle text-emerald-600" />
+                        <span>{trip.altitude}</span>
+                      </div>
+                    )}
+                    {trip.difficulty && (
+                      <div className="rounded-full bg-white/90 px-3 py-1.5 text-xs font-medium text-slate-800 shadow-sm">
+                        {trip.difficulty}
+                      </div>
+                    )}
+                    <div className="ml-0 flex flex-col rounded-2xl bg-white/95 px-4 py-2.5 text-right text-sm font-semibold text-slate-900 shadow-sm sm:ml-2">
+                      <span className="text-xs font-medium text-slate-500">
+                        Starting from
+                      </span>
+                      <span className="text-lg text-[#017C6D]">{trip.price}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            {/* Mobile booking card (below hero image) */}
+            <div className="mt-6 lg:hidden">
+              <div className="rounded-3xl bg-white p-5 shadow-md ring-1 ring-slate-100">
+                <p className="text-[10px] font-medium uppercase tracking-[0.16em] text-slate-500">
+                  Private &amp; fixed departures
+                </p>
+                <div className="mt-3 flex items-baseline justify-between gap-4">
+                  <div>
+                    <div className="text-[11px] text-slate-500">Starting from</div>
+                    <div className="text-xl font-semibold text-slate-900">
+                      {trip.price}
+                    </div>
+                  </div>
+                  {trip.duration && (
+                    <div className="rounded-2xl bg-slate-50 px-3 py-1.5 text-[11px] font-medium text-slate-700">
+                      {trip.duration}
+                    </div>
+                  )}
+                </div>
+
+                <div className="mt-4 space-y-2 text-[11px] text-slate-600">
+                  {trip.altitude && (
+                    <div className="flex items-center gap-2">
+                      <SpeedIcon className="h-4 w-4 text-emerald-600" />
+                      <span>Max altitude: {trip.altitude}</span>
+                    </div>
+                  )}
+                  {trip.difficulty && (
+                    <div className="flex items-center gap-2">
+                      <span className="inline-block h-2 w-2 rounded-full bg-amber-500" />
+                      <span>Difficulty: {trip.difficulty}</span>
+                    </div>
+                  )}
+                </div>
+
+                <button
+                  onClick={popOpen}
+                  className="mt-4 w-full rounded-xl bg-[#017C6D] px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-[#015c4f]"
+                >
+                  Enquire &amp; book this trip
+                </button>
+
+                <Link
+                  href="/customtrek"
+                  className="mt-3 block text-center text-[11px] font-semibold text-black underline-offset-4 hover:underline"
+                >
+                  Design a custom version of this trek
+                </Link>
+              </div>
+            </div>
+
+            {/* Main content */}
+            <div className="mt-10 grid gap-10 lg:grid-cols-[minmax(0,2fr)_minmax(0,1.1fr)]">
+              {/* Left column */}
+              <main className="space-y-10">
+                {/* About */}
+                <section>
+                  <h2
+                    id="description"
+                    className="text-lg font-semibold text-slate-900 sm:text-xl"
+                  >
+                    Trip overview
+                  </h2>
+                  {trip.description && (
+                    <p className="mt-3 text-sm leading-relaxed text-slate-700 sm:text-base">
+                      {trip.description}
+                    </p>
+                  )}
+                </section>
+
+                {/* Inclusions / Exclusions */}
+                {(trip.inclusions || trip.exclusions) && (
+                  <section>
+                    <h2 className="text-lg font-semibold text-slate-900 sm:text-xl">
+                      What&apos;s included
+                    </h2>
+                    <div className="mt-4 grid gap-6 md:grid-cols-2">
+                      {trip.inclusions && (
+                        <div className="rounded-2xl bg-white p-5 shadow-sm ring-1 ring-slate-100">
+                          <h3
+                            id="inclusions"
+                            className="mb-3 text-sm font-semibold text-slate-900 sm:text-base"
+                          >
+                            Inclusions
+                          </h3>
+                          <div className="space-y-2">
+                            {trip.inclusions.map(
+                              (inclusion: string, index: number) => (
+                                <div
+                                  className="flex items-start gap-2 text-sm text-slate-700"
+                                  key={index}
+                                >
+                                  <CheckCircle className="mt-0.5 h-4 w-4 text-emerald-600" />
+                                  <span>{inclusion}</span>
+                                </div>
+                              ),
+                            )}
+                          </div>
+                        </div>
+                      )}
+
+                      {trip.exclusions && (
+                        <div className="rounded-2xl bg-white p-5 shadow-sm ring-1 ring-slate-100">
+                          <h3
+                            id="exclusions"
+                            className="mb-3 text-sm font-semibold text-slate-900 sm:text-base"
+                          >
+                            Exclusions
+                          </h3>
+                          <div className="space-y-2">
+                            {trip.exclusions.map(
+                              (exclusion: string, index: number) => (
+                                <div
+                                  className="flex items-start gap-2 text-sm text-slate-700"
+                                  key={index}
+                                >
+                                  <Block className="mt-0.5 h-4 w-4 text-rose-500" />
+                                  <span>{exclusion}</span>
+                                </div>
+                              ),
+                            )}
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  </section>
+                )}
+
+                {/* Gallery */}
+                {trip.images && Array.isArray(trip.images) && trip.images.length > 0 && (
+                  <section>
+                    <h2 className="text-lg font-semibold text-slate-900 sm:text-xl">
+                      Trip gallery
+                    </h2>
+                    <div className="mt-4 grid gap-3 sm:grid-cols-3">
+                      {trip.images.slice(0, 6).map((img: string, idx: number) => (
+                        <div
+                          key={idx}
+                          className="overflow-hidden rounded-2xl bg-slate-100"
+                        >
+                          <img
+                            src={img}
+                            alt={`${trip.title} - ${idx + 1}`}
+                            className="h-32 w-full object-cover transition duration-500 hover:scale-105 sm:h-40"
+                          />
+                        </div>
+                      ))}
+                    </div>
+                  </section>
+                )}
+
+                {/* Video */}
+                {trip.youtube && (
+                  <section>
+                    <h2 className="text-lg font-semibold text-slate-900 sm:text-xl">
+                      Watch the experience
+                    </h2>
+                    <div className="mt-4 overflow-hidden rounded-2xl bg-black">
+                      <iframe
+                        className="h-56 w-full sm:h-72 md:h-80"
+                        src={trip.youtube}
+                        title={`${trip.title} - YouTube preview`}
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                      ></iframe>
+                    </div>
+                  </section>
+                )}
+
+                {/* Know before you go - keep concise list */}
+                <section>
+                  <h2
+                    id="faqs"
+                    className="text-lg font-semibold text-slate-900 sm:text-xl"
+                  >
+                    Know before you go
+                  </h2>
+                  <div className="mt-4 rounded-2xl bg-white p-5 shadow-sm ring-1 ring-slate-100">
+                    <FAQ />
+                  </div>
+                </section>
+              </main>
+
+              {/* Right column – booking card (desktop) */}
+              <aside className="hidden space-y-6 lg:sticky lg:top-24 lg:block">
+                <div className="rounded-3xl bg-white p-6 shadow-md ring-1 ring-slate-100">
+                  <p className="text-xs font-medium uppercase tracking-[0.16em] text-slate-500">
+                    Private &amp; fixed departures
+                  </p>
+                  <div className="mt-3 flex items-baseline justify-between gap-4">
+                    <div>
+                      <div className="text-xs text-slate-500">Starting from</div>
+                      <div className="text-2xl font-semibold text-slate-900">
+                        {trip.price}
+                      </div>
+                    </div>
+                    {trip.duration && (
+                      <div className="rounded-2xl bg-slate-50 px-3 py-1.5 text-xs font-medium text-slate-700">
+                        {trip.duration}
+                      </div>
+                    )}
+                  </div>
+
+                  <div className="mt-4 space-y-2 text-xs text-slate-600">
+                    {trip.altitude && (
+                      <div className="flex items-center gap-2">
+                        <SpeedIcon className="h-4 w-4 text-emerald-600" />
+                        <span>Max altitude: {trip.altitude}</span>
+                      </div>
+                    )}
+                    {trip.difficulty && (
+                      <div className="flex items-center gap-2">
+                        <span className="inline-block h-2 w-2 rounded-full bg-amber-500" />
+                        <span>Difficulty: {trip.difficulty}</span>
+                      </div>
+                    )}
+                  </div>
+
+                  <button
+                    onClick={popOpen}
+                    className="mt-5 w-full rounded-xl bg-[#017C6D] px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-[#015c4f]"
+                  >
+                    Enquire &amp; book this trip
+                  </button>
+
+                  <Link
+                    href="/customtrek"
+                    className="mt-3 block text-center text-xs font-semibold text-black underline-offset-4 hover:underline"
+                  >
+                    Design a custom version of this trek
+                  </Link>
+
+                  <div className="mt-4 flex items-center justify-between rounded-2xl bg-slate-50 px-3 py-2">
+                    <div className="text-[11px] text-black">
+                      Prefer speaking to a human?
+                    </div>
+                    <Link
+                      href="tel:+919065550642"
+                      className="text-xs font-semibold text-black hover:text-[#017C6D]"
+                    >
+                      Call travel expert
+                    </Link>
+                  </div>
+                </div>
+              </aside>
+            </div>
+
+            {/* Recommended trips */}
+            <section className="mt-14">
+              <TrekSection title="Trips you may also like" treks={popularTreks} />
+            </section>
           </div>
-        </div>
-      <form onSubmit={handleSubmit}>
-        <input className="urbanist rounded p-2 w-full border-1 border-[#d7d7d9] mb-3"type="text" placeholder="Name" name="name" value={formData.name} onChange={handleChange}/>
-        <input className="urbanist rounded p-2 w-full border-1 border-[#d7d7d9] mb-3"type="number" placeholder="Phone" name="phone" value={formData.phone} onChange={handleChange}/>
-        <input className="urbanist rounded p-2 w-full border-1 border-[#d7d7d9] mb-3"type="email" placeholder="E-Mail" name="email" value={formData.email} onChange={handleChange}/>
-        <span className="urbanist rounded w-full text-[#7f878b] py-10 mb-3">Trip Starting Date</span>
-        <input className="urbanist rounded p-2 w-full border-1 border-[#d7d7d9] mb-3"type="date" placeholder=" Start Date" name="startDate" value={formData.startDate} onChange={handleChange}/>
-        <input className="urbanist rounded p-2 w-full border-1 border-[#d7d7d9] mb-3" type="text" placeholder="Refferal Code" name="coupon" value={formData.coupon} onChange={handleChange}/>
-        <button className="bg-[#017C6D] font-bold text-white p-2 w-[150px] rounded w-full" type="submit">Book Now</button>
-     </form>
-  </div>
-  </div>
 
-<div className="sm:w-[70%] order-first">
-<img className="w-full h-[350px] object-cover rounded mb-4" src={trip.imageSrc} alt={trip.title} />
-
-<h1 className="text-3xl font-bold py-4">{trip.title}</h1>
-<div className="text-lg text-gray-700 mb-4 flex rounded">
-  <Link className="hover:bg-[#017C6D] hover:text-white  border-1 border-[#d7d7d9] px-5 py-1" href="#description">Details</Link> <Link className="hover:text-white hover:bg-[#017C6D] border-1 border-[#d7d7d9] px-5 py-1" href="#inclusions">Inclusions</Link>
-  <Link href="#exclusions" className="hover:bg-[#017C6D] hover:text-white border-1 border-[#d7d7d9] px-5 py-1">Exclusions</Link> <Link href="#faqs" className="hidden border-1 border-[#d7d7d9] px-5 py-1">FAQs</Link>
-</div>
-<div className="sm:hidden rounded-md w-full mb-5">
-      <div className="w-full text-3xl font-bold mb-2">{trip.price}</div>
-      <div className=" sm:text-lg flex item-center mb-2"><LocationOnIcon className="text-[#017C6D] mr-3" /> <text>{trip.location}</text></div>
-      <div className="  sm:text-lg flex item-center mb-2"><DateRangeIcon className="text-[#017C6D] mr-3" />  <text>{trip.duration}</text></div>
-      <div className=" sm:text-lg flex  item-center mb-2"><MapIcon className="text-[#017C6D] mr-3" /><text>{trip.distance}</text></div>
-      <div className=" sm:text-lg flex  item-center mb-2"><SpeedIcon className="text-[#017C6D] mr-3" /> <text>{trip.difficulty}</text></div>
-      <Link href="/customtrek"><button className="block w-full rounded-sm p-2 mb-2 border-1 border-[#017C6D] mt-1 text-[#017C6D] font-bold">Request A Custom Trip</button></Link>
-      <button className="sm:hidden block w-full rounded-sm p-2 bg-[#017C6D] mt-1 text-white font-bold" onClick={popOpen}>Book Now</button>
-
-  </div>
- <p id="description">{trip.description}</p><br/>
-<h2 className="mt-4 text-3xl font-bold py-4">What's Inside the Package?</h2>
-<div className="sm:flex mb-4  rounded gap-2">
-
-	<div className=" p-5 rounded">
-    	<h3 className="text-2xl font-bold mb-3" id="inclusions">Inclusions</h3>
-      { trip.inclusions && trip.inclusions.map((inclusion: string, index: number) => (
-        <div className="flex items-center" key={index}>
-          <CheckCircle className="text-[#175725] mr-3" />
-          <text>{inclusion}</text>
-        </div>
-      ))}
-    </div>
-
-    <div className="  p-5 rounded">
-    	<h3 className="text-2xl font-bold mb-3" id="exclusions">Exclusions</h3>
-      {trip.exclusions && trip.exclusions.map((exclusion:string, index:number)=>(
-        <div className="flex items-center" key={index}>
-        <Block className="text-[#ff0000] mr-3" />
-        	<text>{exclusion}</text>
-        </div>
-
-      ))}
-    </div>
-
-</div>
-<h2 className="text-3xl font-bold py-4" id="faqs">Know Before You Go</h2>
-<ul className="px-5 list-disc">
-  <li>Engage in regular cardiovascular exercises like hiking, jogging, or cycling to build stamina and endurance.</li>
-  <li>Incorporate strength training exercises to strengthen leg muscles and core stability.</li>
-  <li>Practice hiking with a loaded backpack to simulate trekking conditions.</li>
-  <li>Plan for at least a day or two of acclimatization in Lukla or nearby areas before starting the trek.</li>
-  <li>Stay hydrated and avoid alcohol and smoking to minimize the risk of altitude sickness.</li>
-   <li>Ascend gradually and listen to your body’s signals to recognize symptoms of altitude sickness.</li>
-  <li>Stay informed about weather forecasts and trail conditions before and during the trek.</li>
-  <li>Follow the guidance of experienced trekking guides and adhere to safety protocols at all times.</li>
-  <li>Stay together as a group, avoid straying off the designated trail, and be mindful of potential hazards like loose rocks, steep cliffs, or slippery surfaces.</li>
-  <li>Keep emergency contact information handy and communicate regularly with your trekking companions and support staff.</li>
-</ul>
-</div>
-
-</div>
-
-     {/**  <iframe
-        src="https://www.google.com/maps/d/u/0/embed?mid=1yCZDSeqrxtbLSdFFVJ_fLb8ODkDxEOs&ehbc=2E312F&noprof=1"
-        className="w-full p-10 h-[500px]"
-      ></iframe>*/}
-       <div className="pl-10 pr-10 pb-10">
-       <FAQ/>
-       </div>
-      <div className="pl-10 pr-10 pb-10">
-        <TrekSection title="Trips You May Like" treks={popularTreks} />
-      </div>
-
-     
-      <div className="fixed bottom-2 right-2">
+          <div className="fixed bottom-2 right-2 ">
         <a href="https://api.whatsapp.com/send/?phone=919065550642&text=Hi%20Lambda%20Adventures,%20I%20want%20to%20plan%20a%20trip">
-          <img src="https://res.cloudinary.com/dibrmj6nh/image/upload/v1747946474/Frame_1597884222_xnchxt.png" className="w-[50px]"/>
+          <img src="/Whatsapp.webp" className="w-[50px] hover:w-[90px]"/>
         </a>
       </div>
-      </div>
-            )}
-
-      
-            
+        </div>
+      )}
     </>
   );
 }

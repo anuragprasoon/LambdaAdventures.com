@@ -34,7 +34,7 @@ const CustomTrekSection: React.FC = () => {
   ];
 
   return (
-    <section className="relative py-20 overflow-hidden text-black">
+    <section className="relative py-20 overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 bg-gradient-to-br from-[#017c6d]/10 to-transparent" />
       
@@ -44,7 +44,7 @@ const CustomTrekSection: React.FC = () => {
           {/* Left Content */}
           <div className="space-y-8" data-aos="fade-right">
             <div>
-              <h2 className="text-4xl font-bold mb-4">
+              <h2 className="text-4xl font-bold mb-4 text-black">
                 Create Your Own <br />
                 <span className="text-[#017c6d]">Adventure</span>
               </h2>
@@ -56,7 +56,7 @@ const CustomTrekSection: React.FC = () => {
 
             <div className="space-y-6">
               {features.map((feature, index) => (
-                <div key={index} className="flex items-start space-x-4">
+                <div key={index} className="flex items-start space-x-4 text-black">
                   <div className="p-2 bg-[#017c6d]/10 rounded-lg text-[#017c6d]">
                     {feature.icon}
                   </div>
@@ -70,7 +70,7 @@ const CustomTrekSection: React.FC = () => {
 
             <Link 
               href="/customtrek" 
-              className="inline-flex text-[#000000] items-center px-6 py-3 bg-[#017c6d] text-white rounded-lg font-semibold hover:bg-[#015c4d] transition-colors duration-300"
+              className="inline-flex items-center px-6 py-3 bg-[#017c6d] text-white rounded-lg font-semibold hover:bg-[#015c4d] transition-colors duration-300"
             >
               Plan Your Custom Trek
               <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">

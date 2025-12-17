@@ -203,7 +203,6 @@ export default function Home() {
       <div className="px-[6%]">
       <Hero/>
       <CategorySection />
-       <PhotoGallery />
       <TrekSection title="Upcoming" treks={upcomingTreks} />
       <TrekSection title="Popular" treks={popularTreks} />
        <div>
@@ -264,9 +263,9 @@ You drop the destination, we’ll handle the rest, <text className="font-bold">n
       <FAQ />
       
       </div>
-      <div className="fixed bottom-2 right-2">
+      <div className="fixed bottom-2 right-2 ">
         <a href="https://api.whatsapp.com/send/?phone=919065550642&text=Hi%20Lambda%20Adventures,%20I%20want%20to%20plan%20a%20trip">
-          <img src="https://res.cloudinary.com/dibrmj6nh/image/upload/v1747946474/Frame_1597884222_xnchxt.png" className="w-[50px]"/>
+          <img src="/Whatsapp.webp" className="w-[50px] hover:w-[90px]"/>
         </a>
       </div>
       <PopUp/>
