@@ -7,6 +7,7 @@ import { Urbanist } from "next/font/google";
 import { useRouter } from 'next/router';
 import { useState, useEffect } from "react";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
+import mixpanel from "mixpanel-browser";
 
 const urbanist = Urbanist({
   subsets: ['latin'],
@@ -15,6 +16,15 @@ const urbanist = Urbanist({
 
 
 export default function App({ Component, pageProps }: AppProps) {
+  //Import Mixpanel SDK
+
+
+// Create an instance of the Mixpanel object, your token is already added to this snippet
+mixpanel.init('8a7aa3118ae6015d25d83c8b52fd9695', {
+  autocapture: true,
+  record_sessions_percent: 100,
+})
+
   const router = useRouter();
   const [isload, setLoad]=useState(false);
 
